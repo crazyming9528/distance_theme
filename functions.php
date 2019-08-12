@@ -44,7 +44,8 @@ if ( ! function_exists( 'distance_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'distance' ),
+//			'menu-1' => esc_html__( 'Primary', 'distance' ),
+            'distance_menu' => __( 'distance_menu' ),
 		) );
 
 		/*

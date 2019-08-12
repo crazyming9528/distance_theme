@@ -25,6 +25,13 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'distance' ); ?></a>
 
 	<header id="masthead" class="site-header">
+        <?php
+//        wp_nav_menu(array(
+//            'theme_location' => 'distance_menu',//注册菜单的名称
+//            'container_class' => 'my_extra_menu_class'
+//        ) );
+
+        ?>
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
