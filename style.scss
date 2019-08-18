@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+*{
+  font-family: '微软雅黑';
+}
+
+.distance-header {
+  background-color: #163f60;
+  font-size: 30px;
+  background-image: url("./img/top.jpg");
+  height: 80vh;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  overflow: hidden;
+
+  .distance-header-container {
+    position: absolute;
+    width: 100%;
+
+    .distance-branding {
+      color: white;
+      font-size: 30px;
+
+      .distance-title, a {
+        color: white;
+        font-size: 48px;
+      }
+    }
+
+    z-index: 100;
+
+  }
+
+
+  .home_video {
+    width: auto;
+    min-width: 100%;
+    position: absolute;
+    z-index: 1;
+
+  }
+
+  .sentence {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    font-size: 30px;
+  }
+}
