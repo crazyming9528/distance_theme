@@ -1,11 +1,19 @@
 @charset "UTF-8";
 
+#wpadminbar {
+  top: 55px!important;
+  opacity: 0.6;
+}
 
-*{
+
+* {
   font-family: '微软雅黑';
 }
 
 .distance-header {
+  position: relative;
+  padding-top: 55px;
+
   background-color: #163f60;
   font-size: 30px;
   background-image: url("./img/top.jpg");

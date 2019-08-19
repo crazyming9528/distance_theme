@@ -31,6 +31,19 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script>
+   jQuery(document).ready(function ($) {
+
+       $('.distance-header').circleMagic({
+           elem: '.distance-header',
+           radius: 15,
+           densety: .3,
+           color: 'rgba(255,255,255, .3)',
+           // color: 'random',
+           clearOffset: .3
+       });
+   })
+</script>
 
 </body>
 </html>
