@@ -15,45 +15,75 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+    <div class="row">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+        <div class="distance-first-screen col-12" style="background-image: url('<?php echo get_header_image() ?>')">
+            <div class="layer"></div>
+            <div class="sentence"><p style="color: <?php get_theme_mods('header_textcolor') ?>">若能避开猛烈的欢喜
+                    自然也不会有悲痛的来袭</p></div>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+        </div>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+    </div>
 
-			endwhile;
+    <div class="container">
 
-			the_posts_navigation();
+        <div class="row ">
+            <div class="col-9 ">
+                <?php
+                if (have_posts()) : ?>
+                    <ul class="distance-article-list">
+                        <?php while (have_posts()) :the_post(); ?>
+                            <li class="_item dp_shadow ">
+                                <div class="_img">
+                                    <?php if (has_post_thumbnail()) { ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php } else { ?>
+                                        <!--没有特色图像暂时不显示-->
+                                    <?php } ?>
+                                </div>
 
-		else :
+                                <div class="_text">
+                                    <h1 class="_title"><a
+                                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 
-			get_template_part( 'template-parts/content', 'none' );
+                                    <p class="_author-info">
+                                        <time><?php echo get_the_date('Y-m-d'); ?></time> &bull;
+                                        <span><?php echo get_the_author(); ?></span> &bull;
+                                        <span><a href=""><?php comments_popup_link('0', '1', '%'); ?>条评论</a></span>
+                                        &bull;
+                                        <span> 次浏览</span>
+                                    </p>
+                                    <p class="_excerpt"> <?php echo esc_attr(get_the_excerpt()); ?></p>
+                                    <div class="_footer">
+                                        <div class="tags">
+                                            <?php the_tags('', ' ', ''); ?>
+                                        </div>
+                                        <div class="_read-more"><a href="<?php the_permalink() ?>">继续阅读</a></div>
 
-		endif;
-		?>
+                                    </div>
+                                </div>
+                            </li>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                        <?php endwhile; ?>
+
+                    </ul>
+
+
+                <?php endif;
+                ?>
+
+
+            </div>
+            <div class="col-3"><?php get_sidebar('right'); ?></div>
+
+        </div>
+
+    </div>
+
+
 
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

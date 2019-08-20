@@ -1,38 +1,41 @@
 @charset "UTF-8";
-#wpadminbar {
-  top: 55px !important;
-  opacity: 0.6; }
+body {
+  background-color: #f9f9f9; }
+
+.dp_shadow {
+  box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
+  transition: box-shadow 0.5s; }
+  .dp_shadow:hover {
+    box-shadow: 2px 3px 15px rgba(129, 129, 129, 0.45); }
 
 * {
   font-family: '微软雅黑'; }
 
-.distance-header {
+.distance-nav, .navbar-brand {
+  color: white !important; }
+  .distance-nav a, .navbar-brand a {
+    color: white; }
+  .distance-nav .nav-item, .navbar-brand .nav-item {
+    height: 100px;
+    line-height: 100px; }
+
+.distance-first-screen {
   position: relative;
-  padding-top: 55px;
-  background-color: #163f60;
-  font-size: 30px;
-  background-image: url("./img/top.jpg");
+  overflow: hidden;
+  background-color: gray;
   height: 80vh;
   background-size: cover;
   background-position: center bottom;
-  position: relative;
-  overflow: hidden; }
-  .distance-header .distance-header-container {
-    position: absolute;
+  box-shadow: 0px 5px 8px #b9b9b9; }
+  .distance-first-screen .layer {
+    display: block;
     width: 100%;
-    z-index: 100; }
-    .distance-header .distance-header-container .distance-branding {
-      color: white;
-      font-size: 30px; }
-      .distance-header .distance-header-container .distance-branding .distance-title, .distance-header .distance-header-container .distance-branding a {
-        color: white;
-        font-size: 48px; }
-  .distance-header .home_video {
-    width: auto;
-    min-width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 1; }
-  .distance-header .sentence {
+    top: 0;
+    left: 0;
+    z-index: 99; }
+  .distance-first-screen .sentence {
     color: white;
     position: absolute;
     top: 50%;
@@ -40,5 +43,22 @@
     transform: translate(-50%, -50%);
     z-index: 100;
     font-size: 30px; }
+
+.distance-article-list {
+  margin: 20px 0; }
+  .distance-article-list ._item {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white; }
+    .distance-article-list ._item:not(:last-child) {
+      margin-bottom: 15px; }
+    .distance-article-list ._item ._img {
+      border-radius: 2px; }
+      .distance-article-list ._item ._img img {
+        border-radius: 2px;
+        width: 100%;
+        height: 300px; }
+    .distance-article-list ._item ._text {
+      padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */
