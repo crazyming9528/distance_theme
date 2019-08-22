@@ -24,19 +24,69 @@ body {
 }
 
 
-.distance-nav, .navbar-brand {
-  color: white !important;
+//.distance-nav, .navbar-brand {
+//  color: white !important;
+//
+//  a {
+//    color: white;
+//  }
+//
+//  .nav-item {
+//    height: 100px;
+//    line-height: 100px;
+//  }
+//
+//
+//}
 
-  a {
-    color: white;
+.distance-nav {
+  list-style: none;
+  margin: 0;
+width: 100%;
+  background: deepskyblue;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+
+}
+
+
+.distance-nav a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+.distance-nav a:hover {
+  background: darken(deepskyblue, 2%);
+}
+
+@media all and (max-width: 800px) {
+  .distance-nav {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .distance-nav {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
   }
 
-  .nav-item {
-    height: 100px;
-    line-height: 100px;
+  .distance-nav a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
   }
 
 
+  .distance-nav li:last-of-type a {
+    border-bottom: none;
+  }
 }
 
 .distance-first-screen {
@@ -47,6 +97,7 @@ body {
   background-size: cover;
   background-position: center bottom;
   box-shadow: 0px 5px 8px rgba(185, 185, 185, 1);
+  top:50px;
 
   // 首屏加一个 透明的  遮罩层
   .layer {

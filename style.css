@@ -11,14 +11,41 @@ body {
 * {
   font-family: '微软雅黑'; }
 
-.distance-nav, .navbar-brand {
-  color: white !important; }
-  .distance-nav a, .navbar-brand a {
-    color: white; }
-  .distance-nav .nav-item, .navbar-brand .nav-item {
-    height: 100px;
-    line-height: 100px; }
+.distance-nav {
+  list-style: none;
+  margin: 0;
+  width: 100%;
+  background: deepskyblue;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end; }
 
+.distance-nav a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white; }
+
+.distance-nav a:hover {
+  background: #00b7f5; }
+
+@media all and (max-width: 800px) {
+  .distance-nav {
+    justify-content: space-around; } }
+@media all and (max-width: 600px) {
+  .distance-nav {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0; }
+
+  .distance-nav a {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+  .distance-nav li:last-of-type a {
+    border-bottom: none; } }
 .distance-first-screen {
   position: relative;
   overflow: hidden;
@@ -26,7 +53,8 @@ body {
   height: 80vh;
   background-size: cover;
   background-position: center bottom;
-  box-shadow: 0px 5px 8px #b9b9b9; }
+  box-shadow: 0px 5px 8px #b9b9b9;
+  top: 50px; }
   .distance-first-screen .layer {
     display: block;
     width: 100%;
