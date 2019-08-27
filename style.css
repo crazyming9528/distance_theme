@@ -11,11 +11,16 @@ body {
 * {
   font-family: '微软雅黑'; }
 
+.head {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 99999999; }
+
 .distance-nav {
   list-style: none;
   margin: 0;
   width: 100%;
-  background: deepskyblue;
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: flex-end; }
@@ -50,11 +55,10 @@ body {
   position: relative;
   overflow: hidden;
   background-color: gray;
-  height: 80vh;
+  height: 100vh;
   background-size: cover;
   background-position: center bottom;
-  box-shadow: 0px 5px 8px #b9b9b9;
-  top: 50px; }
+  box-shadow: 0px 5px 8px #b9b9b9; }
   .distance-first-screen .layer {
     display: block;
     width: 100%;

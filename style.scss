@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-#wpadminbar {
-  //top: 55px!important;
-  //opacity: 0.6;
-  //position: fixed;
-}
+//#wpadminbar {
+//  top: 55px !important;
+//  opacity: 0.6;
+//  position: absolute;
+//}
 
 body {
   background-color: #f9f9f9;
@@ -39,13 +39,19 @@ body {
 //
 //}
 
+.head {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 99999999;
+}
+
 .distance-nav {
   list-style: none;
   margin: 0;
-width: 100%;
-  background: deepskyblue;
+  width: 100%;
+  //background: deepskyblue;
   display: flex;
-
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
 
@@ -79,8 +85,8 @@ width: 100%;
   .distance-nav a {
     text-align: center;
     padding: 10px;
-    border-top: 1px solid rgba(255,255,255,0.3);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
 
@@ -93,11 +99,11 @@ width: 100%;
   position: relative;
   overflow: hidden;
   background-color: gray;
-  height: 80vh;
+  height: 100vh;
   background-size: cover;
   background-position: center bottom;
   box-shadow: 0px 5px 8px rgba(185, 185, 185, 1);
-  top:50px;
+
 
   // 首屏加一个 透明的  遮罩层
   .layer {
