@@ -8,6 +8,9 @@ body {
   .dp_shadow:hover {
     box-shadow: 2px 3px 15px rgba(129, 129, 129, 0.45); }
 
+a:link, a:visited, a:hover, a:active {
+  color: inherit; }
+
 * {
   font-family: '微软雅黑'; }
 
@@ -16,6 +19,17 @@ body {
   width: 100%;
   left: 0;
   z-index: 99999999; }
+
+.logo {
+  position: fixed;
+  left: 0;
+  z-index: 999999999;
+  font-size: 28px;
+  padding: 25px; }
+  .logo a:visited, .logo a:hover, .logo a:link {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize; }
 
 .distance-nav {
   list-style: none;
@@ -32,7 +46,7 @@ body {
   color: white; }
 
 .distance-nav a:hover {
-  background: #00b7f5; }
+  background: rgba(0, 0, 0, 0.5); }
 
 @media all and (max-width: 800px) {
   .distance-nav {
@@ -75,6 +89,49 @@ body {
     transform: translate(-50%, -50%);
     z-index: 100;
     font-size: 30px; }
+
+.index-wrapper {
+  width: 80%;
+  margin: 15px auto;
+  max-width: 1600px; }
+
+.index-article-wrapper ._article-item {
+  min-height: 350px; }
+  .index-article-wrapper ._article-item:nth-of-type(odd) {
+    flex-direction: row; }
+    .index-article-wrapper ._article-item:nth-of-type(odd) ._box {
+      text-align: left; }
+      .index-article-wrapper ._article-item:nth-of-type(odd) ._box ._font {
+        border-right: 1px solid #a2a2a2; }
+  .index-article-wrapper ._article-item:nth-of-type(even) {
+    flex-direction: row-reverse; }
+    .index-article-wrapper ._article-item:nth-of-type(even) ._box {
+      text-align: right; }
+      .index-article-wrapper ._article-item:nth-of-type(even) ._box ._font {
+        border-left: 1px solid #a2a2a2; }
+  .index-article-wrapper ._article-item:not(:last-child) {
+    margin-bottom: 50px; }
+  .index-article-wrapper ._article-item ._img {
+    padding: 0;
+    position: relative;
+    background-color: #ededed;
+    background-image: url("./img/article_bg.png");
+    background-position: center center;
+    background-repeat: no-repeat; }
+    .index-article-wrapper ._article-item ._img img {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+  .index-article-wrapper ._article-item ._box ._font {
+    width: 100%;
+    padding: 10px; }
+    .index-article-wrapper ._article-item ._box ._font ._title h1 {
+      font-size: 28px; }
+    .index-article-wrapper ._article-item ._box ._font ._author-info {
+      color: #8b8b8b;
+      font-size: 14px; }
+    .index-article-wrapper ._article-item ._box ._font ._excerpt {
+      color: #575757; }
 
 .distance-article-list {
   margin: 20px 0; }

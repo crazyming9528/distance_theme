@@ -32,6 +32,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="distance">
 
+    <div class="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></div>
     <div class="container-fluid head" >
         <div class="row">
             <ul class="distance-nav">
