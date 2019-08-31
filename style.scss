@@ -19,7 +19,7 @@ body {
   }
 }
 
-a:link,a:visited,a:hover,a:active{
+a:link, a:visited, a:hover, a:active {
   color: inherit;
 }
 
@@ -146,10 +146,9 @@ a:link,a:visited,a:hover,a:active{
 }
 
 
-
 .index-wrapper {
   width: 80%;
-  margin: 15px auto;
+  margin: 50px auto;
   max-width: 1600px;
 
 }
@@ -160,9 +159,11 @@ a:link,a:visited,a:hover,a:active{
     //奇数
     &:nth-of-type(odd) {
       flex-direction: row;
-      ._box{
+
+      ._box {
         text-align: left;
-        ._font{
+
+        ._font {
           border-right: 1px solid #a2a2a2;
         }
       }
@@ -172,9 +173,10 @@ a:link,a:visited,a:hover,a:active{
     &:nth-of-type(even) {
       flex-direction: row-reverse;
 
-      ._box{
+      ._box {
         text-align: right;
-        ._font{
+
+        ._font {
           border-left: 1px solid #a2a2a2;
         }
       }
@@ -193,24 +195,32 @@ a:link,a:visited,a:hover,a:active{
       position: relative;
       background-color: #ededed;
       background-image: url("./img/article_bg.png");
-      background-position:center center;
+      background-position: center center;
       background-repeat: no-repeat;
+      overflow: hidden;
 
       img {
         position: absolute;
         width: 100%;
         height: 100%;
+        transition: all 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 
-    ._box{
+    ._box {
 
-      ._font{
+      ._font {
         width: 100%;
         padding: 10px;
-        ._title{
 
-          h1{
+        ._title {
+
+          h1 {
             font-size: 28px;
 
           }
@@ -218,13 +228,13 @@ a:link,a:visited,a:hover,a:active{
 
         }
 
-        ._author-info{
+        ._author-info {
           color: #8b8b8b;
           font-size: 14px;
 
         }
 
-        ._excerpt{
+        ._excerpt {
           color: #575757;
         }
 

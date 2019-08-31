@@ -27,6 +27,9 @@ if ( ! function_exists( 'distance_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+
+
+
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -61,10 +64,20 @@ if ( ! function_exists( 'distance_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'distance_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+//		add_theme_support( 'custom-background', apply_filters( 'distance_custom_background_args', array(
+//			'default-color' => 'ffffff',
+//			'default-image' => '',
+//		) ) );
+
+
+
+		// 不加custom-header   自定义顶部图像时无法  跳过裁剪
+		add_theme_support( 'custom-header', array(
+			'width'     =>2680,//自定义宽度
+			'flex-width'=>true,//自适应宽度
+			'height'    =>800,//自定义高度
+			'flex-heigt'=>true,//自适应高度
+			'uploads' => true ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -80,6 +93,8 @@ if ( ! function_exists( 'distance_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+
 	}
 endif;
 add_action( 'after_setup_theme', 'distance_setup' );
