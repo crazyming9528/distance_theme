@@ -31,19 +31,19 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script>
-   jQuery(document).ready(function ($) {
-
-       $('.distance-first-screen').circleMagic({
-           elem: '.distance-first-screen',
-           radius: 15,
-           densety: .15,
-           color: 'rgba(255,255,255, .25)',
-           // color: 'random',
-           clearOffset: .15
-       });
-   })
-</script>
+<!--<script>-->
+<!--   jQuery(document).ready(function ($) {-->
+<!---->
+<!--       $('.distance-first-screen').circleMagic({-->
+<!--           elem: '.distance-first-screen',-->
+<!--           radius: 15,-->
+<!--           densety: .15,-->
+<!--           color: 'rgba(255,255,255, .25)',-->
+<!--           // color: 'random',-->
+<!--           clearOffset: .15-->
+<!--       });-->
+<!--   })-->
+<!--</script>-->
 
 </body>
 </html>

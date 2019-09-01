@@ -6,6 +6,9 @@
 //  position: absolute;
 //}
 
+
+$baseColor: #006699;
+
 body {
   background-color: #f9f9f9;
 }
@@ -20,7 +23,13 @@ body {
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: inherit;
+  //color: inherit;
+  color: $baseColor;
+  //text-decoration: none;
+}
+
+a:link {
+  color: $baseColor;
 }
 
 * {
@@ -28,7 +37,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
-//.distance-nav, .navbar-brand {
+//.distance_nav, .navbar-brand {
 //  color: white !important;
 //
 //  a {
@@ -60,11 +69,11 @@ a:link, a:visited, a:hover, a:active {
   a:visited, a:hover, a:link {
     color: white;
     text-decoration: none;
-    text-transform: capitalize;
+    //text-transform: capitalize;
   }
 }
 
-.distance-nav {
+.distance_nav {
   list-style: none;
   margin: 0;
   width: 100%;
@@ -76,31 +85,31 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
-.distance-nav a {
+.distance_nav a {
   text-decoration: none;
   display: block;
   padding: 1em;
   color: white;
 }
 
-.distance-nav a:hover {
+.distance_nav a:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
 @media all and (max-width: 800px) {
-  .distance-nav {
+  .distance_nav {
     justify-content: space-around;
   }
 }
 
 @media all and (max-width: 600px) {
-  .distance-nav {
+  .distance_nav {
     -webkit-flex-flow: column wrap;
     flex-flow: column wrap;
     padding: 0;
   }
 
-  .distance-nav a {
+  .distance_nav a {
     text-align: center;
     padding: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -108,7 +117,7 @@ a:link, a:visited, a:hover, a:active {
   }
 
 
-  .distance-nav li:last-of-type a {
+  .distance_nav li:last-of-type a {
     border-bottom: none;
   }
 }
@@ -141,20 +150,56 @@ a:link, a:visited, a:hover, a:active {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    font-size: 30px;
+    font-size: 32px;
+
+    p {
+      opacity: 0;
+      animation: fadeInDown 3s .5s 1;
+      animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+    }
+  }
+
+  .header_down {
+    animation: bounce 4s 2s infinite;
+    color: rgba(255, 255, 255, 0.8);
+    height: 34px;
+    width: 34px;
+    position: absolute;
+    bottom: 50px;
+    margin-left: -17px;
+    left: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  svg {
+    fill: currentColor;
+    display: inline-block;
+    stroke-width: 0;
+    stroke: currentColor;
+    width: 14px;
+    height: 14px;
   }
 }
 
 
 .index-wrapper {
-  width: 80%;
-  margin: 50px auto;
-  max-width: 1600px;
+  //width: 80%;
+  //margin: 50px auto;
+  //max-width: 1600px;
+
+  margin-top: 50px;
 
 }
 
 .index-article-wrapper {
   ._article-item {
+
 
     //奇数
     &:nth-of-type(odd) {
@@ -166,7 +211,20 @@ a:link, a:visited, a:hover, a:active {
         ._font {
           border-right: 1px solid #a2a2a2;
         }
+
       }
+
+      @media screen and (max-width: 540px) {
+        ._box {
+          text-align: left;
+
+          ._font {
+            border-right: none;
+            border-left: none;
+          }
+        }
+      }
+
     }
 
     //偶数
@@ -180,6 +238,17 @@ a:link, a:visited, a:hover, a:active {
           border-left: 1px solid #a2a2a2;
         }
       }
+
+      @media screen and (max-width: 540px) {
+        ._box {
+          text-align: left;
+
+          ._font {
+            border-right: none;
+            border-left: none;
+          }
+        }
+      }
     }
 
     &:not(:last-child) {
@@ -187,8 +256,14 @@ a:link, a:visited, a:hover, a:active {
 
     }
 
+    &:hover {
+      border: 1px solid #ededed;
+    }
 
-    min-height: 350px;
+
+    border: 1px solid transparent;
+    min-height: 360px;
+    transition: all 0.3s;
 
     ._img {
       padding: 0;
@@ -198,12 +273,13 @@ a:link, a:visited, a:hover, a:active {
       background-position: center center;
       background-repeat: no-repeat;
       overflow: hidden;
+      min-height: 200px;
 
       img {
         position: absolute;
         width: 100%;
         height: 100%;
-        transition: all 0.5s;
+        transition: all 0.3s;
         cursor: pointer;
 
         &:hover {
@@ -219,18 +295,14 @@ a:link, a:visited, a:hover, a:active {
         padding: 10px;
 
         ._title {
-
-          h1 {
-            font-size: 28px;
-
-          }
+          font-size: 28px;
 
 
         }
 
         ._author-info {
-          color: #8b8b8b;
-          font-size: 14px;
+          color: #969696;
+          font-size: 13px;
 
         }
 
@@ -238,6 +310,34 @@ a:link, a:visited, a:hover, a:active {
           color: #575757;
         }
 
+        ._footer {
+          .tags {
+            a {
+              padding: 2px 4px;
+              border-radius: 2px;
+              background: #ccc;
+              color: #fff;
+              text-decoration: none;
+              font-size: 14px;
+
+              &:before {
+                content: '#';
+              }
+            }
+
+          }
+
+          ._read-more {
+            a {
+              text-decoration: none;
+
+              &:after {
+                content: '>';
+              }
+            }
+          }
+        }
+
       }
 
     }
@@ -246,34 +346,81 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
-.distance-article-list {
-  margin: 20px 0;
+//.distance-article-list {
+//  margin: 20px 0;
+//
+//  ._item {
+//    border-radius: 5px;
+//    overflow: hidden;
+//    background-color: white;
+//
+//
+//    &:not(:last-child) {
+//      margin-bottom: 15px;
+//    }
+//
+//    ._img {
+//      border-radius: 2px;
+//
+//      img {
+//        border-radius: 2px;
+//        width: 100%;
+//        height: 300px;
+//      }
+//    }
+//
+//    ._text {
+//      padding: 15px;
+//    }
+//
+//  }
+//
+//}
 
-  ._item {
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: white;
+.distance-top {
+  height: 440px;
+  background-color: gray;
+  background-image: url("./img/code.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-
-    &:not(:last-child) {
-      margin-bottom: 15px;
-    }
-
-    ._img {
-      border-radius: 2px;
-
-      img {
-        border-radius: 2px;
-        width: 100%;
-        height: 300px;
-      }
-    }
-
-    ._text {
-      padding: 15px;
-    }
-
+  &:after {
+    background-image: linear-gradient(-180deg, rgba(45, 58, 111, .5), rgba(0, 0, 0, .5));
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
+  .container {
+    height: 100%;
+
+    .description {
+      height: 100%;
+      position: relative;
+      z-index: 1;
+
+      h1 {
+        color: white;
+        text-align: center;
+
+      }
+
+      .summary {
+        color: white;
+        text-align: center;
+      }
+    }
+  }
 }
 
+.distance-main {
+  height: 600px;
+  margin-top: -100px;
+  position: relative;
+  background-color: white;
+
+}

@@ -46,10 +46,18 @@ if ( ! function_exists( 'distance_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-//			'menu-1' => esc_html__( 'Primary', 'distance' ),
-            'distance_menu' => __( 'distance_menu' ),
-		) );
+//		register_nav_menus( array(
+////			'menu-1' => esc_html__( 'Primary', 'distance' ),
+//            'distance_menu' => __( 'distance_menu' ),
+//		) );
+
+		//注册菜单
+		register_nav_menus(
+			array(
+				'top_menu'    => __( '顶部菜单', 'distance' ),
+				'bottom_menu' => __( '底部菜单', 'distance' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -71,7 +79,7 @@ if ( ! function_exists( 'distance_setup' ) ) :
 
 
 
-		// 不加custom-header   自定义顶部图像时无法  跳过裁剪
+		// 不加 add_theme_support custom-header   自定义顶部图像时无法  跳过裁剪
 		add_theme_support( 'custom-header', array(
 			'width'     =>2680,//自定义宽度
 			'flex-width'=>true,//自适应宽度
