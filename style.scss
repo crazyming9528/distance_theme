@@ -5,9 +5,10 @@
 //  opacity: 0.6;
 //  position: absolute;
 //}
+@import "mixin";
 
 
-$baseColor: #006699;
+$baseColor: rgba(13, 13, 13, 0.9);
 
 body {
   background-color: #f9f9f9;
@@ -65,6 +66,7 @@ a:link {
   z-index: 999999999;
   font-size: 28px;
   padding: 25px;
+  @include mixin_fadeIn;
 
   a:visited, a:hover, a:link {
     color: white;
@@ -81,6 +83,7 @@ a:link {
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
+  @include mixin_fadeIn;
 
 }
 
@@ -90,11 +93,27 @@ a:link {
   display: block;
   padding: 1em;
   color: white;
+  position: relative;
+  opacity: 0.85;
+
+  &:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover:after {
+    left: 0;
+    width: 100%;
+
+  }
 }
 
-.distance_nav a:hover {
-  background: rgba(0, 0, 0, 0.5);
-}
 
 @media all and (max-width: 800px) {
   .distance_nav {
@@ -153,9 +172,10 @@ a:link {
     font-size: 32px;
 
     p {
-      opacity: 0;
-      animation: fadeInDown 3s .5s 1;
-      animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+      //opacity: 0;
+      @include mixin_fadeInDown;
+      //animation: fadeInDown 3s .5s 1;
+      //animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
     }
   }
 
@@ -209,12 +229,12 @@ a:link {
         text-align: left;
 
         ._font {
-          border-right: 1px solid #a2a2a2;
+          border-right: 1px solid  #cfcfcf;
         }
 
       }
 
-      @media screen and (max-width: 540px) {
+      @media screen and (max-width: 768px) {
         ._box {
           text-align: left;
 
@@ -235,11 +255,11 @@ a:link {
         text-align: right;
 
         ._font {
-          border-left: 1px solid #a2a2a2;
+          border-left: 1px solid #cfcfcf;
         }
       }
 
-      @media screen and (max-width: 540px) {
+      @media screen and (max-width: 768px) {
         ._box {
           text-align: left;
 
@@ -256,13 +276,11 @@ a:link {
 
     }
 
-    &:hover {
-      border: 1px solid #ededed;
-    }
+    //&:hover {
+    //  border: 1px solid #ededed;
+    //}
 
 
-    border: 1px solid transparent;
-    min-height: 360px;
     transition: all 0.3s;
 
     ._img {
@@ -273,19 +291,30 @@ a:link {
       background-position: center center;
       background-repeat: no-repeat;
       overflow: hidden;
-      min-height: 200px;
+      min-height: 260px;
+      height: auto;
 
       img {
-        position: absolute;
         width: 100%;
         height: 100%;
         transition: all 0.3s;
-        cursor: pointer;
+          &:hover {
+            transform: scale(1.02);
+          }
 
-        &:hover {
-          transform: scale(1.1);
-        }
       }
+
+      //img {
+      //  position: absolute;
+      //  width: 100%;
+      //  height: auto;
+      //  transition: all 0.3s;
+      //  cursor: pointer;
+      //
+      //  &:hover {
+      //    transform: scale(1.1);
+      //  }
+      //}
     }
 
     ._box {
@@ -297,13 +326,31 @@ a:link {
         ._title {
           font-size: 28px;
 
+          a {
+            text-decoration: none;
+            position: relative;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 15px;
+            line-height: 180%;
+            transition: all 0.3s;
 
+            &:hover {
+              border-bottom: 1px solid #dbdbdb;
+              padding-bottom: 5px;
+            }
+
+
+          }
         }
 
         ._author-info {
           color: #969696;
           font-size: 13px;
 
+          a {
+            color: #969696;
+
+          }
         }
 
         ._excerpt {
@@ -336,8 +383,19 @@ a:link {
               }
             }
           }
+
+          @media screen and (max-width: 768px) {
+            ._read-more {
+              text-align: right;
+            }
+          }
         }
 
+      }
+
+      @media screen and (max-width: 768px) {
+        border: 1px solid #e2e2e2;
+        border-top: none;
       }
 
     }
@@ -403,15 +461,17 @@ a:link {
       position: relative;
       z-index: 1;
 
+
       h1 {
         color: white;
         text-align: center;
-
+        @include mixin_fadeInDown;
       }
 
       .summary {
         color: white;
         text-align: center;
+        @include mixin_fadeInDown;
       }
     }
   }

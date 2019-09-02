@@ -122,6 +122,37 @@ function distance_content_width() {
 }
 add_action( 'after_setup_theme', 'distance_content_width', 0 );
 
+/* 访问计数 */
+function record_visitors()
+{
+	if (is_singular())
+	{
+		global $post;
+		$post_ID = $post->ID;
+		if($post_ID)
+		{
+			$post_views = (int)get_post_meta($post_ID, 'views', true);
+			if(!update_post_meta($post_ID, 'views', ($post_views+1)))
+			{
+				add_post_meta($post_ID, 'views', 1, true);
+			}
+		}
+	}
+}
+add_action('wp_head', 'record_visitors');
+
+/// 函数名称：post_views
+/// 函数作用：取得文章的阅读次数
+function post_views($before = '(点击 ', $after = ' 次)', $echo = 1)
+{
+	global $post;
+	$post_ID = $post->ID;
+	$views = (int)get_post_meta($post_ID, 'views', true);
+	if ($echo) echo $before, number_format($views), $after;
+	else return $views;
+}
+
+
 /**
  * Register widget area.
  *
@@ -184,3 +215,5 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+//remove_filter('pre_term_description', 'wp_filter_kses');//使得分类描述支持html代码

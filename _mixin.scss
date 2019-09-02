@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+@mixin mixin_fadeIn {
+  opacity: 0;
+  animation: fadeIn 2s .5s 1;
+  animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+}
+
+
+@mixin mixin_fadeInDown {
+  opacity: 0;
+  animation: fadeInDown 2s .5s 1;
+  animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
+}

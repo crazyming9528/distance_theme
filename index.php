@@ -20,7 +20,8 @@ get_header();
 
         <div class="distance-first-screen col-12" style="background-image: url('<?php echo get_header_image() ?>')">
             <div class="layer"></div>
-            <div class="sentence"><p style="color: <?php get_theme_mods( 'header_textcolor' ) ?>"><?php bloginfo('description'); ?></p>
+            <div class="sentence"><p
+                        style="color: <?php get_theme_mods( 'header_textcolor' ) ?>"><?php bloginfo( 'description' ); ?></p>
             </div>
 
             <svg class="header_down" id="headerDown" viewBox="0 0 32 32" width="100%" height="100%">
@@ -56,16 +57,16 @@ get_header();
                                     <p class="_author-info">
                                         <time><?php echo get_the_date( 'Y-m-d' ); ?></time> &bull;
                                         <span><?php echo get_the_author(); ?></span> &bull;
-                                        <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?>条评论</a></span>
+                                        <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</a></span>
                                         &bull;
-                                        <span> 次浏览</span>
+                                        <span> <?php post_views( ' ', ' 次浏览' ); ?></span>
                                     </p>
                                     <p class="_excerpt"> <?php echo esc_attr( get_the_excerpt() ); ?></p>
                                     <div class="_footer">
                                         <div class="tags">
 											<?php the_tags( '', ' ', '' ); ?>
                                         </div>
-                                        <div class="_read-more text-primary"><a href="<?php the_permalink() ?>">点击阅读</a>
+                                        <div class="_read-more text-primary"><a href="<?php the_permalink() ?>">阅读</a>
                                         </div>
 
                                     </div>
@@ -105,63 +106,63 @@ get_header();
             </ul>
         </div>
     </div>
-<?php wp_tag_cloud(); //显示标签云 ?>
-<?php get_sidebar(); //引用侧边栏 ?>
-    <div class="container">
-
-
-        <div class="row ">
-            <div class="col-9 ">
-				<?php
-				if ( have_posts() ) : ?>
-                    <ul class="distance-article-list">
-						<?php while ( have_posts() ) :the_post(); ?>
-                            <li class="_item dp_shadow ">
-                                <div class="_img">
-									<?php if ( has_post_thumbnail() ) { ?>
-										<?php the_post_thumbnail(); ?>
-									<?php } else { ?>
-                                        <!--没有特色图像暂时不显示-->
-									<?php } ?>
-                                </div>
-
-                                <div class="_text">
-                                    <h1 class="_title"><a
-                                                href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-
-                                    <p class="_author-info">
-                                        <time><?php echo get_the_date( 'Y-m-d' ); ?></time> &bull;
-                                        <span><?php echo get_the_author(); ?></span> &bull;
-                                        <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?>条评论</a></span>
-                                        &bull;
-                                        <span> 次浏览</span>
-                                    </p>
-                                    <p class="_excerpt"> <?php echo esc_attr( get_the_excerpt() ); ?></p>
-                                    <div class="_footer">
-                                        <div class="tags">
-											<?php the_tags( '', ' ', '' ); ?>
-                                        </div>
-                                        <div class="_read-more"><a href="<?php the_permalink() ?>">继续阅读</a></div>
-
-                                    </div>
-                                </div>
-                            </li>
-
-						<?php endwhile; ?>
-
-                    </ul>
-
-
-				<?php endif;
-				?>
-
-
-            </div>
-            <div class="col-3"><?php get_sidebar( 'right' ); ?></div>
-
-        </div>
-
-    </div>
+<?php //wp_tag_cloud(); //显示标签云 ?>
+<?php //get_sidebar(); //引用侧边栏 ?>
+    <!--    <div class="container">-->
+    <!---->
+    <!---->
+    <!--        <div class="row ">-->
+    <!--            <div class="col-9 ">-->
+    <!--				--><?php
+//				if ( have_posts() ) : ?>
+    <!--                    <ul class="distance-article-list">-->
+    <!--						--><?php //while ( have_posts() ) :the_post(); ?>
+    <!--                            <li class="_item dp_shadow ">-->
+    <!--                                <div class="_img">-->
+    <!--									--><?php //if ( has_post_thumbnail() ) { ?>
+    <!--										--><?php //the_post_thumbnail(); ?>
+    <!--									--><?php //} else { ?>
+    <!--                                        <!--没有特色图像暂时不显示-->-->
+    <!--									--><?php //} ?>
+    <!--                                </div>-->
+    <!---->
+    <!--                                <div class="_text">-->
+    <!--                                    <h1 class="_title"><a-->
+    <!--                                                href="--><?php //the_permalink(); ?><!--">--><?php //the_title(); ?><!--</a></h1>-->
+    <!---->
+    <!--                                    <p class="_author-info">-->
+    <!--                                        <time>--><?php //echo get_the_date( 'Y-m-d' ); ?><!--</time> &bull;-->
+    <!--                                        <span>--><?php //echo get_the_author(); ?><!--</span> &bull;-->
+    <!--                                        <span><a href="">--><?php //comments_popup_link( '0', '1', '%' ); ?><!--条评论</a></span>-->
+    <!--                                        &bull;-->
+    <!--                                        <span> 次浏览</span>-->
+    <!--                                    </p>-->
+    <!--                                    <p class="_excerpt"> --><?php //echo esc_attr( get_the_excerpt() ); ?><!--</p>-->
+    <!--                                    <div class="_footer">-->
+    <!--                                        <div class="tags">-->
+    <!--											--><?php //the_tags( '', ' ', '' ); ?>
+    <!--                                        </div>-->
+    <!--                                        <div class="_read-more"><a href="--><?php //the_permalink() ?><!--">继续阅读</a></div>-->
+    <!---->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                            </li>-->
+    <!---->
+    <!--						--><?php //endwhile; ?>
+    <!---->
+    <!--                    </ul>-->
+    <!---->
+    <!---->
+    <!--				--><?php //endif;
+//				?>
+    <!---->
+    <!---->
+    <!--            </div>-->
+    <!--            <div class="col-3">--><?php //get_sidebar( 'right' ); ?><!--</div>-->
+    <!---->
+    <!--        </div>-->
+    <!---->
+    <!--    </div>-->
 
     <script>
         jQuery(document).ready(function ($) {

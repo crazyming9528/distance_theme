@@ -11,12 +11,16 @@ get_header();
 ?>
 
     <div class="row">
-        <div class="distance-top col-12">
+        <div class="distance-top col-12"  <?php if (function_exists('z_taxonomy_image_url')) echo 'style="background-image: url(\''.z_taxonomy_image_url().'\')"'; ?>'>
             <div class="container">
                 <div class="row align-items-center description">
-                    <div class="col-12 " style="height: 120px"><h1>编程</h1>
-                        <p class="summary">web（World Wide
-                            Web）即全球广域网，也称为万维网，它是一种基于超文本和HTTP的、全球性的、动态交互的、跨平台的分布式图形信息系统。</p>
+                    <div class="col-12 " ><h1><?php echo single_cat_title( '', false ) ; ?></h1>
+                        <div class="summary">
+                          <?php
+                          $category_description = category_description();
+                          if ( !empty( $category_description ) ) echo  $category_description ;
+                          ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -27,6 +31,9 @@ get_header();
         <div class="row">
             <div class="col-12 bg-warning">
                 文章列表
+
+                1
+
             </div>
         </div>
     </div>
