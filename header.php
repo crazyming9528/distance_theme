@@ -33,18 +33,20 @@
 <body <?php body_class(); ?>>
 <div id="page" class="distance">
 
-    <div class="logo">
-<!--        --><?php //the_custom_logo(); ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  bloginfo( 'name' ); ?></a>
-    </div>
+
     <div class="container-fluid head">
-        <div class="row">
+        <div class="row top align-items-center">
             <!--            <ul class="distance-nav">-->
             <!--                <li><a href="#">Home</a></li>-->
             <!--                <li><a href="#">About</a></li>-->
             <!--                <li><a href="#">Products</a></li>-->
             <!--                <li><a href="#">Contact</a></li>-->
             <!--            </ul>-->
+
+            <div class="logo col-6 col-md-3 ">
+                <!--        --><?php //the_custom_logo(); ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  bloginfo( 'name' ); ?></a>
+            </div>
 			<?php
 
 			wp_nav_menu(
@@ -52,7 +54,7 @@
 					'theme_location'  => 'top_menu',
 					'menu_id'         => 'top-menu',
 					'menu_class'      => 'distance_nav',
-					'container_class' => 'distance_nav_wrapper col-12'
+					'container_class' => 'distance_nav_wrapper d-none  d-md-flex  col-md-9'
 				)
 			);
 			?>
@@ -62,4 +64,4 @@
     </div>
 
 
-    <div id="content" class="distance-content container-fluid">
+    <div id="content" class="distance-mainbody container-fluid">

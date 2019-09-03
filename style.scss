@@ -57,21 +57,25 @@ a:link {
   position: fixed;
   width: 100%;
   left: 0;
-  z-index: 99999999;
+  z-index: 99999;
 }
 
-.logo {
-  position: fixed;
-  left: 0;
-  z-index: 999999999;
-  font-size: 28px;
-  padding: 25px;
-  @include mixin_fadeIn;
 
-  a:visited, a:hover, a:link {
-    color: white;
-    text-decoration: none;
-    //text-transform: capitalize;
+.top {
+
+  .logo {
+    font-size: 26px;
+    transition: all .3s;
+
+    a:visited, a:hover, a:link {
+      color: white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      transform: skewX(10deg);
+    }
+
   }
 }
 
@@ -83,6 +87,7 @@ a:link {
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content: flex-end;
+
   @include mixin_fadeIn;
 
 }
@@ -149,18 +154,29 @@ a:link {
   background-size: cover;
   background-position: center bottom;
   box-shadow: 0px 5px 8px rgba(185, 185, 185, 1);
+  padding: 0;
 
+  .video_bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
 
-  // 首屏加一个 透明的  遮罩层
-  .layer {
+  //遮罩层
+  &:after {
+
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
-    z-index: 99;
+    content: '';
+
   }
+
 
   .sentence {
     color: white;
@@ -209,13 +225,13 @@ a:link {
 
 
 .index-wrapper {
-  //width: 80%;
-  //margin: 50px auto;
-  //max-width: 1600px;
 
   margin-top: 50px;
+  position: relative;
 
 }
+
+
 
 .index-article-wrapper {
   ._article-item {
@@ -229,7 +245,7 @@ a:link {
         text-align: left;
 
         ._font {
-          border-right: 1px solid  #cfcfcf;
+          border-right: 1px solid #cfcfcf;
         }
 
       }
@@ -298,9 +314,10 @@ a:link {
         width: 100%;
         height: 100%;
         transition: all 0.3s;
-          &:hover {
-            transform: scale(1.02);
-          }
+
+        &:hover {
+          transform: scale(1.02);
+        }
 
       }
 
@@ -377,6 +394,8 @@ a:link {
           ._read-more {
             a {
               text-decoration: none;
+              font-size: 14px;
+              color: gray;
 
               &:after {
                 content: '>';
@@ -404,36 +423,36 @@ a:link {
 }
 
 
-//.distance-article-list {
-//  margin: 20px 0;
-//
-//  ._item {
-//    border-radius: 5px;
-//    overflow: hidden;
-//    background-color: white;
-//
-//
-//    &:not(:last-child) {
-//      margin-bottom: 15px;
-//    }
-//
-//    ._img {
-//      border-radius: 2px;
-//
-//      img {
-//        border-radius: 2px;
-//        width: 100%;
-//        height: 300px;
-//      }
-//    }
-//
-//    ._text {
-//      padding: 15px;
-//    }
-//
-//  }
-//
-//}
+.distance-article-list {
+  margin: 20px 0;
+
+  ._item {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    ._img {
+      border-radius: 2px;
+
+      img {
+        border-radius: 2px;
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+    ._text {
+      padding: 15px;
+    }
+
+  }
+
+}
 
 .distance-top {
   height: 440px;
@@ -477,10 +496,62 @@ a:link {
   }
 }
 
+.distance-main-wrapper{
+  position: relative;
+  overflow: hidden;
+
+  .distance-sidebar{
+    position: absolute;
+    background-color: #d04139;
+    width: 260px;
+    right: -260px;
+    top:0;
+    z-index: 1;
+    padding: 15px;
+    opacity: 0.5;
+    transition: all 0.3s;
+    &:hover{
+      right: 0;
+      opacity: 0.8;
+      &:before{
+        left: 500px;
+        opacity: 0;
+
+      }
+    }
+    &:before{
+      width: 100px;
+      height: 200px;
+      background-color: #00d084;
+      display: block;
+      visibility: visible;
+      content: '';
+      position: absolute;
+      left: -100px;
+      top: 20%;
+      transition: all 0.5s;
+      opacity: 1;
+
+    }
+
+    .widget{
+
+      background: #f9f9f9;
+      padding: .5em .7em;
+      margin: 1em 0;
+
+    }
+
+  }
+}
+
 .distance-main {
-  height: 600px;
+
   margin-top: -100px;
   position: relative;
   background-color: white;
+  img{
+    width: 100px!important;//临时的
+  }
 
 }

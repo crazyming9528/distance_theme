@@ -21,20 +21,16 @@ a:link {
   position: fixed;
   width: 100%;
   left: 0;
-  z-index: 99999999; }
+  z-index: 99999; }
 
-.logo {
-  position: fixed;
-  left: 0;
-  z-index: 999999999;
-  font-size: 28px;
-  padding: 25px;
-  opacity: 0;
-  animation: fadeIn 2s .5s 1;
-  animation-fill-mode: forwards; }
-  .logo a:visited, .logo a:hover, .logo a:link {
+.top .logo {
+  font-size: 26px;
+  transition: all .3s; }
+  .top .logo a:visited, .top .logo a:hover, .top .logo a:link {
     color: white;
     text-decoration: none; }
+  .top .logo:hover {
+    transform: skewX(10deg); }
 
 .distance_nav {
   list-style: none;
@@ -91,15 +87,22 @@ a:link {
   height: 100vh;
   background-size: cover;
   background-position: center bottom;
-  box-shadow: 0px 5px 8px #b9b9b9; }
-  .distance-first-screen .layer {
+  box-shadow: 0px 5px 8px #b9b9b9;
+  padding: 0; }
+  .distance-first-screen .video_bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+  .distance-first-screen:after {
     display: block;
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
-    z-index: 99; }
+    content: ''; }
   .distance-first-screen .sentence {
     color: white;
     position: absolute;
@@ -135,7 +138,8 @@ a:link {
     height: 14px; }
 
 .index-wrapper {
-  margin-top: 50px; }
+  margin-top: 50px;
+  position: relative; }
 
 .index-article-wrapper ._article-item {
   transition: all 0.3s; }
@@ -144,7 +148,7 @@ a:link {
     .index-article-wrapper ._article-item:nth-of-type(odd) ._box {
       text-align: left; }
       .index-article-wrapper ._article-item:nth-of-type(odd) ._box ._font {
-        border-right: 1px solid  #cfcfcf; }
+        border-right: 1px solid #cfcfcf; }
     @media screen and (max-width: 768px) {
       .index-article-wrapper ._article-item:nth-of-type(odd) ._box {
         text-align: left; }
@@ -213,7 +217,9 @@ a:link {
       .index-article-wrapper ._article-item ._box ._font ._footer .tags a:before {
         content: '#'; }
     .index-article-wrapper ._article-item ._box ._font ._footer ._read-more a {
-      text-decoration: none; }
+      text-decoration: none;
+      font-size: 14px;
+      color: gray; }
       .index-article-wrapper ._article-item ._box ._font ._footer ._read-more a:after {
         content: '>'; }
     @media screen and (max-width: 768px) {
@@ -223,6 +229,23 @@ a:link {
     .index-article-wrapper ._article-item ._box {
       border: 1px solid #e2e2e2;
       border-top: none; } }
+
+.distance-article-list {
+  margin: 20px 0; }
+  .distance-article-list ._item {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white; }
+    .distance-article-list ._item:not(:last-child) {
+      margin-bottom: 15px; }
+    .distance-article-list ._item ._img {
+      border-radius: 2px; }
+      .distance-article-list ._item ._img img {
+        border-radius: 2px;
+        width: 100%;
+        height: 300px; }
+    .distance-article-list ._item ._text {
+      padding: 15px; }
 
 .distance-top {
   height: 440px;
@@ -258,10 +281,47 @@ a:link {
         animation: fadeInDown 2s .5s 1;
         animation-fill-mode: forwards; }
 
+.distance-main-wrapper {
+  position: relative;
+  overflow: hidden; }
+  .distance-main-wrapper .distance-sidebar {
+    position: absolute;
+    background-color: #d04139;
+    width: 260px;
+    right: -260px;
+    top: 0;
+    z-index: 1;
+    padding: 15px;
+    opacity: 0.5;
+    transition: all 0.3s; }
+    .distance-main-wrapper .distance-sidebar:hover {
+      right: 0;
+      opacity: 0.8; }
+      .distance-main-wrapper .distance-sidebar:hover:before {
+        left: 500px;
+        opacity: 0; }
+    .distance-main-wrapper .distance-sidebar:before {
+      width: 100px;
+      height: 200px;
+      background-color: #00d084;
+      display: block;
+      visibility: visible;
+      content: '';
+      position: absolute;
+      left: -100px;
+      top: 20%;
+      transition: all 0.5s;
+      opacity: 1; }
+    .distance-main-wrapper .distance-sidebar .widget {
+      background: #f9f9f9;
+      padding: .5em .7em;
+      margin: 1em 0; }
+
 .distance-main {
-  height: 600px;
   margin-top: -100px;
   position: relative;
   background-color: white; }
+  .distance-main img {
+    width: 100px !important; }
 
 /*# sourceMappingURL=style.css.map */
