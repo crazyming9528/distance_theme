@@ -68,10 +68,17 @@ $video = get_header_video_url();
 
    <div  class="col-12 distance-main-wrapper index-wrapper">
 
-       <div class="distance-sidebar">
-		   <?php get_sidebar();
-          var_dump(wp_get_sidebars_widgets());
-           ?>
+       <div class="distance-sidebar d-none d-md-block">
+<div class="sidebar-wrapper">
+
+	<?php get_sidebar();
+	var_dump(wp_get_sidebars_widgets());
+	?>
+
+</div>
+
+
+
        </div>
 
        <div class=" container">

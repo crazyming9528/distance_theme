@@ -232,7 +232,6 @@ a:link {
 }
 
 
-
 .index-article-wrapper {
   ._article-item {
 
@@ -496,30 +495,20 @@ a:link {
   }
 }
 
-.distance-main-wrapper{
+.distance-main-wrapper {
   position: relative;
-  overflow: hidden;
 
-  .distance-sidebar{
+
+  .distance-sidebar {
     position: absolute;
-    background-color: #d04139;
-    width: 260px;
-    right: -260px;
-    top:0;
+    width: 100px;
+    right: 0;
+    top: 0;
     z-index: 1;
-    padding: 15px;
-    opacity: 0.5;
     transition: all 0.3s;
-    &:hover{
-      right: 0;
-      opacity: 0.8;
-      &:before{
-        left: 500px;
-        opacity: 0;
+    overflow: hidden;
 
-      }
-    }
-    &:before{
+    &:before {
       width: 100px;
       height: 200px;
       background-color: #00d084;
@@ -527,20 +516,48 @@ a:link {
       visibility: visible;
       content: '';
       position: absolute;
-      left: -100px;
-      top: 20%;
-      transition: all 0.5s;
+      left: 0;
+      top: 10%;
+      transition: all 0.3s;
       opacity: 1;
 
     }
 
-    .widget{
+    &:hover {
+      width: 260px;
+      .sidebar-wrapper{
+        margin-left: 0;
+      }
 
-      background: #f9f9f9;
-      padding: .5em .7em;
-      margin: 1em 0;
+      &:before{
+        opacity: 0;
+      }
+
 
     }
+
+
+
+.sidebar-wrapper{
+  width: 260px;
+  background-color: #00d084;
+  padding: 15px;
+margin-left: 260px;
+  transition: all 0.3s;
+
+
+
+  .widget {
+    background: #f9f9f9;
+    padding: .5em .7em;
+    margin: 1em 0;
+
+  }
+}
+
+
+
+
 
   }
 }
@@ -550,8 +567,9 @@ a:link {
   margin-top: -100px;
   position: relative;
   background-color: white;
-  img{
-    width: 100px!important;//临时的
+
+  img {
+    width: 100px !important; //临时的
   }
 
 }

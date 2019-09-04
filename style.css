@@ -282,24 +282,15 @@ a:link {
         animation-fill-mode: forwards; }
 
 .distance-main-wrapper {
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
   .distance-main-wrapper .distance-sidebar {
     position: absolute;
-    background-color: #d04139;
-    width: 260px;
-    right: -260px;
+    width: 100px;
+    right: 0;
     top: 0;
     z-index: 1;
-    padding: 15px;
-    opacity: 0.5;
-    transition: all 0.3s; }
-    .distance-main-wrapper .distance-sidebar:hover {
-      right: 0;
-      opacity: 0.8; }
-      .distance-main-wrapper .distance-sidebar:hover:before {
-        left: 500px;
-        opacity: 0; }
+    transition: all 0.3s;
+    overflow: hidden; }
     .distance-main-wrapper .distance-sidebar:before {
       width: 100px;
       height: 200px;
@@ -308,14 +299,26 @@ a:link {
       visibility: visible;
       content: '';
       position: absolute;
-      left: -100px;
-      top: 20%;
-      transition: all 0.5s;
+      left: 0;
+      top: 10%;
+      transition: all 0.3s;
       opacity: 1; }
-    .distance-main-wrapper .distance-sidebar .widget {
-      background: #f9f9f9;
-      padding: .5em .7em;
-      margin: 1em 0; }
+    .distance-main-wrapper .distance-sidebar:hover {
+      width: 260px; }
+      .distance-main-wrapper .distance-sidebar:hover .sidebar-wrapper {
+        margin-left: 0; }
+      .distance-main-wrapper .distance-sidebar:hover:before {
+        opacity: 0; }
+    .distance-main-wrapper .distance-sidebar .sidebar-wrapper {
+      width: 260px;
+      background-color: #00d084;
+      padding: 15px;
+      margin-left: 260px;
+      transition: all 0.3s; }
+      .distance-main-wrapper .distance-sidebar .sidebar-wrapper .widget {
+        background: #f9f9f9;
+        padding: .5em .7em;
+        margin: 1em 0; }
 
 .distance-main {
   margin-top: -100px;

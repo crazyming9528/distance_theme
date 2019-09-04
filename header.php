@@ -45,16 +45,17 @@
 
             <div class="logo col-6 col-md-3 ">
                 <!--        --><?php //the_custom_logo(); ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  bloginfo( 'name' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
             </div>
 			<?php
 
 			wp_nav_menu(
 				array(
 					'theme_location'  => 'top_menu',
-					'menu_id'         => 'top-menu',
-					'menu_class'      => 'distance_nav',
-					'container_class' => 'distance_nav_wrapper d-none  d-md-flex  col-md-9'
+					'menu_id'         => 'top_menu',
+					'menu_class'      => 'distance_nav d-none  d-md-flex  col-6 col-md-9 ',
+					'container'       => false,
+//					'container_class' => 'distance_nav_wrapper d-none  d-md-flex  col-md-9'
 				)
 			);
 			?>
