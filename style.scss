@@ -5,6 +5,7 @@
 //  opacity: 0.6;
 //  position: absolute;
 //}
+@import "base";
 @import "mixin";
 @import "index";
 @import "archive";
@@ -29,14 +30,15 @@ body {
   }
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link, a:visited, a:active {
   //color: inherit;
   color: $baseColor;
   //text-decoration: none;
 }
 
-a:link {
-  color: $baseColor;
+a:hover {
+  color: $baseColor2;
+
 }
 
 * {
@@ -258,8 +260,6 @@ a:link {
 }
 
 
-
-
 .distance-main {
   margin-top: -100px;
   position: relative;
@@ -271,5 +271,21 @@ a:link {
   padding-top: 30px;
   padding-bottom: 30px;
 
+
+}
+
+.distance-footer {
+
+  background-color: $baseColor;
+
+  a:link, a:visited, a:active, a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  .site-info {
+    height: 120px;
+    color: white;
+  }
 
 }
