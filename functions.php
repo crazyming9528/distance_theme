@@ -28,8 +28,6 @@ if ( ! function_exists( 'distance_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 
-
-
 		/*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
@@ -78,14 +76,14 @@ if ( ! function_exists( 'distance_setup' ) ) :
 //		) ) );
 
 
-
 		// 不加 add_theme_support custom-header   自定义顶部图像时无法  跳过裁剪
 		add_theme_support( 'custom-header', array(
-			'width'     =>2680,//自定义宽度
-			'flex-width'=>true,//自适应宽度
-			'height'    =>800,//自定义高度
-			'flex-heigt'=>true,//自适应高度
-			'uploads' => true ) );
+			'width'      => 2680,//自定义宽度
+			'flex-width' => true,//自适应宽度
+			'height'     => 800,//自定义高度
+			'flex-heigt' => true,//自适应高度
+			'uploads'    => true
+		) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -120,36 +118,54 @@ function distance_content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'distance_content_width', 640 );
 }
+
 add_action( 'after_setup_theme', 'distance_content_width', 0 );
 
 /* 访问计数 */
-function record_visitors()
-{
-	if (is_singular())
-	{
+function record_visitors() {
+	if ( is_singular() ) {
 		global $post;
 		$post_ID = $post->ID;
-		if($post_ID)
-		{
-			$post_views = (int)get_post_meta($post_ID, 'views', true);
-			if(!update_post_meta($post_ID, 'views', ($post_views+1)))
-			{
-				add_post_meta($post_ID, 'views', 1, true);
+		if ( $post_ID ) {
+			$post_views = (int) get_post_meta( $post_ID, 'views', true );
+			if ( ! update_post_meta( $post_ID, 'views', ( $post_views + 1 ) ) ) {
+				add_post_meta( $post_ID, 'views', 1, true );
 			}
 		}
 	}
 }
-add_action('wp_head', 'record_visitors');
+
+add_action( 'wp_head', 'record_visitors' );
+
+
+/*
+ * 搜索模块 前台页面搜索DOM结构自定义，样式自定义
+ */
+function distance_search_form( $form ) {
+	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+	<div class="form-group" style="margin-bottom:0;">
+	<input type="search" required  autocomplete="off" value="' . get_search_query() . '" name="s" id="s" class="form-control" placeholder="' . __( '按回车搜索...', 'distance' ) . '" />
+	<input type="submit" id="searchsubmit"  class="search_btn " value="' . esc_attr__( 'Search' ) . '" />
+	</div>
+	</form>';
+
+	return $form;
+}
+
+add_filter( 'get_search_form', 'distance_search_form' );
+
 
 /// 函数名称：post_views
 /// 函数作用：取得文章的阅读次数
-function post_views($before = '(点击 ', $after = ' 次)', $echo = 1)
-{
+function post_views( $before = '(点击 ', $after = ' 次)', $echo = 1 ) {
 	global $post;
 	$post_ID = $post->ID;
-	$views = (int)get_post_meta($post_ID, 'views', true);
-	if ($echo) echo $before, number_format($views), $after;
-	else return $views;
+	$views   = (int) get_post_meta( $post_ID, 'views', true );
+	if ( $echo ) {
+		echo $before, number_format( $views ), $after;
+	} else {
+		return $views;
+	}
 }
 
 
@@ -163,12 +179,13 @@ function distance_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'distance' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'distance' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class=" widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
+
 add_action( 'widgets_init', 'distance_widgets_init' );
 
 /**
@@ -186,6 +203,7 @@ function distance_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'distance_scripts' );
 
 /**

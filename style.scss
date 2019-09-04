@@ -6,20 +6,26 @@
 //  position: absolute;
 //}
 @import "mixin";
+@import "index";
+@import "archive";
 
 
 $baseColor: rgba(13, 13, 13, 0.9);
 
 body {
+  position: relative;
+  font-size: 14px;
   background-color: #f9f9f9;
+  font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
+
 
 .dp_shadow {
   box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
   transition: box-shadow 0.5s;
 
   &:hover {
-    box-shadow: 2px 3px 15px rgba(129, 129, 129, 0.45);
+    box-shadow: 3px 6px 10px rgba(129, 129, 129, 0.3);
   }
 }
 
@@ -37,21 +43,6 @@ a:link {
   font-family: '微软雅黑';
 }
 
-
-//.distance_nav, .navbar-brand {
-//  color: white !important;
-//
-//  a {
-//    color: white;
-//  }
-//
-//  .nav-item {
-//    height: 100px;
-//    line-height: 100px;
-//  }
-//
-//
-//}
 
 .head {
   position: fixed;
@@ -224,235 +215,6 @@ a:link {
 }
 
 
-.index-wrapper {
-
-  margin-top: 50px;
-  position: relative;
-
-}
-
-
-.index-article-wrapper {
-  ._article-item {
-
-
-    //奇数
-    &:nth-of-type(odd) {
-      flex-direction: row;
-
-      ._box {
-        text-align: left;
-
-        ._font {
-          border-right: 1px solid #cfcfcf;
-        }
-
-      }
-
-      @media screen and (max-width: 768px) {
-        ._box {
-          text-align: left;
-
-          ._font {
-            border-right: none;
-            border-left: none;
-          }
-        }
-      }
-
-    }
-
-    //偶数
-    &:nth-of-type(even) {
-      flex-direction: row-reverse;
-
-      ._box {
-        text-align: right;
-
-        ._font {
-          border-left: 1px solid #cfcfcf;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        ._box {
-          text-align: left;
-
-          ._font {
-            border-right: none;
-            border-left: none;
-          }
-        }
-      }
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 50px;
-
-    }
-
-    //&:hover {
-    //  border: 1px solid #ededed;
-    //}
-
-
-    transition: all 0.3s;
-
-    ._img {
-      padding: 0;
-      position: relative;
-      background-color: #ededed;
-      background-image: url("./img/article_bg.png");
-      background-position: center center;
-      background-repeat: no-repeat;
-      overflow: hidden;
-      min-height: 260px;
-      height: auto;
-
-      img {
-        width: 100%;
-        height: 100%;
-        transition: all 0.3s;
-
-        &:hover {
-          transform: scale(1.02);
-        }
-
-      }
-
-      //img {
-      //  position: absolute;
-      //  width: 100%;
-      //  height: auto;
-      //  transition: all 0.3s;
-      //  cursor: pointer;
-      //
-      //  &:hover {
-      //    transform: scale(1.1);
-      //  }
-      //}
-    }
-
-    ._box {
-
-      ._font {
-        width: 100%;
-        padding: 10px;
-
-        ._title {
-          font-size: 28px;
-
-          a {
-            text-decoration: none;
-            position: relative;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 15px;
-            line-height: 180%;
-            transition: all 0.3s;
-
-            &:hover {
-              border-bottom: 1px solid #dbdbdb;
-              padding-bottom: 5px;
-            }
-
-
-          }
-        }
-
-        ._author-info {
-          color: #969696;
-          font-size: 13px;
-
-          a {
-            color: #969696;
-
-          }
-        }
-
-        ._excerpt {
-          color: #575757;
-        }
-
-        ._footer {
-          .tags {
-            a {
-              padding: 2px 4px;
-              border-radius: 2px;
-              background: #ccc;
-              color: #fff;
-              text-decoration: none;
-              font-size: 14px;
-
-              &:before {
-                content: '#';
-              }
-            }
-
-          }
-
-          ._read-more {
-            a {
-              text-decoration: none;
-              font-size: 14px;
-              color: gray;
-
-              &:after {
-                content: '>';
-              }
-            }
-          }
-
-          @media screen and (max-width: 768px) {
-            ._read-more {
-              text-align: right;
-            }
-          }
-        }
-
-      }
-
-      @media screen and (max-width: 768px) {
-        border: 1px solid #e2e2e2;
-        border-top: none;
-      }
-
-    }
-
-  }
-}
-
-
-.distance-article-list {
-  margin: 20px 0;
-
-  ._item {
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: white;
-
-
-    &:not(:last-child) {
-      margin-bottom: 15px;
-    }
-
-    ._img {
-      border-radius: 2px;
-
-      img {
-        border-radius: 2px;
-        width: 100%;
-        height: 300px;
-      }
-    }
-
-    ._text {
-      padding: 15px;
-    }
-
-  }
-
-}
-
 .distance-top {
   height: 440px;
   background-color: gray;
@@ -495,81 +257,19 @@ a:link {
   }
 }
 
-.distance-main-wrapper {
-  position: relative;
 
 
-  .distance-sidebar {
-    position: absolute;
-    width: 100px;
-    right: 0;
-    top: 0;
-    z-index: 1;
-    transition: all 0.3s;
-    overflow: hidden;
-
-    &:before {
-      width: 100px;
-      height: 200px;
-      background-color: #00d084;
-      display: block;
-      visibility: visible;
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10%;
-      transition: all 0.3s;
-      opacity: 1;
-
-    }
-
-    &:hover {
-      width: 260px;
-      .sidebar-wrapper{
-        margin-left: 0;
-      }
-
-      &:before{
-        opacity: 0;
-      }
-
-
-    }
-
-
-
-.sidebar-wrapper{
-  width: 260px;
-  background-color: #00d084;
-  padding: 15px;
-margin-left: 260px;
-  transition: all 0.3s;
-
-
-
-  .widget {
-    background: #f9f9f9;
-    padding: .5em .7em;
-    margin: 1em 0;
-
-  }
-}
-
-
-
-
-
-  }
-}
 
 .distance-main {
-
   margin-top: -100px;
   position: relative;
+  z-index: 2;
   background-color: white;
+  min-height: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  padding-top: 30px;
+  padding-bottom: 30px;
 
-  img {
-    width: 100px !important; //临时的
-  }
 
 }

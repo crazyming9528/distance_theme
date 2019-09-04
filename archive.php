@@ -11,9 +11,12 @@ get_header();
 ?>
 
     <div class="row">
+
+        <!--        distance-top 开始-->
         <div class="distance-top col-12" <?php if ( function_exists( 'z_taxonomy_image_url' ) ) {
 			echo 'style="background-image: url(\'' . z_taxonomy_image_url() . '\')"';
 		} ?>'>
+        <!--        顶部内容区域container开始-->
         <div class="container">
             <div class="row align-items-center description">
                 <div class="col-12 "><h1><?php echo single_cat_title( '', false ); ?></h1>
@@ -28,31 +31,33 @@ get_header();
                 </div>
             </div>
         </div>
-
+        <!--        顶部内容区域container结束-->
     </div>
+    <!--        distance-top 结束-->
     </div>
     <div class="row">
-        <div class="col-12 distance-main-wrapper">
+    <div class="col-12 distance-main-wrapper archive-wrapper">
 
-            <div class="container distance-main">
+        <div class="container distance-main dp_shadow">
 
-                <div class="row ">
+            <div class="row  archive-article-wrapper">
 
+                <div class="col-12 col-lg-9">
 
-			        <?php
-			        if ( have_posts() ) : ?>
+					<?php
+					if ( have_posts() ) : ?>
 
-                        <ul class="col-12">
-					        <?php while ( have_posts() ) :the_post(); ?>
+                        <ul>
+							<?php while ( have_posts() ) :the_post(); ?>
                                 <li class="row _article-item  ">
-                                    <div class="col-md-6 _img ">
-								        <?php if ( has_post_thumbnail() ) { ?>
-									        <?php the_post_thumbnail(); ?>
-								        <?php } else { ?>
+                                    <div class="col-12  _img ">
+										<?php if ( has_post_thumbnail() ) { ?>
+											<?php the_post_thumbnail(); ?>
+										<?php } else { ?>
                                             <!--没有特色图像暂时不显示-->
-								        <?php } ?>
+										<?php } ?>
                                     </div>
-                                    <div class="col-md-6 _box d-flex align-items-center justify-content-start ">
+                                    <div class="col-12 _box d-flex align-items-center justify-content-start ">
                                         <div class="_font">
                                             <h1 class="_title"><a
                                                         href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
@@ -66,9 +71,10 @@ get_header();
                                             <p class="_excerpt"> <?php echo esc_attr( get_the_excerpt() ); ?></p>
                                             <div class="_footer">
                                                 <div class="tags">
-											        <?php the_tags( '', ' ', '' ); ?>
+													<?php the_tags( '', ' ', '' ); ?>
                                                 </div>
-                                                <div class="_read-more text-primary"><a href="<?php the_permalink() ?>">阅读</a>
+                                                <div class="_read-more text-primary"><a
+                                                            href="<?php the_permalink() ?>">阅读</a>
                                                 </div>
 
                                             </div>
@@ -76,22 +82,31 @@ get_header();
                                     </div>
                                 </li>
 
-					        <?php endwhile; ?>
+							<?php endwhile; ?>
 
 
                         </ul>
 
-			        <?php endif;
-			        ?>
-
+					<?php endif;
+					?>
 
                 </div>
 
 
+                <div class="sidebar-wrapper col-12 col-lg-3">
+                    <div class="distance-sidebar">
+					<?php
+					get_sidebar();
+					?>
+                    </div>
+
+                </div>
 
 
             </div>
+
+
+        </div>
     </div>
 <?php
-get_sidebar();
 get_footer();
