@@ -295,6 +295,9 @@ a:hover {
   left: 0;
   z-index: 99999; }
 
+.distance-mainbody {
+  padding-bottom: 50px; }
+
 .top .logo {
   font-size: 26px;
   transition: all .3s; }
