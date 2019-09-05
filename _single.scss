@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.single-wrapper {
+
+  .sidebar-wrapper {
+
+    .distance-sidebar {
+      transition: all 0.3s;
+      opacity: 0.8;
+
+      .form-group {
+        text-align: right;
+
+        .search_btn {
+          width: 100px;
+          border: none;
+          background-color: white;
+          height: 30px;
+          cursor: pointer;
+          margin-top: 5px;
+          display: none;
+        }
+      }
+
+
+      .widget {
+        background-color: white;
+        padding: .5em .7em;
+        margin: 1em 0;
+
+      }
+    }
+
+
+  }
+  .single-article-wrapper{
+
+    .distance-article-content{
+      width: 100%;
+      height: auto;
+      margin: 15px auto 10px;
+      overflow: hidden;
+      font-size: 14px;
+      img{
+        max-width: 100%;
+        height: auto;
+        text-align: center;
+        overflow: hidden;
+        margin: 10px auto 10px;
+      }
+
+    }
+
+  }
+
+}
