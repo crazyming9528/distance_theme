@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="<?php echo get_theme_file_uri() ?>/frame/bs4/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/animate.css" type="text/css"/>
+    <link rel="stylesheet"
+          href="<?php echo get_theme_file_uri(); ?>/css/hightlightjs-a11y-dark.css"/>
+
     <!--[if lt IE 9]>
     <script src="<?php echo get_theme_file_uri()?>/js/html5shiv.min.js"></script>
     <![endif]-->
@@ -28,6 +31,7 @@
 	wp_head(); ?>
     <script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
     <script src="<?php echo get_theme_file_uri() ?>/frame/bs4/js/bootstrap.min.js"></script>
+    <script src="<?php echo get_theme_file_uri() ?>/js/highlight.pack.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

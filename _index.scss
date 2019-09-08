@@ -75,13 +75,16 @@
   }
 
   .index-article-wrapper {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
     ._article-item {
 
 
       //奇数
       &:nth-of-type(odd) {
         flex-direction: row;
-
+        margin-left: -10%;
         ._box {
           text-align: left;
 
@@ -107,6 +110,7 @@
       //偶数
       &:nth-of-type(even) {
         flex-direction: row-reverse;
+        margin-right: -10%;
 
         ._box {
           text-align: right;

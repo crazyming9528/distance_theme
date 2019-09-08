@@ -16,7 +16,6 @@
 	<footer id="colophon" class="site-footer distance-footer container-fluid">
 		<div class="container">
             <div class="row">
-
                     <div class="site-info col-12 d-flex align-items-center justify-content-center ">
                         <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'distance' ) ); ?>">
 			                <?php
@@ -36,6 +35,14 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
 
 
 </body>
