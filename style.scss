@@ -29,11 +29,12 @@ pre,code{
 
 
 .dp_shadow {
-  box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
+  //box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
+  box-shadow: 0 2px 12px 3px rgba(0,0,0,.05);
   transition: box-shadow 0.5s;
 
   &:hover {
-    box-shadow: 3px 6px 10px rgba(129, 129, 129, 0.3);
+    box-shadow: 0 5px 18px 5px rgba(0,0,0,.05);
   }
 }
 
@@ -61,6 +62,7 @@ a:hover {
   transition: all 0.5s;
 
   .top {
+    min-height: 60px;
 
     .logo {
       font-size: 26px;
@@ -172,7 +174,7 @@ a:hover {
 }
 
 .distance-mainbody{
-  padding-bottom: 50px;
+  //margin-bottom: 50px;
 }
 
 
@@ -318,6 +320,7 @@ a:hover {
   overflow: hidden;
   padding-top: 30px;
   padding-bottom: 30px;
+  margin-bottom: 50px;
 
 
 }

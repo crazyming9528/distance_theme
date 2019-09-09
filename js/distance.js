@@ -3,16 +3,27 @@
         var mainWrapper = $('.distance-main-wrapper');
         var distanceWrapper = $('.distance-head');
 
-        console.log(mainWrapper.offset().top,$(document).scrollTop());
+        console.log(mainWrapper.offset().top, $(document).scrollTop());
 
 
-        $(document).scroll(function () {
-            console.log($(document).scrollTop(),mainWrapper.offset().top);
-            if ($(document).scrollTop()>mainWrapper.offset().top){
+        function setNav() {
+            // if ($(document).scrollTop() > mainWrapper.offset().top) {
+            //     distanceWrapper.addClass('distance-head-bg');
+            // } else {
+            //     distanceWrapper.removeClass('distance-head-bg');
+            // }
+            if (($(document).scrollTop() - mainWrapper.offset().top) > -100) {
                 distanceWrapper.addClass('distance-head-bg');
-            }else {
+            } else {
                 distanceWrapper.removeClass('distance-head-bg');
             }
+        }
+
+        setNav();
+
+        $(document).scroll(function () {
+
+            setNav();
 
         });
 
