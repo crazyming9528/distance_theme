@@ -32,13 +32,14 @@
     <script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
     <script src="<?php echo get_theme_file_uri() ?>/frame/bs4/js/bootstrap.min.js"></script>
     <script src="<?php echo get_theme_file_uri() ?>/js/highlight.pack.js"></script>
+    <script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="distance">
 
 
-    <div class="container-fluid head">
+    <div class="container-fluid distance-head">
         <div class="row top align-items-center">
             <!--            <ul class="distance-nav">-->
             <!--                <li><a href="#">Home</a></li>-->
@@ -55,10 +56,10 @@
 
 			wp_nav_menu(
 				array(
-					'theme_location'  => 'top_menu',
-					'menu_id'         => 'top_menu',
-					'menu_class'      => 'distance_nav d-none  d-md-flex  col-6 col-md-9 ',
-					'container'       => false,
+					'theme_location' => 'top_menu',
+					'menu_id'        => 'top_menu',
+					'menu_class'     => 'distance_nav d-none  d-md-flex  col-6 col-md-9 ',
+					'container'      => false,
 //					'container_class' => 'distance_nav_wrapper d-none  d-md-flex  col-md-9'
 				)
 			);

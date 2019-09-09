@@ -202,6 +202,10 @@ function distance_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_deregister_script( 'jquery' );//移除自带 jquery
+	wp_register_script( 'jquery', 'https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js'); //注册 新的jquery
+	wp_enqueue_script( 'jquery' );//将新注册的jq 加入主题
 }
 
 add_action( 'wp_enqueue_scripts', 'distance_scripts' );
