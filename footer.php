@@ -35,8 +35,15 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
+<script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
+<script src="<?php echo get_theme_file_uri() ?>/frame/bs4/js/bootstrap.min.js"></script>
+<script src="<?php echo get_theme_file_uri() ?>/js/highlight.pack.js"></script>
+<script src="<?php echo get_theme_file_uri() ?>/js/wow.min.js"></script>
+<script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
 
 <script>
+    new WOW().init();
+
     document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('pre code').forEach((block) => {
             hljs.highlightBlock(block);

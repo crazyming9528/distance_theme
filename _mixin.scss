@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-
+//使用 animation 和 wow.js,  这里的动画 除了导航 其他地方暂时弃用
 @mixin mixin_fadeIn {
   opacity: 0;
-  animation: fadeIn 2s .5s 1;
+  animation: fadeIn .8s .5s 1;
   animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
 }
 

@@ -1,7 +1,8 @@
 @charset "UTF-8";
 .index-wrapper {
   position: relative;
-  background-color: white; }
+  background-color: white !important;
+  overflow: hidden; }
   .index-wrapper .sidebar-wrapper {
     position: absolute;
     width: 100px;
@@ -60,22 +61,26 @@
         .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) ._box {
           text-align: left; }
         @media screen and (max-width: 768px) {
-          .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) ._box {
-            text-align: left; }
-            .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) ._box ._font {
-              border-right: none;
-              border-left: none; } }
+          .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) {
+            margin-left: -15px; }
+            .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) ._box {
+              text-align: left; }
+              .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) ._box ._font {
+                border-right: none;
+                border-left: none; } }
       .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) {
         flex-direction: row-reverse;
         margin-right: -10%; }
         .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) ._box {
           text-align: right; }
         @media screen and (max-width: 768px) {
-          .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) ._box {
-            text-align: left; }
-            .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) ._box ._font {
-              border-right: none;
-              border-left: none; } }
+          .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) {
+            margin-right: -15px; }
+            .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) ._box {
+              text-align: left; }
+              .index-wrapper .index-article-wrapper ._article-item:nth-of-type(even) ._box ._font {
+                border-right: none;
+                border-left: none; } }
       .index-wrapper .index-article-wrapper ._article-item:not(:last-child) {
         margin-bottom: 50px; }
       .index-wrapper .index-article-wrapper ._article-item ._img {
@@ -173,8 +178,8 @@
         background-color: rgba(0, 0, 0, 0.15);
         opacity: 1; }
       .archive-wrapper .archive-article-wrapper ._article-item:hover ._box {
-        border-left: 5px solid #0c5460;
-        border-right: 1px solid #0c5460; }
+        border-left: 2px solid #0c5460;
+        border-right: 2px solid #0c5460; }
     .archive-wrapper .archive-article-wrapper ._article-item ._img {
       padding: 0;
       background-position: center center;
@@ -198,7 +203,7 @@
         height: 100%;
         transition: all 0.3s; }
     .archive-wrapper .archive-article-wrapper ._article-item ._box {
-      border-left: 2px solid rgba(13, 13, 13, 0.9);
+      border-left: 2px solid transparent;
       border-right: 1px solid transparent;
       transition: all 0.3s; }
       .archive-wrapper .archive-article-wrapper ._article-item ._box ._font {
@@ -276,12 +281,15 @@
 body {
   position: relative;
   font-size: 14px;
-  background-color: #f9f9f9;
+  background-color: rgba(13, 13, 13, 0.9);
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif; }
 
 pre, code {
   margin: 0 .2em;
   background: #e7e7e7; }
+
+.wow {
+  visibility: hidden; }
 
 .dp_shadow {
   box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.05);
@@ -323,7 +331,7 @@ a:hover {
     -webkit-flex-flow: row wrap;
     justify-content: flex-end;
     opacity: 0;
-    animation: fadeIn 2s .5s 1;
+    animation: fadeIn .8s .5s 1;
     animation-fill-mode: forwards; }
   .distance-head .distance_nav a {
     text-decoration: none;
@@ -401,10 +409,6 @@ a:hover {
     transform: translate(-50%, -50%);
     z-index: 100;
     font-size: 32px; }
-    .distance-first-screen .sentence p {
-      opacity: 0;
-      animation: fadeInDown 2s .5s 1;
-      animation-fill-mode: forwards; }
   .distance-first-screen .header_down {
     animation: bounce 4s 2s infinite;
     color: rgba(255, 255, 255, 0.8);
@@ -465,6 +469,9 @@ a:hover {
         opacity: 0;
         animation: fadeInDown 2s .5s 1;
         animation-fill-mode: forwards; }
+
+.distance-main-wrapper {
+  background-color: #f9f9f9; }
 
 .distance-main {
   margin-top: -100px;

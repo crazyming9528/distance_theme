@@ -58,8 +58,8 @@
         }
 
         ._box {
-          border-left: 5px solid $baseColor2;
-          border-right: 1px solid $baseColor2;
+          border-left: 2px solid $baseColor2;
+          border-right: 2px solid $baseColor2;
         }
       }
 
@@ -117,7 +117,7 @@
       }
 
       ._box {
-        border-left: 2px solid $baseColor;
+        border-left: 2px solid transparent;
         border-right: 1px solid transparent;
         transition: all 0.3s;
 

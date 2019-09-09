@@ -26,12 +26,8 @@
 
 
 	<?php
-	wp_enqueue_script( 'jquery' );
 	wp_head(); ?>
-    <script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
-    <script src="<?php echo get_theme_file_uri() ?>/frame/bs4/js/bootstrap.min.js"></script>
-    <script src="<?php echo get_theme_file_uri() ?>/js/highlight.pack.js"></script>
-    <script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -47,7 +43,7 @@
             <!--                <li><a href="#">Contact</a></li>-->
             <!--            </ul>-->
 
-            <div class="logo col-6 col-md-3 ">
+            <div class="logo col-12 col-md-3 ">
                 <!--        --><?php //the_custom_logo(); ?>
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
             </div>
@@ -57,7 +53,7 @@
 				array(
 					'theme_location' => 'top_menu',
 					'menu_id'        => 'top_menu',
-					'menu_class'     => 'distance_nav d-none  d-md-flex  col-6 col-md-9 ',
+					'menu_class'     => 'distance_nav d-none  d-md-flex  col-md-9 ',
 					'container'      => false,
 //					'container_class' => 'distance_nav_wrapper d-none  d-md-flex  col-md-9'
 				)

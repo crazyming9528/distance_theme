@@ -49,7 +49,7 @@ get_header();
 
                         <ul>
 							<?php while ( have_posts() ) :the_post(); ?>
-                                <li class="row _article-item  ">
+                                <li class="row _article-item  dp_shadow ">
                                     <div class="col-12  _img ">
 										<?php if ( has_post_thumbnail() ) { ?>
 											<?php the_post_thumbnail(); ?>

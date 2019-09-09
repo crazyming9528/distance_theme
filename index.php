@@ -25,10 +25,10 @@ $video = get_header_video_url();
 
 
 <?php if ( $video ): ?>
-    <div class="distance-first-screen col-12" style="background-color: black">
+    <div class="distance-first-screen col-12 wow fadeIn" style="background-color: black">
     <video class="video_bg" src="<?php echo $video ?>" loop="loop" autoplay="autoplay"></video>
 	<?php else: ?>
-    <div class="distance-first-screen col-12" style="background-image: url('<?php echo get_header_image() ?>')">
+    <div class="distance-first-screen col-12 wow fadeIn" style="background-image: url('<?php echo get_header_image() ?>')">
     <script>
         jQuery(document).ready(function ($) {
 
@@ -42,7 +42,7 @@ $video = get_header_video_url();
             });
         })
     </script>
-    <div class="sentence"><p
+    <div class="sentence"><p class="wow fadeInDown"
                 style="color: <?php  echo '#'.get_theme_mod( 'header_textcolor') ?>"><?php     bloginfo( 'description' ); ?>
 
         </p>
@@ -90,7 +90,7 @@ $video = get_header_video_url();
 
                    <ul class="col-12">
 					   <?php while ( have_posts() ) :the_post(); ?>
-                           <li class="row _article-item  ">
+                           <li class="row _article-item  wow  fadeIn " data-wow-duration="1.5s">
                                <div class="col-md-6 _img  dp_shadow">
 								   <?php if ( has_post_thumbnail() ) { ?>
 									   <?php the_post_thumbnail(); ?>

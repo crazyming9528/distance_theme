@@ -12,12 +12,12 @@
 @import "single";
 
 
-$baseColor: rgba(13, 13, 13, 0.9);
 
 body {
   position: relative;
   font-size: 14px;
-  background-color: #f9f9f9;
+  //background-color: #f9f9f9;
+  background-color: $baseColor;
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
@@ -27,6 +27,9 @@ pre,code{
 }
 
 
+.wow{
+  visibility: hidden;
+}
 
 .dp_shadow {
   //box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
@@ -223,7 +226,7 @@ a:hover {
 
     p {
       //opacity: 0;
-      @include mixin_fadeInDown;
+      //@include mixin_fadeInDown;
       //animation: fadeInDown 3s .5s 1;
       //animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
     }
@@ -307,6 +310,10 @@ a:hover {
       }
     }
   }
+}
+
+.distance-main-wrapper{
+  background-color: $background-color-white;
 }
 
 
