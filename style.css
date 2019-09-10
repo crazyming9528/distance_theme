@@ -54,6 +54,7 @@
     padding-bottom: 50px; }
     .index-wrapper .index-article-wrapper ._article-item {
       background-color: white;
+      box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.05);
       transition: all 0.3s; }
       .index-wrapper .index-article-wrapper ._article-item:nth-of-type(odd) {
         flex-direction: row;
@@ -83,7 +84,9 @@
                 border-left: none; } }
       @media screen and (max-width: 768px) {
         .index-wrapper .index-article-wrapper ._article-item {
-          box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.05); } }
+          box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.05);
+          border-radius: 3px;
+          overflow: hidden; } }
       .index-wrapper .index-article-wrapper ._article-item:not(:last-child) {
         margin-bottom: 50px; }
       .index-wrapper .index-article-wrapper ._article-item ._img {
@@ -95,10 +98,8 @@
         background-repeat: no-repeat;
         overflow: hidden;
         min-height: 260px;
-        height: auto;
-        border-radius: 3px; }
+        height: auto; }
         .index-wrapper .index-article-wrapper ._article-item ._img img {
-          border-radius: 3px;
           width: 100%;
           height: 100%;
           transition: all 0.3s;
@@ -166,8 +167,8 @@
 .archive-wrapper .archive-article-wrapper {
   padding: 15px; }
   .archive-wrapper .archive-article-wrapper ._article-item {
-    cursor: pointer;
     position: relative;
+    border-radius: 3px;
     transition: all 0.3s; }
     .archive-wrapper .archive-article-wrapper ._article-item:not(:last-child) {
       margin-bottom: 50px; }
@@ -188,7 +189,6 @@
         opacity: 1; }
     .archive-wrapper .archive-article-wrapper ._article-item ._img {
       padding: 0;
-      border-radius: 3px;
       background-position: center center;
       background-repeat: no-repeat;
       overflow: hidden;
@@ -209,8 +209,7 @@
       .archive-wrapper .archive-article-wrapper ._article-item ._img img {
         width: 100%;
         height: 100%;
-        transition: all 0.3s;
-        border-radius: 3px; }
+        transition: all 0.3s; }
     .archive-wrapper .archive-article-wrapper ._article-item ._box {
       border-left: 2px solid transparent;
       border-right: 1px solid transparent;
@@ -220,7 +219,7 @@
       padding: 0; }
       .archive-wrapper .archive-article-wrapper ._article-item ._box ._font {
         width: 100%;
-        padding: 10px; }
+        padding: 30px 10px; }
         .archive-wrapper .archive-article-wrapper ._article-item ._box ._font ._title {
           font-size: 28px; }
           .archive-wrapper .archive-article-wrapper ._article-item ._box ._font ._title a {
@@ -278,6 +277,8 @@
     padding: .5em .7em;
     margin: 1em 0; }
 .single-wrapper .single-article-wrapper .distance-article-content {
+  padding: 25px 15px;
+  line-height: 1.6;
   width: 100%;
   height: auto;
   margin: 15px auto 10px;
@@ -289,6 +290,16 @@
     text-align: center;
     overflow: hidden;
     margin: 10px auto 10px; }
+.single-wrapper .single-article-wrapper .distance-copyright {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(16, 152, 152, 0.05);
+  border-left: 2px solid #0c5460;
+  color: #3b3b3b;
+  margin-top: 60px;
+  margin-bottom: 45px; }
+  .single-wrapper .single-article-wrapper .distance-copyright a, .single-wrapper .single-article-wrapper .distance-copyright a:link, .single-wrapper .single-article-wrapper .distance-copyright a:visited, .single-wrapper .single-article-wrapper .distance-copyright a:hover, .single-wrapper .single-article-wrapper .distance-copyright a:active {
+    color: #0c5460; }
 
 body {
   position: relative;
@@ -470,17 +481,24 @@ a:hover {
       position: relative;
       z-index: 1; }
       .distance-top .container .description h1 {
+        margin-top: -60px;
         color: white;
         text-align: center;
+        font-size: 2.5rem;
         opacity: 0;
         animation: fadeInDown 2s .5s 1;
         animation-fill-mode: forwards; }
+        @media screen and (max-width: 768px) {
+          .distance-top .container .description h1 {
+            font-size: 1.8rem; } }
       .distance-top .container .description .summary {
         color: white;
         text-align: center;
         opacity: 0;
         animation: fadeInDown 2s .5s 1;
         animation-fill-mode: forwards; }
+        .distance-top .container .description .summary a, .distance-top .container .description .summary a:link, .distance-top .container .description .summary a:visited, .distance-top .container .description .summary a:hover, .distance-top .container .description .summary a:active {
+          color: white; }
 
 .distance-main-wrapper {
   background-color: #f9f9f9; }
@@ -493,9 +511,11 @@ a:hover {
   min-height: 300px;
   border-radius: 4px;
   overflow: hidden;
-  padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 50px; }
+
+.distance-page-content {
+  min-height: 500px; }
 
 .distance-footer {
   background-color: rgba(13, 13, 13, 0.9); }

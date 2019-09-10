@@ -13,3 +13,9 @@
   animation: fadeInDown 2s .5s 1;
   animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
 }
+
+@mixin mixin_a_color($color){
+  a,a:link,a:visited,a:hover,a:active{
+    color: $color;
+  }
+}

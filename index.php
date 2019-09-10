@@ -91,7 +91,7 @@ $video = get_header_video_url();
                    <ul class="col-12">
 					   <?php while ( have_posts() ) :the_post(); ?>
                            <li class="row _article-item  wow  fadeIn " data-wow-duration="1.5s">
-                               <div class="col-md-6 _img  dp_shadow">
+                               <div class="col-md-6 _img">
 								   <?php if ( has_post_thumbnail() ) { ?>
 									   <?php the_post_thumbnail(); ?>
 								   <?php } else { ?>

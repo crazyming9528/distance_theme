@@ -32,21 +32,39 @@
 
 
   }
-  .single-article-wrapper{
 
-    .distance-article-content{
+  .single-article-wrapper {
+
+    .distance-article-content {
+      padding: 25px 15px;
+      line-height: 1.6;
       width: 100%;
       height: auto;
       margin: 15px auto 10px;
       overflow: hidden;
       font-size: 16px;
-      img{
+
+      img {
         max-width: 100%;
         height: auto;
         text-align: center;
         overflow: hidden;
         margin: 10px auto 10px;
       }
+
+    }
+
+    .distance-copyright {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background-color: rgba(16, 152, 152, 0.05);
+      border-left: 2px solid $baseColor2;
+      color: #3b3b3b;
+      margin-top: 60px;
+      margin-bottom: 45px;
+
+
+      @include mixin_a_color($baseColor2);
 
     }
 

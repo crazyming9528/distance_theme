@@ -12,7 +12,6 @@
 @import "single";
 
 
-
 body {
   position: relative;
   font-size: 14px;
@@ -21,23 +20,23 @@ body {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
-pre,code{
+pre, code {
   margin: 0 .2em;
   background: #e7e7e7
 }
 
 
-.wow{
+.wow {
   visibility: hidden;
 }
 
 .dp_shadow {
   //box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
-  box-shadow: 0 2px 12px 3px rgba(0,0,0,.05);
+  box-shadow: 0 2px 12px 3px rgba(0, 0, 0, .05);
   transition: box-shadow 0.5s;
 
   &:hover {
-    box-shadow: 0 5px 18px 5px rgba(0,0,0,.05);
+    box-shadow: 0 5px 18px 5px rgba(0, 0, 0, .05);
   }
 }
 
@@ -70,7 +69,8 @@ a:hover {
     .logo {
       font-size: 26px;
       transition: all .3s;
-      a{
+
+      a {
         color: white;
       }
 
@@ -153,18 +153,20 @@ a:hover {
   }
 }
 
-.distance-head-bg{
+.distance-head-bg {
   background-color: white;
-  .distance_nav a{
-     color: $baseColor;
-    &:after{
+
+  .distance_nav a {
+    color: $baseColor;
+
+    &:after {
       background-color: $baseColor;
     }
   }
 
-  .top{
+  .top {
     .logo {
-      a{
+      a {
         color: $baseColor;
       }
     }
@@ -173,14 +175,11 @@ a:hover {
   box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
 
 
-
 }
 
-.distance-mainbody{
+.distance-mainbody {
   //margin-bottom: 50px;
 }
-
-
 
 
 .distance-first-screen {
@@ -261,7 +260,6 @@ a:hover {
 }
 
 
-
 .distance-top {
   height: 440px;
   background-color: gray;
@@ -298,21 +296,27 @@ a:hover {
 
 
       h1 {
+        margin-top: -60px;
         color: white;
         text-align: center;
+        font-size: 2.5rem;
         @include mixin_fadeInDown;
+        @media screen and (max-width: 768px) {
+          font-size: 1.8rem;
+        }
       }
 
       .summary {
         color: white;
         text-align: center;
         @include mixin_fadeInDown;
+        @include mixin_a_color(white);
       }
     }
   }
 }
 
-.distance-main-wrapper{
+.distance-main-wrapper {
   background-color: $background-color-white;
 }
 
@@ -325,11 +329,15 @@ a:hover {
   min-height: 300px;
   border-radius: 4px;
   overflow: hidden;
-  padding-top: 30px;
+  //padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 50px;
 
 
+}
+
+.distance-page-content {
+  min-height: 500px;
 }
 
 .distance-footer {

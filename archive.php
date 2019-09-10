@@ -36,80 +36,87 @@ get_header();
     <!--        distance-top 结束-->
     </div>
     <div class="row">
-    <div class="col-12 distance-main-wrapper archive-wrapper">
+        <div class="col-12 distance-main-wrapper archive-wrapper">
 
-        <div class="container distance-main dp_shadow">
+            <div class="container distance-main dp_shadow">
 
-            <div class="row  archive-article-wrapper">
+                <div class="row  archive-article-wrapper">
 
-                <div class="col-12 col-lg-9">
+                    <div class="col-12 col-lg-9">
 
-					<?php
-					if ( have_posts() ) : ?>
+						<?php
+						if ( have_posts() ) : ?>
 
-                        <ul>
-							<?php while ( have_posts() ) :the_post(); ?>
-                                <li class="row _article-item  ">
+                            <ul>
+								<?php while ( have_posts() ) :the_post(); ?>
+                                    <li class="row _article-item  ">
 
 										<?php if ( has_post_thumbnail() ) { ?>
-                                    <div class="col-12   _img ">
-											<?php the_post_thumbnail(); ?>
+
+                                                <a class="col-12   _img" href="<?php the_permalink(); ?>">
+                                                    <div class=" ">
+													<?php the_post_thumbnail(); ?>
+                                                    </div>
+                                                </a>
+
 										<?php } else { ?>
                                             <!--没有特色图像暂时不显示-->
-                                        <div class="d-none   _img  ">
+                                            <div class="d-none   _img  ">
+                                            </div>
 										<?php } ?>
-                                    </div>
-                                    <div class="col-12 _box d-flex align-items-center justify-content-start ">
-                                        <div class="_font">
-                                            <h1 class="_title"><a
-                                                        href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-                                            <p class="_author-info">
-                                                <time><?php echo get_the_date( 'Y-m-d' ); ?></time> &bull;
-                                                <span><?php echo get_the_author(); ?></span> &bull;
-                                                <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</a></span>
-                                                &bull;
-                                                <span> <?php post_views( ' ', ' 次浏览' ); ?></span>
-                                            </p>
-                                            <p class="_excerpt"> <?php echo esc_attr( get_the_excerpt() ); ?></p>
-                                            <div class="_footer">
-                                                <div class="tags">
-													<?php the_tags( '', ' ', '' ); ?>
-                                                </div>
-                                                <div class="_read-more text-primary"><a
-                                                            href="<?php the_permalink() ?>">阅读</a>
-                                                </div>
 
+                                        <div class="col-12 _box d-flex align-items-center justify-content-start ">
+                                            <div class="_font">
+                                                <h1 class="_title"><a
+                                                            href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                </h1>
+                                                <p class="_author-info">
+                                                    <time><?php echo get_the_date( 'Y-m-d' ); ?></time> &bull;
+                                                    <span><?php echo get_the_author(); ?></span> &bull;
+                                                    <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</a></span>
+                                                    &bull;
+                                                    <span> <?php post_views( ' ', ' 次浏览' ); ?></span>
+                                                </p>
+                                                <p class="_excerpt"> <?php echo esc_attr( get_the_excerpt() ); ?></p>
+                                                <div class="_footer">
+                                                    <div class="tags">
+														<?php the_tags( '', ' ', '' ); ?>
+                                                    </div>
+                                                    <div class="_read-more text-primary"><a
+                                                                href="<?php the_permalink() ?>">阅读</a>
+                                                    </div>
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
+                                    </li>
 
-							<?php endwhile; ?>
-
-
-                        </ul>
-
-					<?php endif;
-					?>
-
-                </div>
+								<?php endwhile; ?>
 
 
-                <div class="sidebar-wrapper col-12 col-lg-3">
-                    <div class="distance-sidebar">
-					<?php
-					get_sidebar();
-					?>
+                            </ul>
+
+						<?php endif;
+						?>
+
                     </div>
+
+
+                    <div class="sidebar-wrapper col-12 col-lg-3">
+                        <div class="distance-sidebar">
+							<?php
+							get_sidebar();
+							?>
+                        </div>
+
+                    </div>
+
 
                 </div>
 
 
             </div>
-
-
         </div>
-    </div>
     </div>
 <?php
 get_footer();
