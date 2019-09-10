@@ -76,13 +76,14 @@
   }
 
   .index-article-wrapper {
-    background-color: white;
+
 
 
     padding-top: 50px;
     padding-bottom: 50px;
 
     ._article-item {
+      background-color: white;
 
 
       //奇数
@@ -143,6 +144,12 @@
         }
       }
 
+      @media screen and (max-width: 768px) {
+        box-shadow: 0 2px 12px 3px rgba(0,0,0,.05);
+      }
+
+
+
       &:not(:last-child) {
         margin-bottom: 50px;
 
@@ -195,6 +202,7 @@
       }
 
       ._box {
+
 
         ._font {
           width: 100%;
@@ -272,10 +280,10 @@
 
         }
 
-        @media screen and (max-width: 768px) {
-          border: 1px solid #e2e2e2;
-          border-top: none;
-        }
+        //@media screen and (max-width: 768px) {
+        //  border: 1px solid #e2e2e2;
+        //  border-top: none;
+        //}
 
       }
 

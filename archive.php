@@ -49,12 +49,14 @@ get_header();
 
                         <ul>
 							<?php while ( have_posts() ) :the_post(); ?>
-                                <li class="row _article-item  dp_shadow ">
-                                    <div class="col-12  _img ">
+                                <li class="row _article-item  ">
+
 										<?php if ( has_post_thumbnail() ) { ?>
+                                    <div class="col-12   _img ">
 											<?php the_post_thumbnail(); ?>
 										<?php } else { ?>
                                             <!--没有特色图像暂时不显示-->
+                                        <div class="d-none   _img  ">
 										<?php } ?>
                                     </div>
                                     <div class="col-12 _box d-flex align-items-center justify-content-start ">

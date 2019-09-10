@@ -38,14 +38,27 @@
     padding: 15px;
 
     ._article-item {
+      cursor: pointer;
+      position: relative;
 
       &:not(:last-child) {
         margin-bottom: 50px;
 
+        &:after{
+          content: '';
+          width: 75%;
+          position: absolute;
+          height: 1px;
+          bottom:-20px;
+          left: 50%;
+          display: block;
+          transform: translateX(-50%);
+          background-color: #f1f1f1;
+
+        }
+
       }
 
-      cursor: pointer;
-      position: relative;
 
       &:hover {
         background-color: #f7f7f7;
@@ -58,8 +71,8 @@
         }
 
         ._box {
-          border-left: 2px solid $baseColor2;
-          border-right: 2px solid $baseColor2;
+          //border-left: 2px solid #e2e2e2;
+          //border-right: 2px solid #e2e2e2;
         }
       }
 
@@ -68,13 +81,14 @@
 
       ._img {
         padding: 0;
-
+        border-radius: 3px;
         //background-image: url("./img/article_bg.png");
         background-position: center center;
         background-repeat: no-repeat;
         overflow: hidden;
         //min-height: 260px;
         height: auto;
+        max-height: 400px;
         border: none;
 
         &:after {
@@ -96,6 +110,8 @@
           width: 100%;
           height: 100%;
           transition: all 0.3s;
+          border-radius: 3px;
+
 
           //&:hover {
           //  transform: scale(1.02);
@@ -120,6 +136,9 @@
         border-left: 2px solid transparent;
         border-right: 1px solid transparent;
         transition: all 0.3s;
+        border-radius: 3px;
+        overflow: hidden;
+        padding: 0;
 
         ._font {
           width: 100%;
