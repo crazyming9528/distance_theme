@@ -49,6 +49,7 @@ get_header();
                             <!--                        文章区域-->
 							<?php the_content(); ?>
 
+
                             <div class="row">
 
                                 <div class="col-10 offset-1  distance-copyright">
@@ -58,8 +59,26 @@ get_header();
                                 </div>
                             </div>
 
-                        </div>
+                            <div class="row distance-pager">
 
+                                    <div class="previous col-12 col-md-6">
+				                      <span>上一篇: </span><?php next_post_link( '%link','<i class="fa fa-angle-left"></i> '.'%title'); ?>
+                                    </div>
+                                    <div class="next col-12 col-md-6">
+				                        <span>下一篇:</span> <?php previous_post_link( '%link','%title'.' <i class="fa fa-angle-right"></i>'); ?>
+                                    </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-12">
+	                                <?php comments_template(); ?>
+                                </div>
+                            </div>
+
+
+                        </div>
 
                         <div class="sidebar-wrapper col-12 col-lg-3">
                             <div class="distance-sidebar">

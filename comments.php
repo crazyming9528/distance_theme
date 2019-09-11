@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area distance-comments">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -32,13 +32,13 @@ if ( post_password_required() ) {
 			if ( '1' === $distance_comment_count ) {
 				printf(
 					/* translators: 1: title. */
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'distance' ),
+					esc_html__( '&ldquo;%1$s&rdquo; 有1条评论', 'distance' ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $distance_comment_count, 'comments title', 'distance' ) ),
+					esc_html( _nx( '&ldquo;%2$s&rdquo; 有 %1$s 条评论', ' &ldquo;%2$s&rdquo; 有 %1$s 条评论', $distance_comment_count, 'comments title', 'distance' ) ),
 					number_format_i18n( $distance_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
@@ -63,7 +63,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'distance' ); ?></p>
+			<p class="no-comments"><?php esc_html_e( '评论已经关闭', 'distance' ); ?></p>
 			<?php
 		endif;
 

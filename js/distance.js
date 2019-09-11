@@ -12,7 +12,7 @@
             // } else {
             //     distanceWrapper.removeClass('distance-head-bg');
             // }
-            if (($(document).scrollTop() - mainWrapper.offset().top) > -100) {
+            if (($(document).scrollTop() - mainWrapper.offset().top) > -150) {
                 distanceWrapper.addClass('distance-head-bg');
             } else {
                 distanceWrapper.removeClass('distance-head-bg');

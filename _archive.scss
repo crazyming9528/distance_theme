@@ -45,15 +45,7 @@
         margin-bottom: 50px;
 
         &:after{
-          content: '';
-          width: 75%;
-          position: absolute;
-          height: 1px;
-          bottom:-20px;
-          left: 50%;
-          display: block;
-          transform: translateX(-50%);
-          background-color: #f1f1f1;
+          @include mixin_cutline;
 
         }
 

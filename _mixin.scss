@@ -14,8 +14,23 @@
   animation-fill-mode: forwards; //当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。
 }
 
-@mixin mixin_a_color($color){
-  a,a:link,a:visited,a:hover,a:active{
+@mixin mixin_a_color($color) {
+  a, a:link, a:visited, a:hover, a:active {
     color: $color;
   }
+}
+
+
+@mixin mixin_cutline {
+
+    content: '';
+    width: 75%;
+    position: absolute;
+    height: 1px;
+    bottom: -20px;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%);
+    background-color: #f1f1f1;
+
 }

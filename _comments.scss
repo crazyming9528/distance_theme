@@ -1,0 +1,168 @@
+@charset "UTF-8";
+.distance-comments {
+  & > .comment-list > li:not(:last-child) {
+    position: relative;
+    margin-bottom: 50px;
+
+    &:after {
+      @include mixin_cutline;
+    }
+  }
+
+  .comments-title {
+
+    font-size: 16px;
+    color: grey;
+
+    border-top: 1px solid #f0f0f0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+
+  }
+
+  .comment-list {
+
+    padding-left: 50px;
+
+    .bypostauthor > article > footer > div > .fn::after {
+      margin-left: 5px;
+      color: rgb(255, 255, 255);
+      content: "博主";
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 3px;
+      background: $baseColor2;
+      opacity: .9;
+
+    }
+
+    li {
+
+      .comment-body {
+
+        .comment-author {
+
+          b {
+            color: $baseColor2;
+
+          }
+
+        }
+
+
+        .comment-metadata {
+
+          font-size: 12px;
+          color: #ababab;
+          padding: 0 5px;
+
+          @include mixin_a_color(gray);
+
+        }
+
+        .comment-content {
+          padding: 0 5px;
+        }
+
+        .reply {
+          font-size: 12px;
+        }
+
+
+      }
+
+      .children {
+        margin-left: 30px;
+      }
+    }
+
+
+  }
+
+
+  .comment-respond {
+
+    padding: 10px 20px;
+    border: 1px solid #efefef;
+    background-color: #fff;
+    margin-top:50px;
+    overflow: hidden;
+
+
+    .comment-reply-title {
+      font-weight: normal;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      height: 20px;
+      color: #555;
+      border-left: 4px solid $baseColor2;
+      padding-left: 6px;
+    }
+
+    .comment-form {
+
+      .comment-form-comment {
+        label {
+          display: none
+        }
+
+
+        textarea {
+          padding: 5px 1.8%;
+          width: 95%;
+          border: 1px solid #eee;
+          font-size: 14px;
+          background: #fcfcfc;
+          outline: none;
+          box-shadow: none;
+        }
+
+
+      }
+
+      .required {
+        color: grey;
+      }
+
+      input[name="author"], input[name="email"] {
+        border: 1px solid #c6c6c6;
+        padding: 2px 5px;
+        height: 36px;
+        line-height: 36px;
+        max-width: 100%;
+      }
+
+      .comment-form-author, .comment-form-email {
+        display: inline-block;
+        label{
+          font-size: 14px;
+        }
+      }
+
+
+      .comment-form-url {
+        display: none;
+      }
+
+      .submit{
+        width: 100px;
+        height: 32px;
+        border: 0;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        background: $baseColor2;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+    }
+
+
+  }
+
+}

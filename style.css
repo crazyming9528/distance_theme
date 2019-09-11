@@ -300,6 +300,106 @@
   margin-bottom: 45px; }
   .single-wrapper .single-article-wrapper .distance-copyright a, .single-wrapper .single-article-wrapper .distance-copyright a:link, .single-wrapper .single-article-wrapper .distance-copyright a:visited, .single-wrapper .single-article-wrapper .distance-copyright a:hover, .single-wrapper .single-article-wrapper .distance-copyright a:active {
     color: #0c5460; }
+.single-wrapper .single-article-wrapper .distance-pager span {
+  color: grey;
+  font-size: 14px; }
+
+.distance-comments > .comment-list > li:not(:last-child) {
+  position: relative;
+  margin-bottom: 50px; }
+  .distance-comments > .comment-list > li:not(:last-child):after {
+    content: '';
+    width: 75%;
+    position: absolute;
+    height: 1px;
+    bottom: -20px;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%);
+    background-color: #f1f1f1; }
+.distance-comments .comments-title {
+  font-size: 16px;
+  color: grey;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 50px; }
+.distance-comments .comment-list {
+  padding-left: 50px; }
+  .distance-comments .comment-list .bypostauthor > article > footer > div > .fn::after {
+    margin-left: 5px;
+    color: white;
+    content: "博主";
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    background: #0c5460;
+    opacity: .9; }
+  .distance-comments .comment-list li .comment-body .comment-author b {
+    color: #0c5460; }
+  .distance-comments .comment-list li .comment-body .comment-metadata {
+    font-size: 12px;
+    color: #ababab;
+    padding: 0 5px; }
+    .distance-comments .comment-list li .comment-body .comment-metadata a, .distance-comments .comment-list li .comment-body .comment-metadata a:link, .distance-comments .comment-list li .comment-body .comment-metadata a:visited, .distance-comments .comment-list li .comment-body .comment-metadata a:hover, .distance-comments .comment-list li .comment-body .comment-metadata a:active {
+      color: gray; }
+  .distance-comments .comment-list li .comment-body .comment-content {
+    padding: 0 5px; }
+  .distance-comments .comment-list li .comment-body .reply {
+    font-size: 12px; }
+  .distance-comments .comment-list li .children {
+    margin-left: 30px; }
+.distance-comments .comment-respond {
+  padding: 10px 20px;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  margin-top: 50px;
+  overflow: hidden; }
+  .distance-comments .comment-respond .comment-reply-title {
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    height: 20px;
+    color: #555;
+    border-left: 4px solid #0c5460;
+    padding-left: 6px; }
+  .distance-comments .comment-respond .comment-form .comment-form-comment label {
+    display: none; }
+  .distance-comments .comment-respond .comment-form .comment-form-comment textarea {
+    padding: 5px 1.8%;
+    width: 95%;
+    border: 1px solid #eee;
+    font-size: 14px;
+    background: #fcfcfc;
+    outline: none;
+    box-shadow: none; }
+  .distance-comments .comment-respond .comment-form .required {
+    color: grey; }
+  .distance-comments .comment-respond .comment-form input[name="author"], .distance-comments .comment-respond .comment-form input[name="email"] {
+    border: 1px solid #c6c6c6;
+    padding: 2px 5px;
+    height: 36px;
+    line-height: 36px;
+    max-width: 100%; }
+  .distance-comments .comment-respond .comment-form .comment-form-author, .distance-comments .comment-respond .comment-form .comment-form-email {
+    display: inline-block; }
+    .distance-comments .comment-respond .comment-form .comment-form-author label, .distance-comments .comment-respond .comment-form .comment-form-email label {
+      font-size: 14px; }
+  .distance-comments .comment-respond .comment-form .comment-form-url {
+    display: none; }
+  .distance-comments .comment-respond .comment-form .submit {
+    width: 100px;
+    height: 32px;
+    border: 0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #0c5460;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer; }
 
 body {
   position: relative;
