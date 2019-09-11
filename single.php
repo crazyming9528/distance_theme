@@ -25,10 +25,16 @@ get_header();
                 <div class="container">
                     <div class="row align-items-center description">
                         <div class="col-12 "><h1><?php the_title(); ?></h1>
-                            <div class="summary">
-                                <span>  <span><?php echo get_the_author(); ?></span> 发布于<?php echo get_the_date( 'Y-m-d' ); ?></span>
-                                &bull; <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?>条评论</a></span>
-                                &bull; <span><?php post_views( ' ', ' 次浏览' ); ?></span>
+                            <div class="summary row d-sm-none ">
+                                <div class="author col-12 ">  <span><?php echo get_the_author(); ?></span> &bull; <span> <?php echo get_the_date( 'Y-m-d' ); ?></span></div>
+                             <div class="view col-12 "><span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?>条评论</a></span>
+                                 &bull; <span><?php post_views( ' ', ' 次浏览' ); ?></span></div>
+                            </div>
+
+                            <div class="summary row d-sm-block d-none ">
+             <span><?php echo get_the_author(); ?></span> &bull; <span> <?php echo get_the_date( 'Y-m-d' ); ?></span>  &bull;
+                               <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?>条评论</a></span>
+                                    &bull; <span><?php post_views( ' ', ' 次浏览' ); ?></span>
                             </div>
                         </div>
                     </div>

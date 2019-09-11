@@ -43,12 +43,12 @@
 
 <script>
     new WOW().init();
-
-    document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block);
-        });
+jQuery(document).ready(function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
     });
+
+});
 </script>
 
 

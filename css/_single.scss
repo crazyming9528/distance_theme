@@ -57,11 +57,12 @@
     .distance-copyright {
       padding-top: 10px;
       padding-bottom: 10px;
-      background-color: rgba(16, 152, 152, 0.05);
+      background-color: rgba(16, 152, 152, 0.02);
       border-left: 2px solid $baseColor2;
       color: #3b3b3b;
       margin-top: 60px;
       margin-bottom: 45px;
+      font-size: 12px;
 
 
       @include mixin_a_color($baseColor2);

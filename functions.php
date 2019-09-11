@@ -230,11 +230,24 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
+
+require get_template_directory() . '/inc/customizer-seo.php';
+require get_template_directory() . '/inc/customizer-function.php';
+
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+if ( ! file_exists( get_template_directory() . '/classes/class-wp-bootstrap-navwalker.php' ) ) {
+	// file does not exist... return an error.
+	return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
+} else {
+	// file exists... require it.
+	require_once get_template_directory() . '/classes/class-wp-bootstrap-navwalker.php';
 }
 
 

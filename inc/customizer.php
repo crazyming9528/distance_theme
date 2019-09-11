@@ -25,6 +25,14 @@ function distance_customize_register( $wp_customize ) {
 			'render_callback' => 'distance_customize_partial_blogdescription',
 		) );
 	}
+
+	$wp_customize->add_panel(
+		'distance_appearance_settings', array(
+			'priority' => 160,
+			'title' => esc_html__('distance主题设置'),
+		)
+	);
+
 }
 add_action( 'customize_register', 'distance_customize_register' );
 
@@ -53,3 +61,6 @@ function distance_customize_preview_js() {
 	wp_enqueue_script( 'distance-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'distance_customize_preview_js' );
+
+
+
