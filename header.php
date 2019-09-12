@@ -88,16 +88,18 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
     <meta name="keywords" content="<?php echo $keywords; ?>"/>
     <meta name="description" content="<?php echo $description; ?>"/>
     <link rel="stylesheet" href="<?php echo get_theme_file_uri() ?>/css/nec-base.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo get_theme_file_uri() ?>/frame/bs4/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/animate.css" type="text/css"/>
+<!--    <link rel="stylesheet" href="--><?php //echo get_theme_file_uri() ?><!--/frame/bs4/css/bootstrap.min.css" type="text/css">-->
+    <link crossorigin="anonymous" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" href="//lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link rel="stylesheet" href="--><?php //echo get_theme_file_uri(); ?><!--/css/animate.css" type="text/css"/>-->
+    <link crossorigin="anonymous" integrity="sha384-7/Tl0k65OTvDSvtuq7aPR7aa0aCz7ZKqHsbMRLxhzueldW+9MZpCe9LB1c5UBuNS" href="//lib.baomitu.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/distance.css" type="text/css"/>
     <link rel="stylesheet"
           href="<?php echo get_theme_file_uri(); ?>/js/prism/prism.css"/>
 
 
-
+<!--    <script src="--><?php //echo get_theme_file_uri()?><!--/js/html5shiv.min.js"></script>-->
     <!--[if lt IE 9]>
-    <script src="<?php echo get_theme_file_uri()?>/js/html5shiv.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-CLKmepoEqm+8g1zYcrHJuGaM+IiwqEjhYZpW1kQf0++07t63QBTUcWijzFM0hvOJ" src="//lib.baomitu.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
 
 

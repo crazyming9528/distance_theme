@@ -63,9 +63,11 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 <script src="<?php echo get_theme_file_uri() ?>/js/layer/layer.js"></script>
-<script src="<?php echo get_theme_file_uri() ?>/frame/bs4/js/bootstrap.min.js"></script>
+<!--<script src="--><?php //echo get_theme_file_uri() ?><!--/frame/bs4/js/bootstrap.min.js"></script>-->
+<script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="//lib.baomitu.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script src="<?php echo get_theme_file_uri() ?>/js/prism/prism.js"></script>
-<script src="<?php echo get_theme_file_uri() ?>/js/wow.min.js"></script>
+<!--<script src="--><?php //echo get_theme_file_uri() ?><!--/js/wow.min.js"></script>-->
+<script crossorigin="anonymous" integrity="sha384-V27yAyb3yYhZbiwaK9Sgxh9Cywkf/H2al4wcrcp/hKF9ZYT7d5saGJFoO/0v1Cgs" src="//lib.baomitu.com/wow/1.1.2/wow.min.js"></script>
 <script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
 
 
