@@ -7,6 +7,7 @@
         var navbarSupportedContent = $('#navbarSupportedContent');
 
 
+        $('pre').addClass("line-numbers").css("white-space", "pre-wrap");//使得 prism.js 支持显示行号 自动换行
 
         toggleNavBtn.bind('click',function () {
 

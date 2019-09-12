@@ -11,7 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'distance' ); ?></h1>
+		<h1 class="page-title"><?php esc_html_e( '什么也没有找到~', 'distance' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -34,9 +34,9 @@
 		elseif ( is_search() ) :
 			?>
 
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'distance' ); ?></p>
+			<p><?php esc_html_e( '没有找到你要搜索的内容,换一个关键词试一下吧!', 'distance' ); ?></p>
 			<?php
-			get_search_form();
+//			get_search_form();
 
 		else :
 			?>

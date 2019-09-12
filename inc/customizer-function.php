@@ -70,29 +70,29 @@ function cn_nf_url_parse( $content ) {
 add_filter( 'the_content', 'cn_nf_url_parse' );
 
 
-function add_custom_field_automatically($post_ID) {
-	global $wpdb;
-	if(!wp_is_post_revision($post_ID)) {
-		add_post_meta($post_ID, 'keywords', '', true);
-		add_post_meta($post_ID, 'description', '', true);
-	}
-}
-
-add_action('publish_page', 'add_custom_field_automatically');//发布页面时
-add_action('publish_post', 'add_custom_field_automatically');//发布文章时
-
-/**
- * 字符截断
- *
- * @param $str
- * @param $start
- * @param $width
- * @param $trimmarker
- *
- * @return string
- */
-function dm_strimwidth( $str, $start, $width, $trimmarker ) {
-	$output = preg_replace( '/^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,' . $start . '}((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,' . $width . '}).*/s', '\1', $str );
-
-	return $output . $trimmarker;
-}
+////function add_custom_field_automatically($post_ID) {
+////	global $wpdb;
+////	if(!wp_is_post_revision($post_ID)) {
+////		add_post_meta($post_ID, 'keywords', '', true);
+////		add_post_meta($post_ID, 'description', '', true);
+////	}
+////}
+////
+////add_action('publish_page', 'add_custom_field_automatically');//发布页面时
+////add_action('publish_post', 'add_custom_field_automatically');//发布文章时
+//
+///**
+// * 字符截断
+// *
+// * @param $str
+// * @param $start
+// * @param $width
+// * @param $trimmarker
+// *
+// * @return string
+// */
+//function dm_strimwidth( $str, $start, $width, $trimmarker ) {
+//	$output = preg_replace( '/^(?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,' . $start . '}((?:[\x00-\x7F]|[\xC0-\xFF][\x80-\xBF]+){0,' . $width . '}).*/s', '\1', $str );
+//
+//	return $output . $trimmarker;
+//}

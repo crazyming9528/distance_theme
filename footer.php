@@ -11,44 +11,76 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer distance-footer container-fluid">
-		<div class="container">
-            <div class="row">
-                    <div class="site-info col-12 d-flex align-items-center justify-content-center ">
-                        <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'distance' ) ); ?>">
-			                <?php
-			                /* translators: %s: CMS name, i.e. WordPress. */
-			                printf( esc_html__( 'Proudly powered by %s', 'distance' ), 'WordPress' );
-			                ?>
-                        </a>
-                        <span class="sep"> &nbsp;&nbsp;|&nbsp;&nbsp; </span>
-		                <?php
-		                /* translators: 1: Theme name, 2: Theme author. */
-		                printf( esc_html__( 'Theme: %1$s by  %2$s', 'distance' ), 'Distance', '<a href="https://www.crazyming.cn/">&nbsp; Crazyming </a>' );
-		                ?>
-                    </div><!-- .site-info -->
-
-            </div>
+<div class="distance-footer container-fluid link">
+    <div class="container">
+        <div class="row">
+            <!--                友情链接-->
+	        <?php
+	        wp_nav_menu(
+		        array(
+			        'theme_location' => 'bottom_menu',
+			        'menu_id'        => 'bottom_menu',
+			        'menu_class'     => 'col-12 btm d-flex flex-wrap',
+			        'container'      => false,
+		        )
+	        );
+	        ?>
         </div>
-	</footer><!-- #colophon -->
+    </div>
+</div>
+<footer id="colophon" class="site-footer distance-footer container-fluid  site-info">
+
+    <div class="row">
+
+        <div class="_part copyright col-12 d-flex align-items-center justify-content-center">
+            Copyright &copy; <?php echo date( 'Y' ); ?> <span class="separator"></span> <a class="vc-a"
+                                                                                           href="#"><?php bloginfo( 'name' ); ?></a>
+            <span class="separator"> &bull;</span>
+            <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'distance' ) ); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'powered by %s', 'distance' ), 'WordPress' );
+				?>
+            </a>
+        </div>
+
+        <div class="_part theme col-12 d-flex align-items-center justify-content-center">
+            The theme is made by Crazyming
+        </div>
+
+        <div class="_part icp col-12 d-flex align-items-center justify-content-center">
+
+            <span> <?php echo get_theme_mod( 'icp' ); ?> </span>
+            <span> <?php echo ! empty( get_theme_mod( '110icp' ) ) ? " " . ( get_theme_mod( '110icp' ) ) : "";; ?> </span>
+            <span> <?php echo ! empty( get_theme_mod( 'footer_code' ) ) ? html_entity_decode( esc_js( get_theme_mod( 'footer_code' ) ) ) : "";; ?> </span>
+
+        </div>
+    </div>
+
+</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
-<script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
+<script src="<?php echo get_theme_file_uri() ?>/js/layer/layer.js"></script>
 <script src="<?php echo get_theme_file_uri() ?>/frame/bs4/js/bootstrap.min.js"></script>
-<script src="<?php echo get_theme_file_uri() ?>/js/highlight.pack.js"></script>
+<script src="<?php echo get_theme_file_uri() ?>/js/prism/prism.js"></script>
 <script src="<?php echo get_theme_file_uri() ?>/js/wow.min.js"></script>
 <script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
 
+
 <script>
     new WOW().init();
-jQuery(document).ready(function () {
-    document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-    });
+    jQuery(document).ready(function () {
 
-});
+        layer.msg('近期正在修改博客主题,可能会存在一些显示问题,见谅~ ', {
+            skin: 'layui-layer-molv', //样式类名
+            offset: 'r',
+            time: 5000,
+        });
+
+
+    });
 </script>
 
 

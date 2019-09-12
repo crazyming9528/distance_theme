@@ -15,8 +15,8 @@ function seo_customize_register( $wp_customize ) {
 	) );
 
 
-	$wp_customize->add_section( 'distance_icp', array(
-		'title' => '备案号设置',
+	$wp_customize->add_section( 'distance_footer', array(
+		'title' => 'footer设置(备案号,统计代码)',
 		'panel'    => 'distance_appearance_settings',
 		'priority' => 22
 	) );
@@ -103,7 +103,7 @@ function seo_customize_register( $wp_customize ) {
 		'icp',
 		array(
 			'label' => __('备案号'),
-			'section'  => 'distance_icp',
+			'section'  => 'distance_footer',
 			'type'     => 'text',
 		)
 	));
@@ -122,29 +122,29 @@ function seo_customize_register( $wp_customize ) {
 		array(
 			'label' => __('公安备案号'),
 			'description' => __( '' ),
-			'section'  => 'distance_icp',
+			'section'  => 'distance_footer',
 			'type'     => 'text',
 		)
 	));
-//
-//	//页脚代码
-//	$wp_customize->add_setting( 'seo_footer_code', array(
-//			'default' => '',
-//			'transport' => 'postMessage',
-//			'sanitize_callback' => 'esc_html'
-//		)
-//	);
-//
-//	$wp_customize->add_control(new WP_Customize_Control(
-//		$wp_customize,
-//		'seo_footer_code',
-//		array(
-//			'label' => __('页脚脚本区域'),
-//			'description' => __( '例如统计代码等' ),
-//			'section'  => 'distance_seo',
-//			'type'     => 'textarea',
-//		)
-//	));
+
+	//页脚代码
+	$wp_customize->add_setting( 'footer_code', array(
+			'default' => '',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'esc_js'
+		)
+	);
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'footer_code',
+		array(
+			'label' => __('页脚脚本区域'),
+			'description' => __( '例如统计代码等' ),
+			'section'  => 'distance_footer',
+			'type'     => 'textarea',
+		)
+	));
 
 }
 

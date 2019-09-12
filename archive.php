@@ -94,7 +94,22 @@ get_header();
 								<?php endwhile; ?>
 
 
+
                             </ul>
+
+
+
+                        <div class="page">
+
+	                        <?php
+
+	                        if ( function_exists( 'wp_pagenavi' ) ) {
+		                        wp_pagenavi();
+	                        }
+
+	                        ?>
+
+                        </div>
 
 						<?php endif;
 						?>

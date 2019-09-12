@@ -69,6 +69,10 @@ if ( ! function_exists( 'distance_header_style' ) ) :
                 color: #<?php echo esc_attr( $header_text_color ); ?>;
             }
 
+            .customize_color {
+                color: <?php echo '#' . get_theme_mod( 'header_textcolor' ) ?>
+            }
+
             <?php endif; ?>
         </style>
 		<?php

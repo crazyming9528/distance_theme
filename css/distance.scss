@@ -15,11 +15,24 @@ body {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
-pre, code {
-  margin: 0 .2em;
-  background: #2b2b2b;
-  padding: 15px;
+pre {
+  display: block;
+  padding: 11px;
+  margin: 0 0 11.5px;
+  font-size: 12px;
+  line-height: 1.846;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #212121;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
 }
+
+//pre, code {
+//  margin: 0 .2em;
+//  padding: 15px;
+//}
 
 
 .wow {
@@ -48,7 +61,6 @@ a:hover {
 }
 
 
-
 .distance-head {
   position: fixed;
   width: 100%;
@@ -56,7 +68,7 @@ a:hover {
   z-index: 99999;
   transition: all 0.5s;
 
-@include mixin_a_color(white);
+  @include mixin_a_color(white);
 
   .distance_nav {
     list-style: none;
@@ -138,7 +150,6 @@ a:hover {
   //    background-color: $baseColor;
   //  }
   //}
-
 
 
   box-shadow: 1px 2px 8px rgba(185, 185, 185, 0.45);
@@ -280,11 +291,13 @@ a:hover {
         text-align: center;
         @include mixin_fadeInDown;
         @include mixin_a_color(white);
-        .author{
+
+        .author {
           font-size: 12px;
           opacity: .9;
         }
-        .view{
+
+        .view {
           font-size: 14px;
         }
       }
@@ -318,16 +331,75 @@ a:hover {
 
 .distance-footer {
 
-  background-color: $baseColor;
 
-  a:link, a:visited, a:active, a:hover {
-    color: white;
-    text-decoration: none;
+}
+
+.site-info {
+
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #242424;
+
+  ._part {
+    color: #666666;
+
+    @include mixin_a_color(#666666);
+
+    .separator {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 
-  .site-info {
-    height: 120px;
-    color: white;
+  .theme {
+
+
   }
+
+  .copyright {
+
+  }
+
+  .icp {
+    span {
+      padding: 0 5px;
+    }
+
+  }
+
+}
+
+.link {
+  background-color: #2d2e2f;
+  ul{
+    margin: 0;
+  }
+
+  .btm{
+
+
+      li{
+
+
+        a {
+          display: block;
+          transition: all .5s;
+          padding: 10px 20px;
+          text-decoration: none;
+
+          &:hover {
+            color: lighten($baseColor2, 10) !important;
+            //background-color: lighten(#2d2e2f,20);
+
+          }
+        }
+
+      }
+
+
+  }
+
+  @include mixin_a_color(rgb(209, 209, 209));
+
 
 }

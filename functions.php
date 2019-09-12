@@ -53,7 +53,7 @@ if ( ! function_exists( 'distance_setup' ) ) :
 		register_nav_menus(
 			array(
 				'top_menu'    => __( '顶部菜单', 'distance' ),
-				'bottom_menu' => __( '底部菜单', 'distance' ),
+				'bottom_menu' => __( '底部菜单(友情链接)', 'distance' ),
 			)
 		);
 
@@ -204,7 +204,7 @@ function distance_scripts() {
 	}
 
 	wp_deregister_script( 'jquery' );//移除自带 jquery
-	wp_register_script( 'jquery', 'https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js'); //注册 新的jquery
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js'); //注册 新的jquery  可以使用cdn
 	wp_enqueue_script( 'jquery' );//将新注册的jq 加入主题
 }
 

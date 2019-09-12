@@ -8,7 +8,6 @@
  *
  * @package distance
  */
-
 $description = '';
 $keywords    = '';
 if ( is_home() ) {
@@ -19,16 +18,39 @@ if ( is_home() ) {
 } elseif ( is_page() ) {
 	$id          = $post->ID;
 	$description = trim( get_post_meta( $id, "description", true ) );
+
+	//如果没有摘要 通过下方的方式可 将 描述 设置为 文章的 前55字
+	if ( ! $description ) {
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				$description = str_replace( '[&hellip;]', '...', get_the_excerpt() );
+			}
+		}
+	}
+
 	// 将以下引号中的内容改成你的主页keywords
 	$keywords = trim( get_post_meta( $id, "keywords", true ) );
 
 } elseif ( is_single() ) {
 	$id = $post->ID;
 	//文章描述 为文章摘要
-	$description1 = get_post( $id )->post_excerpt;
+	$description = get_post( $id )->post_excerpt;
+
+
+	//如果没有摘要 通过下方的方式可 将 描述 设置为 文章的 前55字
+	if ( ! $description ) {
+		if ( have_posts() ) {
+			while ( have_posts() ) {
+				the_post();
+				$description = str_replace( '[&hellip;]', '...', get_the_excerpt() );
+			}
+		}
+	}
+
 	// 文章的 关键词 为  自定义字段  keywords  拼接  tag标签名 拼接 博客名称
 	$keywords = trim( get_post_meta( $id, "keywords", true ) );
-	if ( $keywords !='' && mb_substr( $keywords, - 1 ) !== ',' ) {
+	if ( $keywords != '' && mb_substr( $keywords, - 1 ) !== ',' ) {
 		$keywords .= ',';
 	}
 	$tags = wp_get_post_tags( $post->ID );
@@ -70,7 +92,9 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/animate.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/distance.css" type="text/css"/>
     <link rel="stylesheet"
-          href="<?php echo get_theme_file_uri(); ?>/css/hightlightjs-a11y-dark.css"/>
+          href="<?php echo get_theme_file_uri(); ?>/js/prism/prism.css"/>
+
+
 
     <!--[if lt IE 9]>
     <script src="<?php echo get_theme_file_uri()?>/js/html5shiv.min.js"></script>
@@ -80,9 +104,11 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 	<?php
 	wp_head(); ?>
 
+    <script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
+
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-simplebar>
 <div id="page" class="distance">
 
 

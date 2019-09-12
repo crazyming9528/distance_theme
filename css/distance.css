@@ -93,7 +93,7 @@
         padding: 0;
         position: relative;
         background-color: #ededed;
-        background-image: url("./img/article_bg.png");
+        background-image: url("../img/article_bg.png");
         background-position: center center;
         background-repeat: no-repeat;
         overflow: hidden;
@@ -408,10 +408,18 @@ body {
   background-color: rgba(13, 13, 13, 0.9);
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif; }
 
-pre, code {
-  margin: 0 .2em;
-  background: #2b2b2b;
-  padding: 15px; }
+pre {
+  display: block;
+  padding: 11px;
+  margin: 0 0 11.5px;
+  font-size: 12px;
+  line-height: 1.846;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #212121;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 3px; }
 
 .wow {
   visibility: hidden; }
@@ -608,13 +616,32 @@ a:hover {
 .distance-page-content {
   min-height: 500px; }
 
-.distance-footer {
-  background-color: rgba(13, 13, 13, 0.9); }
-  .distance-footer a:link, .distance-footer a:visited, .distance-footer a:active, .distance-footer a:hover {
-    color: white;
+.site-info {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #242424; }
+  .site-info ._part {
+    color: #666666; }
+    .site-info ._part a, .site-info ._part a:link, .site-info ._part a:visited, .site-info ._part a:hover, .site-info ._part a:active {
+      color: #666666; }
+    .site-info ._part .separator {
+      margin-left: 5px;
+      margin-right: 5px; }
+  .site-info .icp span {
+    padding: 0 5px; }
+
+.link {
+  background-color: #2d2e2f; }
+  .link ul {
+    margin: 0; }
+  .link .btm li a {
+    display: block;
+    transition: all .5s;
+    padding: 10px 20px;
     text-decoration: none; }
-  .distance-footer .site-info {
-    height: 120px;
-    color: white; }
+    .link .btm li a:hover {
+      color: #127c8d !important; }
+  .link a, .link a:link, .link a:visited, .link a:hover, .link a:active {
+    color: #d1d1d1; }
 
 /*# sourceMappingURL=distance.css.map */

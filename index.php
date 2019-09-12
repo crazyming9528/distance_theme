@@ -21,6 +21,8 @@ get_header();
 
 <?php
 $video = get_header_video_url();
+$show_animation = get_theme_mod( 'show_animation' ,true);
+
 ?>
 
 
@@ -30,37 +32,13 @@ $video = get_header_video_url();
 	<?php else: ?>
     <div class="distance-first-screen col-12 wow fadeIn"
          style="background-image: url('<?php echo get_header_image() ?>')">
-	<?php
 
-	if ( get_theme_mod( 'show_animation' ) ) :
-	?>
-		<script>
-
-		 jQuery(document).ready(function ($) {
-
-			 $('.distance-first-screen').circleMagic({
-                elem: '.distance-first-screen',
-                radius: 15,
-                densety: .15,
-                color: 'rgba(255,255,255, .25)',
-                // color: 'random',
-                clearOffset: .15
-            });
-        })
-
-    </script>
-        <?php
-
-        endif;
-
-	?>
-
-
-    <div class="sentence"><p class="wow fadeInDown"
-                             style="color: <?php echo '#' . get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo( 'description' ); ?>
+    <div class="sentence"><p class="wow fadeInDown customize_color"><?php bloginfo( 'description' ); ?>
 
         </p>
     </div>
+
+
 <?php endif; ?>
     <!--    <div class="layer"></div>-->
     <!--    <div class="sentence"><p-->
@@ -148,6 +126,26 @@ $video = get_header_video_url();
             </div>
         </div>
     </div>
+
+
+
+
+
+    <script>
+        var a='<?php echo !$video.',,'. $show_animation ?>';
+        var isShow ='<?php echo (!$video && $show_animation)  ?>';
+       if(isShow){
+           $('.distance-first-screen').circleMagic({
+               elem: '.distance-first-screen',
+               radius: 15,
+               densety: .15,
+               color: 'rgba(255,255,255, .25)',
+               // color: 'random',
+               clearOffset: .15
+           });
+       }
+    </script>
+
 
 
 <?php
