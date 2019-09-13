@@ -11,7 +11,6 @@ body {
   position: relative;
   font-size: 14px;
   //background-color: #f9f9f9;
-  background-color: $baseColor;
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif;
 }
 
@@ -242,13 +241,16 @@ a:hover {
 
 .distance-top {
   height: 440px;
-  background-color: gray;
   //background-image: url("./img/code.gif");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   padding: 0;
+  background: #159957;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #155799, #159957);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 
   img {
     position: absolute;
@@ -280,10 +282,17 @@ a:hover {
         color: white;
         text-align: center;
         font-size: 2.2rem;
+        font-weight: lighter;
         @include mixin_fadeInDown;
         @media screen and (max-width: 768px) {
           font-size: 1.6rem;
         }
+      }
+
+      h1.big{
+        font-size: 2.5rem;
+        font-weight: 500;
+
       }
 
       .summary {
@@ -320,6 +329,8 @@ a:hover {
   overflow: hidden;
   //padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-bottom: 50px;
 
 

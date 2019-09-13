@@ -19,7 +19,36 @@ get_header();
         <!--        顶部内容区域container开始-->
         <div class="container">
             <div class="row align-items-center description">
-                <div class="col-12 "><h1><?php echo single_cat_title( '', false ); ?></h1>
+                <div class="col-12 ">
+
+
+
+<!--                        --><?php //echo single_cat_title( '', false ); ?>
+
+
+                        <?php
+                        if ( is_day() ) :
+	                        printf( '<h1 class="big">' . get_the_date() . '</h1>' );
+                        elseif ( is_month() ) :
+	                        printf( '<h1 class="big">' . get_the_date( _x( 'Y F', 'monthly archives date format', 'distance' ) ) . '</h1>' );
+                        elseif ( is_year() ) :
+	                        printf(  '<h1 class="big">' . get_the_date( _x( 'Y', 'yearly archives date format', 'distance' ) ) . '</h1>' );
+                        elseif ( is_category() ) :
+	                        printf( '<h1 class="big">' . single_cat_title( '', false ) . '</h1>' );
+                        elseif ( is_tag() ) :
+	                        printf( '<h1 class="big">' . single_tag_title( '', false ) . '</h1>' );
+                        elseif ( is_author() ) :
+	                        printf( '<h1 class="big">' . get_the_author() . '</h1>' );
+                        else :
+	                        _e( 'Archives', 'distance' );
+                        endif;
+                        ?>
+
+
+
+
+
+
                     <div class="summary">
 						<?php
 						$category_description = category_description();

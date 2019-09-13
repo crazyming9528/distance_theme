@@ -23,7 +23,7 @@
 
   .comment-list {
 
-    padding-left: 50px;
+    padding-left: 25px;
 
     .bypostauthor > article > footer > div > .fn::after {
       margin-left: 5px;
@@ -73,7 +73,7 @@
       }
 
       .children {
-        margin-left: 30px;
+        margin-left: 15px;
       }
     }
 
@@ -131,7 +131,8 @@
         padding: 2px 5px;
         height: 36px;
         line-height: 36px;
-        max-width: 100%;
+        width: 150px;
+
       }
 
       .comment-form-author, .comment-form-email {

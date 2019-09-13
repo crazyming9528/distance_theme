@@ -19,11 +19,6 @@ get_header();
     <div class="row">
 
 
-<?php
-$video = get_header_video_url();
-$show_animation = get_theme_mod( 'show_animation' ,true);
-
-?>
 
 
 <?php if ( $video ): ?>
@@ -60,7 +55,8 @@ $show_animation = get_theme_mod( 'show_animation' ,true);
 
         <div class="col-12 distance-main-wrapper index-wrapper">
 
-            <div class="sidebar-wrapper d-none d-md-block">
+<!--            显示侧边栏 加上d-md-block-->
+            <div class="sidebar-wrapper d-none">
                 <div class="distance-sidebar">
 
 					<?php get_sidebar();
@@ -127,24 +123,6 @@ $show_animation = get_theme_mod( 'show_animation' ,true);
         </div>
     </div>
 
-
-
-
-
-    <script>
-        var a='<?php echo !$video.',,'. $show_animation ?>';
-        var isShow ='<?php echo (!$video && $show_animation)  ?>';
-       if(isShow){
-           $('.distance-first-screen').circleMagic({
-               elem: '.distance-first-screen',
-               radius: 15,
-               densety: .15,
-               color: 'rgba(255,255,255, .25)',
-               // color: 'random',
-               clearOffset: .15
-           });
-       }
-    </script>
 
 
 

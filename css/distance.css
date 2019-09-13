@@ -277,7 +277,8 @@
     padding: .5em .7em;
     margin: 1em 0; }
 .single-wrapper .single-article-wrapper .distance-article-content {
-  padding: 25px 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   line-height: 1.6;
   width: 100%;
   height: auto;
@@ -326,7 +327,7 @@
   padding-bottom: 30px;
   margin-top: 50px; }
 .distance-comments .comment-list {
-  padding-left: 50px; }
+  padding-left: 25px; }
   .distance-comments .comment-list .bypostauthor > article > footer > div > .fn::after {
     margin-left: 5px;
     color: white;
@@ -349,7 +350,7 @@
   .distance-comments .comment-list li .comment-body .reply {
     font-size: 12px; }
   .distance-comments .comment-list li .children {
-    margin-left: 30px; }
+    margin-left: 15px; }
 .distance-comments .comment-respond {
   padding: 10px 20px;
   border: 1px solid #efefef;
@@ -382,7 +383,7 @@
     padding: 2px 5px;
     height: 36px;
     line-height: 36px;
-    max-width: 100%; }
+    width: 150px; }
   .distance-comments .comment-respond .comment-form .comment-form-author, .distance-comments .comment-respond .comment-form .comment-form-email {
     display: inline-block; }
     .distance-comments .comment-respond .comment-form .comment-form-author label, .distance-comments .comment-respond .comment-form .comment-form-email label {
@@ -405,7 +406,6 @@
 body {
   position: relative;
   font-size: 14px;
-  background-color: rgba(13, 13, 13, 0.9);
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Microsoft YaHei', STHeiti, 'WenQuanYi Micro Hei', SimSun, sans-serif; }
 
 pre {
@@ -550,12 +550,17 @@ a:hover {
 
 .distance-top {
   height: 440px;
-  background-color: gray;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  padding: 0; }
+  padding: 0;
+  background: #159957;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #155799, #159957);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #155799, #159957);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
   .distance-top img {
     position: absolute;
     width: 100%;
@@ -579,12 +584,16 @@ a:hover {
         color: white;
         text-align: center;
         font-size: 2.2rem;
+        font-weight: lighter;
         opacity: 0;
         animation: fadeInDown 2s .5s 1;
         animation-fill-mode: forwards; }
         @media screen and (max-width: 768px) {
           .distance-top .container .description h1 {
             font-size: 1.6rem; } }
+      .distance-top .container .description h1.big {
+        font-size: 2.5rem;
+        font-weight: 500; }
       .distance-top .container .description .summary {
         color: white;
         text-align: center;
@@ -611,6 +620,8 @@ a:hover {
   border-radius: 4px;
   overflow: hidden;
   padding-bottom: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-bottom: 50px; }
 
 .distance-page-content {

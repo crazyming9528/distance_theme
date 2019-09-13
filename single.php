@@ -15,7 +15,7 @@ get_header();
         <div class="row">
 
             <!--        distance-top 开始-->
-            <div class="distance-top col-12">
+            <div class="distance-top col-12" >
                 <!--        顶部内容区域container开始-->
 				<?php if ( has_post_thumbnail() ) { ?>
 					<?php the_post_thumbnail(); ?>

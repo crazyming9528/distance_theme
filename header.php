@@ -87,6 +87,15 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="<?php echo $keywords; ?>"/>
     <meta name="description" content="<?php echo $description; ?>"/>
+    <style>
+        body>#page{
+
+            display: none;
+
+        }
+
+    </style>
+    <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/loader.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo get_theme_file_uri() ?>/css/nec-base.css" type="text/css">
 <!--    <link rel="stylesheet" href="--><?php //echo get_theme_file_uri() ?><!--/frame/bs4/css/bootstrap.min.css" type="text/css">-->
     <link crossorigin="anonymous" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" href="//lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -97,7 +106,22 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
           href="<?php echo get_theme_file_uri(); ?>/js/prism/prism.css"/>
 
 
-<!--    <script src="--><?php //echo get_theme_file_uri()?><!--/js/html5shiv.min.js"></script>-->
+<!--    fundebug-->
+    <script src="https://js.fundebug.cn/fundebug.2.0.0.min.js" apikey="7d712eb26d12673ab29141b7f5c83205db0ad9847f00cebf0e1c09d6d69fe641" crossorigin="anonymous" ></script>
+
+<!--    百度统计代码 请替换-->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?52b5d5cc586cfdd71b08099da04357bb";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+
+    <script src="<?php echo get_theme_file_uri()?>/js/html5shiv.min.js"></script>
     <!--[if lt IE 9]>
     <script crossorigin="anonymous" integrity="sha384-CLKmepoEqm+8g1zYcrHJuGaM+IiwqEjhYZpW1kQf0++07t63QBTUcWijzFM0hvOJ" src="//lib.baomitu.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
@@ -110,7 +134,8 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 
 </head>
 
-<body <?php body_class(); ?> data-simplebar>
+<body <?php body_class(); ?>  >
+
 <div id="page" class="distance">
 
 
