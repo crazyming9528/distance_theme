@@ -13,13 +13,29 @@ get_header();
     <div class="row">
 
         <!--        distance-top 开始-->
-        <div class="distance-top col-12" <?php if ( function_exists( 'z_taxonomy_image_url' ) ) {
-			echo 'style="background-image: url(\'' . z_taxonomy_image_url() . '\')"';
-		} ?>'>
+        <div class="distance-top col-12">
         <!--        顶部内容区域container开始-->
         <div class="container">
             <div class="row align-items-center description">
-                <div class="col-12 "><h1><?php echo single_cat_title( '', false ); ?></h1>
+                <div class="col-12 ">
+	                <?php
+	                if ( is_day() ) :
+		                printf( '<h1 class="big">' . get_the_date() . '</h1>' );
+                    elseif ( is_month() ) :
+		                printf( '<h1 class="big">' . get_the_date( _x( 'Y F', 'monthly archives date format', 'distance' ) ) . '</h1>' );
+                    elseif ( is_year() ) :
+		                printf(  '<h1 class="big">' . get_the_date( _x( 'Y', 'yearly archives date format', 'distance' ) ) . '</h1>' );
+                    elseif ( is_category() ) :
+		                printf( '<h1 class="big">' . single_cat_title( '', false ) . '</h1>' );
+                    elseif ( is_tag() ) :
+		                printf( '<h1 class="big">' . single_tag_title( '', false ) . '</h1>' );
+                    elseif ( is_author() ) :
+		                printf( '<h1 class="big">' . get_the_author() . '</h1>' );
+	                else :
+		                _e( 'Archives', 'distance' );
+	                endif;
+	                ?>
+
                     <div class="summary">
 						<?php
 						$category_description = category_description();
@@ -73,7 +89,7 @@ get_header();
                                                 <p class="_author-info">
                                                     <time><?php echo get_the_date( 'Y-m-d' ); ?></time> &bull;
                                                     <span><?php echo get_the_author(); ?></span> &bull;
-                                                    <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</a></span>
+                                                    <span><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</span>
                                                     &bull;
                                                     <span> <?php post_views( ' ', ' 次浏览' ); ?></span>
                                                 </p>

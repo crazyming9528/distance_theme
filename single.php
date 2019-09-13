@@ -33,7 +33,7 @@ get_header();
 
                             <div class="summary row d-sm-block d-none ">
              <span><?php echo get_the_author(); ?></span> &bull; <span> <?php echo get_the_date( 'Y-m-d' ); ?></span>  &bull;
-                               <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?>条评论</a></span>
+                               <span><?php comments_popup_link( '0', '1', '%' ); ?>条评论</span>
                                     &bull; <span><?php post_views( ' ', ' 次浏览' ); ?></span>
                             </div>
                         </div>

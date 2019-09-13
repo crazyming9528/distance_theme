@@ -84,7 +84,9 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
     <meta name="keywords" content="<?php echo $keywords; ?>"/>
     <meta name="description" content="<?php echo $description; ?>"/>
     <style>
@@ -102,9 +104,9 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 <!--    <link rel="stylesheet" href="--><?php //echo get_theme_file_uri(); ?><!--/css/animate.css" type="text/css"/>-->
     <link crossorigin="anonymous" integrity="sha384-7/Tl0k65OTvDSvtuq7aPR7aa0aCz7ZKqHsbMRLxhzueldW+9MZpCe9LB1c5UBuNS" href="//lib.baomitu.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/distance.css" type="text/css"/>
-    <link rel="stylesheet"
-          href="<?php echo get_theme_file_uri(); ?>/js/prism/prism.css"/>
-
+<!--    <link rel="stylesheet"-->
+<!--          href="--><?php //echo get_theme_file_uri(); ?><!--/js/prism/prism.css"/>-->
+    <link crossorigin="anonymous" integrity="sha384-gXPPtw4xAxtl2Cea68s1jv7j1KR6HtYW5qAnWtAZ/Tb7/WCA1dNU2fnVOyuW/+O9" href="//lib.baomitu.com/prism/9000.0.1/themes/prism.min.css" rel="stylesheet">
 
 <!--    fundebug-->
     <script src="https://js.fundebug.cn/fundebug.2.0.0.min.js" apikey="7d712eb26d12673ab29141b7f5c83205db0ad9847f00cebf0e1c09d6d69fe641" crossorigin="anonymous" ></script>

@@ -102,7 +102,7 @@ get_header();
                                                 <p class="_author-info">
                                                     <time><?php echo get_the_date( 'Y-m-d' ); ?></time> &bull;
                                                     <span><?php echo get_the_author(); ?></span> &bull;
-                                                    <span><a href=""><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</a></span>
+                                                    <span><?php comments_popup_link( '0', '1', '%' ); ?> 条评论</span>
                                                     &bull;
                                                     <span> <?php post_views( ' ', ' 次浏览' ); ?></span>
                                                 </p>
