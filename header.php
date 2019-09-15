@@ -108,10 +108,7 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 <!--          href="--><?php //echo get_theme_file_uri(); ?><!--/js/prism/prism.css"/>-->
     <link crossorigin="anonymous" integrity="sha384-gXPPtw4xAxtl2Cea68s1jv7j1KR6HtYW5qAnWtAZ/Tb7/WCA1dNU2fnVOyuW/+O9" href="//lib.baomitu.com/prism/9000.0.1/themes/prism.min.css" rel="stylesheet">
 
-
-
 <!--    <script src="--><?php //echo get_theme_file_uri()?><!--/js/html5shiv.min.js"></script>-->
-
     <!--[if lt IE 9]>
     <script crossorigin="anonymous" integrity="sha384-CLKmepoEqm+8g1zYcrHJuGaM+IiwqEjhYZpW1kQf0++07t63QBTUcWijzFM0hvOJ" src="//lib.baomitu.com/html5shiv/r29/html5.min.js"></script>
     <![endif]-->
