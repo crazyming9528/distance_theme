@@ -529,7 +529,8 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    text-align: center; }
+    text-align: center;
+    width: 75%; }
     .distance-first-screen .sentence h3 {
       font-size: 38px;
       opacity: .95; }
