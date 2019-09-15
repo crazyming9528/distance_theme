@@ -67,7 +67,6 @@
 
 <?php wp_footer(); ?>
 
-<script src="<?php echo get_theme_file_uri() ?>/js/layer/layer.js"></script>
 <!--<script src="--><?php //echo get_theme_file_uri() ?><!--/frame/bs4/js/bootstrap.min.js"></script>-->
 <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         src="//lib.baomitu.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -81,17 +80,6 @@
 
 <script>
     new WOW().init();
-    // jQuery(document).ready(function () {
-    //
-    //     layer.msg('近期正在修改博客主题,可能会存在一些显示问题,见谅~ ', {
-    //         skin: 'layui-layer-molv', //样式类名
-    //         offset: 'r',
-    //         time: 5000,
-    //     });
-    //
-    //
-    // });
-
 	<?php
 	$video = get_header_video_url();
 	$show_animation = get_theme_mod( 'show_animation', true );

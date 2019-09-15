@@ -2,8 +2,8 @@
 function seo_customize_register( $wp_customize ) {
 
 
-	$wp_customize->add_section( 'distance_display', array(
-		'title' => '效果设置',
+	$wp_customize->add_section( 'distance_index', array(
+		'title' => '首页设置',
 		'panel'    => 'distance_appearance_settings',
 		'priority' => 20
 	) );
@@ -34,9 +34,29 @@ function seo_customize_register( $wp_customize ) {
 		'show_animation',
 		array(
 			'label' => __('首页第一屏动画开关'),
-			'section' => 'distance_display',
+			'section' => 'distance_index',
 			'settings' => 'show_animation',
 			'description' => __( ' 1表示开启 0表示关闭 点击发布后 退出自定义 即可生效' ),
+			'type' => 'text',
+		)
+	));
+
+
+	// 首页显示文章的标签
+	$wp_customize->add_setting('index_article_tag', array(
+		'default' => '',
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_article_tag',
+		array(
+			'label' => __('首页文章标签'),
+			'section' => 'distance_index',
+			'settings' => 'index_article_tag',
+			'description' => __( '首页仅显示该标签的文章,如需显示所有文章请留空!' ),
 			'type' => 'text',
 		)
 	));

@@ -108,19 +108,7 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 <!--          href="--><?php //echo get_theme_file_uri(); ?><!--/js/prism/prism.css"/>-->
     <link crossorigin="anonymous" integrity="sha384-gXPPtw4xAxtl2Cea68s1jv7j1KR6HtYW5qAnWtAZ/Tb7/WCA1dNU2fnVOyuW/+O9" href="//lib.baomitu.com/prism/9000.0.1/themes/prism.min.css" rel="stylesheet">
 
-<!--    fundebug-->
-    <script src="https://js.fundebug.cn/fundebug.2.0.0.min.js" apikey="7d712eb26d12673ab29141b7f5c83205db0ad9847f00cebf0e1c09d6d69fe641" crossorigin="anonymous" ></script>
 
-<!--    百度统计代码 请替换-->
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?52b5d5cc586cfdd71b08099da04357bb";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
 
 
     <script src="<?php echo get_theme_file_uri()?>/js/html5shiv.min.js"></script>

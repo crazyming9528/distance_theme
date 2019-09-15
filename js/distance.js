@@ -4,6 +4,7 @@
     var navbar = $('.navbar');
     var toggleNavBtn = $('#toggle_nav');
     var navbarSupportedContent = $('#navbarSupportedContent');
+    var mark = '';//标记
 
     function setNav() {
 
@@ -17,6 +18,18 @@
 
 
     }
+
+
+    // function checkBg() {
+    //
+    //     var img = new Image();
+    //     var src = $('.distance-top').css("backgroundImage").replace('url(', '').replace(')', '').replace(/"/g, '');
+    //     img.src = src;
+    //     img.onload = function () {
+    //         console.log('bg is ok')
+    //     };
+    //
+    // }
 
     function showAnimation() {
         var show = localStorage.getItem('show_animation') === '1' ? true : 0;
@@ -33,16 +46,37 @@
         }
     }
 
-    $(window).on('load', function () {
+    function showPage() {
+        console.log(mark);
         $('#load-container').fadeOut();
         $("#page").fadeIn();
         setNav();
         showAnimation();
 
+    }
+
+    $(window).on('load', function () {
+        setTimeout(function () {
+            console.log('page is ok');
+            if (!mark) {
+                mark = 'load complete';
+                showPage();
+            }
+        }, 500)//定时器延迟一下 避免某些浏览器出现图片加载  白块现象
     });//$(window).load(function(){})在高版本中已经废弃， 请用：$(window).on('load',function(){});替代
+
 
     $(document).ready(function () {
 
+
+        setNav();
+        // checkBg();
+        setTimeout(function () {
+            if (!mark) {
+                mark = 'force display';
+                showPage();
+            }
+        }, 8000);//8秒强制显示网页  防止onload完成事件过长
 
         $('pre').addClass("line-numbers").css("white-space", "pre-wrap");//使得 prism.js 支持显示行号 自动换行
 
@@ -63,8 +97,6 @@
         })
 
 
-        setNav();
-
         $(document).scroll(function () {
 
             setNav();
@@ -75,6 +107,7 @@
             }
 
         });
+
 
     });
 })(jQuery);

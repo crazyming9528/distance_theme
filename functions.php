@@ -204,8 +204,9 @@ function distance_scripts() {
 	}
 
 	wp_deregister_script( 'jquery' );//移除自带 jquery
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js'); //注册 新的jquery  可以使用cdn
-	wp_enqueue_script( 'jquery' );//将新注册的jq 加入主题
+//	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js'); //注册 新的jquery  可以使用cdn
+	wp_enqueue_script( 'jquery', '//lib.baomitu.com/jquery/2.2.4/jquery.min.js'); //注册 新的jquery  可以使用cdn
+//	wp_enqueue_script( 'jquery' );//将新注册的jq 加入主题
 }
 
 add_action( 'wp_enqueue_scripts', 'distance_scripts' );

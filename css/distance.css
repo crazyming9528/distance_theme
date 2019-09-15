@@ -424,6 +424,9 @@ pre {
 .wow {
   visibility: hidden; }
 
+.wb-ppo-donate .tab-cont .hl {
+  color: white !important; }
+
 .dp_shadow {
   box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.05);
   transition: box-shadow 0.5s; }

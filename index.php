@@ -55,7 +55,7 @@ get_header();
 
         <div class="col-12 distance-main-wrapper index-wrapper">
 
-<!--            显示侧边栏 加上d-md-block-->
+            <!--            显示侧边栏 加上d-md-block-->
             <div class="sidebar-wrapper d-none">
                 <div class="distance-sidebar">
 
@@ -71,8 +71,41 @@ get_header();
             <div class=" container">
                 <div class="row index-article-wrapper">
 
+					<?php
+					//					$posttags = get_tags();
+					//					if ( $posttags ) {
+					//						foreach ( $posttags as $tag ) {
+					//							echo '标签ID：' . $tag->term_id;
+					//							echo '<br />标签名称：' . $tag->name;
+					//							echo '<br />标签描述：' . $tag->description;
+					//						}
+					//					}
+
+					$posttags = get_tags();
+					$tag_id   = 0;
+					if ( $posttags ) {
+						foreach ( $posttags as $tag ) {
+							if ( $tag->name == get_theme_mod( 'index_article_tag' ) ) {
+								$tag_id = $tag->term_id;
+							}
+						}
+					}
+
+
+					?>
 
 					<?php
+
+					if ( $tag_id ) {
+						$args = array(
+							'tag_id'         => $tag_id,//显示指定标签 id
+//						'tag_id'         => 43,//显示指定标签 id
+							'posts_per_page' => 10,//文章数
+						);
+						query_posts( $args );//显示指定标签
+					}
+
+
 					if ( have_posts() ) : ?>
 
                         <ul class="col-12">
@@ -122,8 +155,6 @@ get_header();
             </div>
         </div>
     </div>
-
-
 
 
 <?php
