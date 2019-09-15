@@ -42,10 +42,52 @@ function seo_customize_register( $wp_customize ) {
 	));
 
 
+
+	// 首页第一屏标题
+	$wp_customize->add_setting('index_title', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_title',
+		array(
+			'label' => __('首屏标题'),
+			'section' => 'distance_index',
+			'settings' => 'index_title',
+//			'description' => __( '' ),
+			'type' => 'text',
+		)
+	));
+
+
+
+	// 首页第一屏描述
+	$wp_customize->add_setting('index_description', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_description',
+		array(
+			'label' => __('首屏描述'),
+			'section' => 'distance_index',
+			'settings' => 'index_description',
+//			'description' => __( '' ),
+			'type' => 'text',
+		)
+	));
+
+
 	// 首页显示文章的标签
 	$wp_customize->add_setting('index_article_tag', array(
 		'default' => '',
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 
@@ -60,6 +102,8 @@ function seo_customize_register( $wp_customize ) {
 			'type' => 'text',
 		)
 	));
+
+
 
 
 

@@ -28,9 +28,18 @@ get_header();
     <div class="distance-first-screen col-12 wow fadeIn"
          style="background-image: url('<?php echo get_header_image() ?>')">
 
-    <div class="sentence"><p class="wow fadeInDown customize_color"><?php bloginfo( 'description' ); ?>
-
-        </p>
+    <div class="sentence"><h3 class="wow fadeInDown customize_color"><?php if ( get_theme_mod( 'index_title' ) ) {
+				echo get_theme_mod( 'index_title' );
+			} else {
+				echo '请在自定义中设置 标题 描述 背景图片';
+			} ?>
+        </h3>
+        <p class="wow fadeInUp customize_color"><?php if ( get_theme_mod( 'index_description' ) ) {
+				echo get_theme_mod( 'index_description' );
+			} else {
+				echo "请在自定义中设置 标题 描述 背景图片";
+			}
+			?></p>
     </div>
 
 

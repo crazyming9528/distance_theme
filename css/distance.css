@@ -525,11 +525,18 @@ a:hover {
   .distance-first-screen .sentence {
     color: white;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    font-size: 32px; }
+    text-align: center; }
+    .distance-first-screen .sentence h3 {
+      font-size: 38px;
+      opacity: .95; }
+    .distance-first-screen .sentence p {
+      font-size: 17px;
+      opacity: .85;
+      padding: 10px 30px; }
   .distance-first-screen .header_down {
     animation: bounce 4s 2s infinite;
     color: rgba(255, 255, 255, 0.8);
