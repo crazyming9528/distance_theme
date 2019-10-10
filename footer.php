@@ -64,6 +64,7 @@
 <div class="load-container" id="load-container">
     <div class="boxLoading"></div>
 </div>
+<div id="aplayer"></div>
 
 <?php wp_footer(); ?>
 
@@ -71,7 +72,8 @@
 <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         src="//lib.baomitu.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!--<script src="--><?php //echo get_theme_file_uri() ?><!--/js/prism/prism.js"></script>-->
-<script crossorigin="anonymous" integrity="sha384-+oMXldEzJ/GD3RG8VKoUscTcrjXUGNDqidfsx4A1rTfX5/w9L+80CiF2XaiRKBGz" src="//lib.baomitu.com/prism/9000.0.1/prism.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-+oMXldEzJ/GD3RG8VKoUscTcrjXUGNDqidfsx4A1rTfX5/w9L+80CiF2XaiRKBGz"
+        src="//lib.baomitu.com/prism/9000.0.1/prism.min.js"></script>
 <!--<script src="--><?php //echo get_theme_file_uri() ?><!--/js/wow.min.js"></script>-->
 <script crossorigin="anonymous" integrity="sha384-V27yAyb3yYhZbiwaK9Sgxh9Cywkf/H2al4wcrcp/hKF9ZYT7d5saGJFoO/0v1Cgs"
         src="//lib.baomitu.com/wow/1.1.2/wow.min.js"></script>
@@ -91,6 +93,28 @@
     } else {
         localStorage.setItem('show_animation', '0')
     }
+
+
+	<?php
+	if (is_home()) {
+	?>
+
+    var ap = new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: true,
+        autoplay:true,
+        audio: [{
+            name: '如果当时',
+            artist: '龚宏(cover许嵩)',
+            url: 'https://www.crazyming.com/ruguodangshi.mp3',
+            cover: 'cover.jpg',
+
+        }]
+    });
+
+	<?php
+	}
+	?>
 
 
 </script>

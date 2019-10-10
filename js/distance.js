@@ -107,17 +107,18 @@
             }
 
         });
-        
-        
-        
-        $('#headerDown').bind('click',function () {
 
-            var c=0,song =setInterval(function(){
+
+        $('#headerDown').bind('click', function () {
+
+            var c = 0, song = setInterval(function () {
                 c++;
-                scrollBy(0,10);
-                if(c>80){clearInterval(song)}
-            },10)
-            
+                scrollBy(0, 10);
+                if (c > 80) {
+                    clearInterval(song)
+                }
+            }, 10)
+
         })
 
 

@@ -61,7 +61,7 @@ get_header();
                                 <div class="col-10 offset-1  distance-copyright">
                                     <div>1.如需转载本站原创文章，请务必注明文章出处并附上链接，非常感谢。</div>
                                     <div>2.本站用于记录个人 工作、学习、生活，非商业网站，更多信息请 <a
-                                                href="http://www.crazyming.cn/about/">点击这里</a></div>
+                                                href="http://www.crazyming.com/about/">点击这里</a></div>
                                 </div>
                             </div>
 

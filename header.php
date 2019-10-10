@@ -118,6 +118,8 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
 	wp_head(); ?>
 
     <script src="<?php echo get_theme_file_uri() ?>/js/circleMagic.min.js"></script>
+    <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/js/aplayer/APlayer.min.css" type="text/css"/>
+    <script src="<?php echo get_theme_file_uri() ?>/js/aplayer/APlayer.min.js"></script>
 
 </head>
 
