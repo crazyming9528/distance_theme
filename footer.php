@@ -96,7 +96,7 @@
 
 
 	<?php
-	if (is_home()) {
+	//if (is_home()) {
 	?>
 
     var ap = new APlayer({
@@ -113,7 +113,7 @@
     });
 
 	<?php
-	}
+	//}
 	?>
 
 
