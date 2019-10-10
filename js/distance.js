@@ -43,8 +43,10 @@
                 // color: 'random',
                 clearOffset: .15
             });
+
+            showBgMusic();
         }
-        showBgMusic();
+
     }
 
     function showBgMusic() {
