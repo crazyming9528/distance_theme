@@ -34,6 +34,25 @@ pre {
 //}
 
 
+/*滚动条 宽度*/
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+/*滚动条背景*/
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+
+/*滚动条实体*/
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#0c5460, #329a91);
+  border-radius: 10px;
+}
+
+
 .wow {
   visibility: hidden;
 }
