@@ -4,6 +4,7 @@
     var navbar = $('.navbar');
     var toggleNavBtn = $('#toggle_nav');
     var navbarSupportedContent = $('#navbarSupportedContent');
+    var videoBgC = document.getElementById('video_bg_c');
     var mark = '';//标记
 
     function setNav() {
@@ -78,6 +79,39 @@
 
     }
 
+    function jsmpegPlay(Vcanvas, vVideo, startFun, playingFun, endFun) {
+        var show = localStorage.getItem('show_video') === '1' ? true : 0;
+        if (show) {
+            var player = new JSMpeg.Player(
+                vVideo, {
+                    canvas: Vcanvas,
+                    loop: true,
+                    autoplay: true,
+                    startSign: true,
+                    startCallBack: startFun,
+                    playingCallBack: playingFun,
+                    endCallBack: endFun
+                });
+        }
+    }
+
+    //视频开始播放（
+    function jsmpeg_startCallBack() {
+        canvas.style.display = "block"
+        btn_init.style.display = "none";
+        github.style.display = "block";
+    }
+
+    //视频播放进度
+    function jsmpeg_playingCallBack(currentTime) {
+        console.log(currentTime)
+    }
+
+    //视频播放完成
+    function jsmpeg_endCallBack() {
+
+    }
+
     $(window).on('load', function () {
         setTimeout(function () {
             console.log('page is ok');
@@ -85,7 +119,7 @@
                 mark = 'load complete';
                 showPage();
             }
-        }, 500)//定时器延迟一下 避免某些浏览器出现图片加载  白块现象
+        }, 300)//定时器延迟一下 避免某些浏览器出现图片加载  白块现象
     });//$(window).load(function(){})在高版本中已经废弃， 请用：$(window).on('load',function(){});替代
 
 
@@ -118,6 +152,9 @@
             }
 
         })
+
+
+        jsmpegPlay(videoBgC, 'http://blog.crazy.com/lol.ts', jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
 
 
         $(document).scroll(function () {

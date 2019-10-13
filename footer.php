@@ -100,6 +100,11 @@
         localStorage.setItem('show_animation', '0')
     }
 
+    if (haveVideo  && isHome) {
+        localStorage.setItem('show_video', '1')
+    } else {
+        localStorage.setItem('show_video', '0')
+    }
 
 
     if (!haveVideo  && isHome) {

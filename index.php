@@ -27,14 +27,16 @@ $video = get_header_video_url();
 
 <?php if ( $video ): ?>
     <div class="distance-first-screen col-12 wow fadeIn" style="background-color: black">
-    <video class="video_bg" src="<?php echo $video ?>" loop="loop" autoplay="autoplay"
-           poster="<?php echo get_header_image() ?>"
-           x-webkit-airplay="allow"
-           x5-video-orientation="portraint"
-           webkit-playsinline="true"
-           playsinline="playsinline"
-           x5-playsinline="true"
-           x5-video-player-fullscreen="true"></video>
+<!--    <video id="video_bg" class="video_bg" src="--><?php //echo $video ?><!--" loop="loop" autoplay="autoplay"-->
+<!--           poster="--><?php //echo get_header_image() ?><!--"-->
+<!--           x-webkit-airplay="allow"-->
+<!--           x5-video-orientation="portraint"-->
+<!--           webkit-playsinline="true"-->
+<!--           playsinline="playsinline"-->
+<!--           x5-playsinline="true"-->
+<!--           x5-video-player-fullscreen="true"></video>-->
+
+    <canvas class="video_bg" id="video_bg_c"></canvas>
 
     <div class="sentence"><h3 class="wow fadeInDown customize_color"><?php if ( get_theme_mod( 'index_title' ) ) {
 				echo get_theme_mod( 'index_title' );
