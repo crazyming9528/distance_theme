@@ -18,6 +18,9 @@ get_header();
 
     <div class="row">
 
+<?php
+$video = get_header_video_url();
+?>
 
 
 
