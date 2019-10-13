@@ -28,12 +28,28 @@ $video = get_header_video_url();
 <?php if ( $video ): ?>
     <div class="distance-first-screen col-12 wow fadeIn" style="background-color: black">
     <video class="video_bg" src="<?php echo $video ?>" loop="loop" autoplay="autoplay"
+           poster="<?php echo get_header_image() ?>"
            x-webkit-airplay="allow"
            x5-video-orientation="portraint"
            webkit-playsinline="true"
            playsinline="playsinline"
            x5-playsinline="true"
            x5-video-player-fullscreen="true"></video>
+
+    <div class="sentence"><h3 class="wow fadeInDown customize_color"><?php if ( get_theme_mod( 'index_title' ) ) {
+				echo get_theme_mod( 'index_title' );
+			} else {
+				echo '请在自定义中设置 标题 描述 背景图片';
+			} ?>
+        </h3>
+        <p class="wow fadeInUp customize_color"><?php if ( get_theme_mod( 'index_description' ) ) {
+				echo get_theme_mod( 'index_description' );
+			} else {
+				echo "请在自定义中设置 标题 描述 背景图片";
+			}
+			?></p>
+    </div>
+
 	<?php else: ?>
     <div class="distance-first-screen col-12 wow fadeIn"
          style="background-image: url('<?php echo get_header_image() ?>')">
