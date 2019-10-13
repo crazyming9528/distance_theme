@@ -272,6 +272,15 @@ a:hover {
 }
 
 
+//这里是为了首页是视频时 优化手机播放横屏视频的样式
+@media screen and (max-width: 768px) {
+  .distance-first-screen {
+    height: auto;
+  }
+
+}
+
+
 .distance-top {
   height: 440px;
   //background-image: url("./img/code.gif");

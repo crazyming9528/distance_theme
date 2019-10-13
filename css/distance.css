@@ -573,6 +573,9 @@ a:hover {
     width: 14px;
     height: 14px; }
 
+@media screen and (max-width: 768px) {
+  .distance-first-screen {
+    height: auto; } }
 .distance-top {
   height: 440px;
   background-position: center center;
