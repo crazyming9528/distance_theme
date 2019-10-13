@@ -77,36 +77,43 @@
 <!--<script src="--><?php //echo get_theme_file_uri() ?><!--/js/wow.min.js"></script>-->
 <script crossorigin="anonymous" integrity="sha384-V27yAyb3yYhZbiwaK9Sgxh9Cywkf/H2al4wcrcp/hKF9ZYT7d5saGJFoO/0v1Cgs"
         src="//lib.baomitu.com/wow/1.1.2/wow.min.js"></script>
-<script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
+
+<script src="<?php echo get_theme_file_uri() ?>/js/jsmpeg.js"></script>
+
 
 
 <script>
     new WOW().init();
+
 	<?php
-	$video = get_header_video_url();
+		$video = get_header_video_url();
 	$show_animation = get_theme_mod( 'show_animation', true );
 
 	?>
-    var isShow = '<?php echo( ! $video && $show_animation )  ?>';
-    if (isShow) {
+    //var isShow = '<?php //echo( ! $video && $show_animation )  ?>//';
+    var isShow = '<?php echo( $show_animation )  ?>';
+    var isHome = '<?php echo is_home()  ?>';
+    var haveVideo = '<?php echo( $video )  ?>';
+    if (isShow && isHome) {
         localStorage.setItem('show_animation', '1')
     } else {
         localStorage.setItem('show_animation', '0')
     }
 
 
-	<?php
-	//if (is_home()) {
-	?>
+
+    if (!haveVideo  && isHome) {
+        localStorage.setItem('show_audio', '1')
+    } else {
+        localStorage.setItem('show_audio', '0')
+    }
 
 
-
-	<?php
-	//}
-	?>
 
 
 </script>
+
+<script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
 
 
 </body>
