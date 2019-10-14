@@ -81,12 +81,12 @@
 <script src="<?php echo get_theme_file_uri() ?>/js/jsmpeg.js"></script>
 
 
-
 <script>
     new WOW().init();
 
 	<?php
-		$video = get_header_video_url();
+	$video = get_header_video_url();
+	$video_m = '';//手机首页 视频地址 ts格式
 	$show_animation = get_theme_mod( 'show_animation', true );
 
 	?>
@@ -100,7 +100,7 @@
         localStorage.setItem('show_animation', '0')
     }
 
-    if (haveVideo  && isHome) {
+    if (haveVideo && isHome) {
         // localStorage.setItem('show_video', 'https://www.crazyming.com/assets/xj.ts')
         localStorage.setItem('show_video', '<?php echo $video_m ?>')
     } else {
@@ -108,13 +108,11 @@
     }
 
 
-    if (!haveVideo  && isHome) {
+    if (!haveVideo && isHome) {
         localStorage.setItem('show_audio', '1')
     } else {
         localStorage.setItem('show_audio', '0')
     }
-
-
 
 
 </script>
