@@ -524,7 +524,9 @@ a:hover {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: fill; }
+    object-fit: fill;
+    opacity: 0;
+    transition: all .3s; }
   .distance-first-screen:after {
     display: block;
     width: 100%;

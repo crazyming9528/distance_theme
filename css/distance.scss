@@ -200,6 +200,8 @@ a:hover {
     height: 100%;
     width: 100%;
     object-fit: fill;
+    opacity: 0;
+    transition: all .3s;
   }
 
   //遮罩层

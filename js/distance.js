@@ -76,23 +76,30 @@
         return u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
     }
 
+    function isIos() {
+        var u = navigator.userAgent;
+        return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    }
+
     function showVideo() {
 
         var show = localStorage.getItem('show_video');
 
-        if(show){
+        if (show) {
 
-            if (isAndroid()) {
+            if (isAndroid() || isIos()) {
                 if (videoBg) {
                     videoBg.parentNode.removeChild(videoBg);
+                    console.log(videoBg);
                     jsmpegPlay(videoBgC, show, jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
                 }
 
             } else {
+                console.log(videoBg);
+                videoBg.style.opacity = '1';
                 if (videoBgC) {
                     videoBgC.parentNode.removeChild(videoBgC);
-                    console.log(videoBg);
-                    videoBg.play();
+                    // videoBg.play();
                 }
             }
 
@@ -112,8 +119,8 @@
 
     }
 
-    function jsmpegPlay(Vcanvas, vVideo, startFun, playingFun, endFun, android) {
-        var show = localStorage.getItem('show_video') === '1' ? true : 0;
+    function jsmpegPlay(Vcanvas, vVideo, startFun, playingFun, endFun) {
+        var show = localStorage.getItem('show_video');
         if (show) {
 
 
@@ -129,11 +136,17 @@
                 });
 
 
+            console.log(player)
+
+
         }
     }
 
     //视频开始播放（
     function jsmpeg_startCallBack() {
+
+        videoBgC.style.opacity = '1';
+
 
     }
 
