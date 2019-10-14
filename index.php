@@ -25,10 +25,10 @@ $video = get_header_video_url();
 ?>
 
 
-
 <?php if ( $video ): ?>
-    <div class="distance-first-screen col-12 wow fadeIn" style="background-color: black">
-    <video id="video_bg" class="video_bg" src="<?php echo $video ?>" loop="loop" autoplay="autoplay"
+    <div class="distance-first-screen col-12 wow fadeIn"
+         style="background-color:white;background-image: url('<?php echo get_header_image() ?>')">
+    <video id="video_bg" class="video_bg" src="<?php echo $video ?>" loop="loop"
            poster="<?php echo get_header_image() ?>"
            x-webkit-airplay="allow"
            x5-video-orientation="portraint"
@@ -188,9 +188,6 @@ $video = get_header_video_url();
             </div>
         </div>
     </div>
-
-
-
 
 
 <?php
