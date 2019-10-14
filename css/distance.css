@@ -524,7 +524,7 @@ a:hover {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: cover; }
+    object-fit: fill; }
   .distance-first-screen:after {
     display: block;
     width: 100%;
@@ -573,9 +573,6 @@ a:hover {
     width: 14px;
     height: 14px; }
 
-@media screen and (max-width: 768px) {
-  .distance-first-screen {
-    height: auto; } }
 .distance-top {
   height: 440px;
   background-position: center center;

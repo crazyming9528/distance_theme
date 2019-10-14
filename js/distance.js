@@ -4,6 +4,7 @@
     var navbar = $('.navbar');
     var toggleNavBtn = $('#toggle_nav');
     var navbarSupportedContent = $('#navbarSupportedContent');
+    var videoBg = document.getElementById('video_bg');
     var videoBgC = document.getElementById('video_bg_c');
     var mark = '';//标记
 
@@ -69,6 +70,37 @@
 
     }
 
+
+    function isAndroid() {
+        var u = navigator.userAgent;
+        return u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+    }
+
+    function showVideo() {
+
+        var show = localStorage.getItem('show_video') === '1' ? true : 0;
+
+        if(show){
+
+            if (isAndroid()) {
+                if (videoBg) {
+                    videoBg.parentNode.removeChild(videoBg);
+                    jsmpegPlay(videoBgC, 'https://www.crazyming.com/assets/xj.ts', jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
+                }
+
+            } else {
+                if (videoBgC) {
+                    videoBgC.parentNode.removeChild(videoBgC);
+                    console.log(videoBg);
+                    videoBg.play();
+                }
+            }
+
+
+        }
+
+    }
+
     function showPage() {
         console.log(mark);
         $('#load-container').fadeOut();
@@ -76,12 +108,15 @@
         setNav();
         showAnimation();
         showBgMusic();
+        showVideo();
 
     }
 
-    function jsmpegPlay(Vcanvas, vVideo, startFun, playingFun, endFun) {
+    function jsmpegPlay(Vcanvas, vVideo, startFun, playingFun, endFun, android) {
         var show = localStorage.getItem('show_video') === '1' ? true : 0;
         if (show) {
+
+
             var player = new JSMpeg.Player(
                 vVideo, {
                     canvas: Vcanvas,
@@ -92,14 +127,14 @@
                     playingCallBack: playingFun,
                     endCallBack: endFun
                 });
+
+
         }
     }
 
     //视频开始播放（
     function jsmpeg_startCallBack() {
-        canvas.style.display = "block"
-        btn_init.style.display = "none";
-        github.style.display = "block";
+
     }
 
     //视频播放进度
@@ -152,9 +187,6 @@
             }
 
         })
-
-
-        jsmpegPlay(videoBgC, 'http://blog.crazy.com/lol.ts', jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
 
 
         $(document).scroll(function () {
