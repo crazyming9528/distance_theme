@@ -92,7 +92,7 @@
 	?>
     //var isShow = '<?php //echo( ! $video && $show_animation )  ?>//';
     var isShow = '<?php echo( $show_animation )  ?>';
-    var isHome = '<?php echo is_home()  ?>';
+    var isHome = '<?php wp_reset_query(); echo is_home()  ?>';//wp_reset_query 是为了解决is_home 失效的问题
     var haveVideo = '<?php echo( $video )  ?>';
     if (isShow && isHome) {
         localStorage.setItem('show_animation', '1')
@@ -101,7 +101,8 @@
     }
 
     if (haveVideo  && isHome) {
-        localStorage.setItem('show_video', '1')
+        // localStorage.setItem('show_video', 'https://www.crazyming.com/assets/xj.ts')
+        localStorage.setItem('show_video', '<?php echo $video_m ?>')
     } else {
         localStorage.setItem('show_video', '0')
     }

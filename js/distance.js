@@ -78,14 +78,14 @@
 
     function showVideo() {
 
-        var show = localStorage.getItem('show_video') === '1' ? true : 0;
+        var show = localStorage.getItem('show_video');
 
         if(show){
 
             if (isAndroid()) {
                 if (videoBg) {
                     videoBg.parentNode.removeChild(videoBg);
-                    jsmpegPlay(videoBgC, 'https://www.crazyming.com/assets/xj.ts', jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
+                    jsmpegPlay(videoBgC, show, jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
                 }
 
             } else {
