@@ -86,7 +86,7 @@
 
 	<?php
 	$video = get_header_video_url();
-	$video_m = get_theme_mod( 'show_video_m' );;//手机首页 视频地址 ts格式
+	$video_m = get_theme_mod( 'index_video_m' );;//手机首页 视频地址 ts格式
 	$show_animation = get_theme_mod( 'show_animation', true );
 	$index_audio =  get_theme_mod( 'index_audio');//
 	?>
