@@ -53,12 +53,12 @@
 
     function showBgMusic() {
         var show = localStorage.getItem('show_audio');
-        if (show) {
+        if (isNaN(show)) {
             var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 fixed: true,
                 autoplay: true,
-                audio:JSON.stringify(show),
+                audio: JSON.stringify(show),
             });
         }
 
@@ -77,9 +77,9 @@
 
     function showVideo() {
 
-        var show = localStorage.getItem('show_video');
+        var show = localStorage.getItem('show_video_m');
 
-        if (show) {
+        if (isNaN(show)) {
 
             if (isAndroid() || isIos()) {
                 if (videoBg) {
@@ -97,6 +97,15 @@
                 }
             }
 
+
+        } else {
+
+            if (videoBg) {
+                videoBg.style.opacity = '1';
+            }
+            if (videoBgC) {
+                videoBgC.parentNode.removeChild(videoBgC);
+            }
 
         }
 

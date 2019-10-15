@@ -22,10 +22,18 @@ get_header();
 
 
 ////首页图片地址:
-$index_img =  get_theme_mod( 'index_img') ? get_theme_mod( 'index_img') :get_header_image();
+if(get_theme_mod( 'index_img')){
+	$index_img =get_theme_mod( 'index_img');
+}else{
+	$index_img =get_header_image();
+}
 
 ////首页视频地址:
-$index_video =  get_theme_mod( 'index_video') ? get_theme_mod( 'index_video') : get_header_video_url();
+if(get_theme_mod( 'index_video')){
+	$index_video =get_theme_mod( 'index_video');
+}else{
+	$index_video =get_header_video_url();
+}
 
 
 
@@ -58,7 +66,7 @@ $index_video =  get_theme_mod( 'index_video') ? get_theme_mod( 'index_video') : 
     </div>
 	<?php else: ?>
     <div class="distance-first-screen col-12 wow fadeIn"
-         style="background-image: url('<?php echo get_header_image() ?>')">
+         style="background-image: url('<?php echo $index_img?>')">
 
     <div class="sentence"><h3 class="wow fadeInDown customize_color"><?php if ( get_theme_mod( 'index_title' ) ) {
 				echo get_theme_mod( 'index_title' );

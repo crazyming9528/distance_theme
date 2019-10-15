@@ -103,9 +103,9 @@
 
     if (haveVideo_m && isHome) {
         // localStorage.setItem('show_video', 'https://www.crazyming.com/assets/xj.ts')
-        localStorage.setItem('show_video', '<?php echo $video_m ?>')
+        localStorage.setItem('show_video_m', '<?php echo $video_m ?>')
     } else {
-        localStorage.setItem('show_video', '0')
+        localStorage.setItem('show_video_m', '0')
     }
 
 
