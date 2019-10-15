@@ -110,6 +110,12 @@
                 videoBgC.parentNode.removeChild(videoBgC);
             }
 
+            //手机上移除video 标签
+            if (isAndroid() || isIos()) {
+                videoBg.parentNode.removeChild(videoBg);
+            }
+
+
         }
 
     }
