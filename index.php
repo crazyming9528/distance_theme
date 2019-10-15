@@ -36,6 +36,7 @@ $index_video =  get_theme_mod( 'index_video') ? get_theme_mod( 'index_video') : 
     <div class="distance-first-screen col-12 wow fadeIn"
          style="background-color:white;background-image: url('<?php echo $index_img ?>')">
     <video id="video_bg" class="video_bg" src="<?php echo $index_video ?>" loop="loop"
+           autoplay="autoplay"
            poster="<?php echo $index_img ?>"
            x-webkit-airplay="allow"
            x5-video-orientation="portraint"
