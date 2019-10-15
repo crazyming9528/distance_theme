@@ -94,7 +94,7 @@
     var isShow = '<?php echo( $show_animation )  ?>';
     var isHome = '<?php wp_reset_query(); echo is_home()  ?>';//wp_reset_query 是为了解决is_home 失效的问题
     var haveVideo_m = '<?php echo( $video_m )  ?>';
-    var haveAudio = '<?php echo( $index_audio )  ?>';
+    var haveAudio = <?php echo( json_encode($index_audio) )  ?>;
     if (isShow && isHome) {
         localStorage.setItem('show_animation', '1')
     } else {
@@ -110,7 +110,7 @@
 
 
     if (haveAudio && isHome) {
-        localStorage.setItem('show_audio', JSON.stringify(haveAudio))
+        localStorage.setItem('show_audio', haveAudio)
     } else {
         localStorage.setItem('show_audio', '0')
     }

@@ -53,12 +53,13 @@
 
     function showBgMusic() {
         var show = localStorage.getItem('show_audio');
+        console.log(show);
         if (isNaN(show)) {
             var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 fixed: true,
                 autoplay: true,
-                audio: JSON.stringify(show),
+                audio: eval(show),
             });
         }
 
@@ -82,10 +83,12 @@
         if (isNaN(show)) {
 
             if (isAndroid() || isIos()) {
+
                 if (videoBg) {
                     videoBg.parentNode.removeChild(videoBg);
-                    console.log(videoBg);
+                    console.log(videoBgC);
                     jsmpegPlay(videoBgC, show, jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
+
                 }
 
             } else {
@@ -117,8 +120,8 @@
         $("#page").fadeIn();
         setNav();
         showAnimation();
-        showBgMusic();
         showVideo();
+        showBgMusic();
 
     }
 
@@ -147,9 +150,7 @@
 
     //视频开始播放（
     function jsmpeg_startCallBack() {
-
         videoBgC.style.opacity = '1';
-
 
     }
 
