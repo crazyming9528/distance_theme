@@ -86,21 +86,22 @@
 
 	<?php
 	$video = get_header_video_url();
-	$video_m = '';//手机首页 视频地址 ts格式
+	$video_m = get_theme_mod( 'show_video_m' );;//手机首页 视频地址 ts格式
 	$show_animation = get_theme_mod( 'show_animation', true );
-
+	$index_audio =  get_theme_mod( 'index_audio');//
 	?>
     //var isShow = '<?php //echo( ! $video && $show_animation )  ?>//';
     var isShow = '<?php echo( $show_animation )  ?>';
     var isHome = '<?php wp_reset_query(); echo is_home()  ?>';//wp_reset_query 是为了解决is_home 失效的问题
-    var haveVideo = '<?php echo( $video )  ?>';
+    var haveVideo_m = '<?php echo( $video_m )  ?>';
+    var haveAudio = '<?php echo( $index_audio )  ?>';
     if (isShow && isHome) {
         localStorage.setItem('show_animation', '1')
     } else {
         localStorage.setItem('show_animation', '0')
     }
 
-    if (haveVideo && isHome) {
+    if (haveVideo_m && isHome) {
         // localStorage.setItem('show_video', 'https://www.crazyming.com/assets/xj.ts')
         localStorage.setItem('show_video', '<?php echo $video_m ?>')
     } else {
@@ -108,17 +109,14 @@
     }
 
 
-    if (!haveVideo && isHome) {
-        localStorage.setItem('show_audio', '1')
+    if (haveAudio && isHome) {
+        localStorage.setItem('show_audio', JSON.stringify(haveAudio))
     } else {
         localStorage.setItem('show_audio', '0')
     }
 
 
 </script>
-
 <script src="<?php echo get_theme_file_uri() ?>/js/distance.js"></script>
-
-
 </body>
 </html>

@@ -84,6 +84,88 @@ function seo_customize_register( $wp_customize ) {
 	));
 
 
+	// 首页第一屏壁纸
+	$wp_customize->add_setting('index_img', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_img',
+		array(
+			'label' => __('首屏壁纸url'),
+			'section' => 'distance_index',
+			'settings' => 'index_img',
+			'description' => __( '填写后会覆盖[页头媒体]中设置的媒体' ),
+			'type' => 'text',
+		)
+	));
+
+
+	// 首页第一屏视频背景
+	$wp_customize->add_setting('index_video', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_video',
+		array(
+			'label' => __('首屏视频url'),
+			'section' => 'distance_index',
+			'settings' => 'index_video',
+			'description' => __( '填写后会覆盖[页头媒体]中设置的媒体' ),
+			'type' => 'text',
+		)
+	));
+
+	// 首页第一屏 手机视频背景
+	$wp_customize->add_setting('index_video_m', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_video_m',
+		array(
+			'label' => __('手机版首屏视频url'),
+			'section' => 'distance_index',
+			'settings' => 'index_video_m',
+			'description' => __( '手机上显示的首页视频 仅支持ts格式,按照教程 https://github.com/phoboslab/jsmpeg转成的ts格式视频' ),
+			'type' => 'text',
+		)
+	));
+
+
+	// 首页背景音乐
+	$wp_customize->add_setting('index_audio', array(
+		'default' => '',
+		'transport' => 'refresh',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'index_audio',
+		array(
+			'label' => __('音乐播放器APlayer audio配置'),
+			'section' => 'distance_index',
+			'settings' => 'index_audio',
+		  'description' => __( 'APlayer歌单参数[audio],不填写此项表示不开启音乐播放器. 参考:https://aplayer.js.org/#/zh-Hans/' ),
+			'type' => 'text',
+		)
+	));
+
+
+
+
+
 	// 首页显示文章的标签
 	$wp_customize->add_setting('index_article_tag', array(
 		'default' => '',

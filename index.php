@@ -19,17 +19,24 @@ get_header();
     <div class="row">
 
 <?php
-$video = get_header_video_url();
+
+
+////首页图片地址:
+$index_img =  get_theme_mod( 'index_img') ? get_theme_mod( 'index_img') :get_header_image();
+
+////首页视频地址:
+$index_video =  get_theme_mod( 'index_video') ? get_theme_mod( 'index_video') : get_header_video_url();
+
 
 
 ?>
 
 
-<?php if ( $video ): ?>
+<?php if ( $index_video ): ?>
     <div class="distance-first-screen col-12 wow fadeIn"
-         style="background-color:white;background-image: url('<?php echo get_header_image() ?>')">
-    <video id="video_bg" class="video_bg" src="<?php echo $video ?>" loop="loop"
-           poster="<?php echo get_header_image() ?>"
+         style="background-color:white;background-image: url('<?php echo $index_img ?>')">
+    <video id="video_bg" class="video_bg" src="<?php echo $index_video ?>" loop="loop"
+           poster="<?php echo $index_img ?>"
            x-webkit-airplay="allow"
            x5-video-orientation="portraint"
            webkit-playsinline="true"

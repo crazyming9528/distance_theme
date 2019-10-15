@@ -52,19 +52,13 @@
     }
 
     function showBgMusic() {
-        var show = localStorage.getItem('show_audio') === '1' ? true : 0;
+        var show = localStorage.getItem('show_audio');
         if (show) {
             var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 fixed: true,
                 autoplay: true,
-                audio: [{
-                    name: '如果当时',
-                    artist: '龚宏(cover许嵩)',
-                    url: 'https://www.crazyming.com/ruguodangshi.mp3',
-                    cover: 'cover.jpg',
-
-                }]
+                audio:JSON.stringify(show),
             });
         }
 
