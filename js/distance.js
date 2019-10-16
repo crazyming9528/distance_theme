@@ -58,7 +58,7 @@
             var ap = new APlayer({
                 container: document.getElementById('aplayer'),
                 fixed: true,
-                autoplay: true,
+                autoplay: false,
                 audio: eval(show),
             });
         }
@@ -137,7 +137,7 @@
             vVideo, {
                 canvas: Vcanvas,
                 loop: true,
-                autoplay: false,
+                autoplay: true,
                 startSign: true,
                 audio:false,
                 startCallBack: startFun,
