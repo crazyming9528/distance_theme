@@ -137,7 +137,7 @@
             vVideo, {
                 canvas: Vcanvas,
                 loop: true,
-                autoplay: true,
+                autoplay: false,
                 startSign: true,
                 audio:false,
                 startCallBack: startFun,
