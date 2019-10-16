@@ -88,11 +88,13 @@
                     videoBg.parentNode.removeChild(videoBg);
                     console.log("video已移除");
                     jsmpegPlay(videoBgC, show, jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
-                    console.log('jsmpeg 启动',show);
+                    console.log('jsmpeg 启动', show);
                 }
 
             } else {
-                videoBg.style.opacity = '1';
+                if (videoBg) {
+                    videoBg.style.opacity = '1';
+                }
                 if (videoBgC) {
                     videoBgC.parentNode.removeChild(videoBgC);
                     // videoBg.play();
@@ -131,17 +133,17 @@
     }
 
     function jsmpegPlay(Vcanvas, vVideo, startFun, playingFun, endFun) {
-            var player = new JSMpeg.Player(
-                vVideo, {
-                    canvas: Vcanvas,
-                    loop: true,
-                    autoplay: true,
-                    startSign: true,
-                    startCallBack: startFun,
-                    playingCallBack: playingFun,
-                    endCallBack: endFun
-                });
-            console.log(player)
+        var player = new JSMpeg.Player(
+            vVideo, {
+                canvas: Vcanvas,
+                loop: true,
+                autoplay: true,
+                startSign: true,
+                startCallBack: startFun,
+                playingCallBack: playingFun,
+                endCallBack: endFun
+            });
+        console.log(player)
     }
 
     //视频开始播放（
