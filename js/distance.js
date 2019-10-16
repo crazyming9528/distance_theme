@@ -139,6 +139,7 @@
                 loop: true,
                 autoplay: true,
                 startSign: true,
+                audio:false,
                 startCallBack: startFun,
                 playingCallBack: playingFun,
                 endCallBack: endFun

@@ -45,6 +45,7 @@ if(get_theme_mod( 'index_video')){
          style="background-color:white;background-image: url('<?php echo $index_img ?>')">
     <video id="video_bg" class="video_bg" src="<?php echo $index_video ?>" loop="loop"
            autoplay="autoplay"
+           muted="muted"
            poster="<?php echo $index_img ?>"
            x-webkit-airplay="allow"
            x5-video-orientation="portraint"
