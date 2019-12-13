@@ -103,10 +103,15 @@ $keywords    = $keywords ? $keywords : get_theme_mod( 'seo_keywords' );
     <link crossorigin="anonymous" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" href="//lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!--    <link rel="stylesheet" href="--><?php //echo get_theme_file_uri(); ?><!--/css/animate.css" type="text/css"/>-->
     <link crossorigin="anonymous" integrity="sha384-7/Tl0k65OTvDSvtuq7aPR7aa0aCz7ZKqHsbMRLxhzueldW+9MZpCe9LB1c5UBuNS" href="//lib.baomitu.com/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/markdown.css" type="text/css"/>
     <link rel="stylesheet" href="<?php echo get_theme_file_uri(); ?>/css/distance.css" type="text/css"/>
+
 <!--    <link rel="stylesheet"-->
 <!--          href="--><?php //echo get_theme_file_uri(); ?><!--/js/prism/prism.css"/>-->
     <link crossorigin="anonymous" integrity="sha384-gXPPtw4xAxtl2Cea68s1jv7j1KR6HtYW5qAnWtAZ/Tb7/WCA1dNU2fnVOyuW/+O9" href="//lib.baomitu.com/prism/9000.0.1/themes/prism.min.css" rel="stylesheet">
+
+
+
 
 <!--    <script src="--><?php //echo get_theme_file_uri()?><!--/js/html5shiv.min.js"></script>-->
     <!--[if lt IE 9]>

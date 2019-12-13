@@ -61,7 +61,7 @@ get_header();
 
                     <div class="row  single-article-wrapper">
 
-                        <div class="col-12 col-lg-9 distance-article-content">
+                        <div class="col-12 col-lg-9 distance-article-content ">
 
                             <!--                        文章区域-->
 							<?php the_content(); ?>
