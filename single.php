@@ -8,17 +8,28 @@
  */
 
 get_header();
+
 ?>
 
 <?php if ( have_posts() ): ?>
 	<?php while ( have_posts() ):the_post(); ?>
         <div class="row">
+	        <?php $getThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()),full); ?>
 
             <!--        distance-top 开始-->
-            <div class="distance-top col-12" >
-                <!--        顶部内容区域container开始-->
+            <div class="distance-top col-12" <?php if ($getThumbnail[0]) {
+	            echo 'style="background-image: url(\'' . $getThumbnail[0] . '\')"';
+            } ?> >
+
+
+	            <?php if ($getThumbnail[0]){
+		            // 如果存在图片 增加shade 遮罩标签, 避免图片过于明亮 影响到标题的 显示效果
+	                echo '<div class="shade"></div>';
+                } ?>
+
+<!--                        顶部内容区域container开始-->
 				<?php if ( has_post_thumbnail() ) { ?>
-					<?php the_post_thumbnail(); ?>
+					<?php //the_post_thumbnail(); ?>
 				<?php } else { ?>
                     <!--没有特色图像暂时不显示-->
 				<?php } ?>

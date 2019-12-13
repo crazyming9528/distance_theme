@@ -33,24 +33,24 @@ pre {
 //  padding: 15px;
 //}
 
-
-/*滚动条 宽度*/
-::-webkit-scrollbar {
-  width: 5px;
-
-}
-
-/*滚动条背景*/
-::-webkit-scrollbar-track {
-  background-color: white;
-}
-
-
-/*滚动条实体*/
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(#0c5460, #329a91);
-  border-radius: 10px;
-}
+//
+///*滚动条 宽度*/
+//::-webkit-scrollbar {
+//  width: 5px;
+//
+//}
+//
+///*滚动条背景*/
+//::-webkit-scrollbar-track {
+//  background-color: white;
+//}
+//
+//
+///*滚动条实体*/
+//::-webkit-scrollbar-thumb {
+//  background: linear-gradient(#0c5460, #329a91);
+//  border-radius: 10px;
+//}
 
 
 .wow {
@@ -58,8 +58,8 @@ pre {
 }
 
 
-.wb-ppo-donate .tab-cont .hl{
-  color: white!important;
+.wb-ppo-donate .tab-cont .hl {
+  color: white !important;
 }
 
 .dp_shadow {
@@ -211,7 +211,7 @@ a:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0, 0, 0, .1);
     z-index: 1;
     top: 0;
     left: 0;
@@ -229,7 +229,8 @@ a:hover {
     z-index: 100;
     text-align: center;
     width: 85%;
-    h3{
+
+    h3 {
       font-size: 36px;
       opacity: .95;
     }
@@ -291,25 +292,31 @@ a:hover {
   background-size: cover;
   position: relative;
   padding: 0;
-  background-color: #159957;  /* fallback for old browsers */
-  background-image: linear-gradient(to top, #155799, #159957); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #159957; /* fallback for old browsers */
+  background-image: linear-gradient(120deg, #155799, #159957);
 
+  //img {
+  //  position: absolute;
+  //  width: 100%;
+  //  height: 100%;
+  //}
 
-  img {
+  .shade {
     position: absolute;
     width: 100%;
     height: 100%;
+
+    &::after {
+      background-image: linear-gradient(-180deg, rgba(45, 58, 111, .3), rgba(0, 0, 0, .5));
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  &:after {
-    background-image: linear-gradient(-180deg, rgba(45, 58, 111, .5), rgba(0, 0, 0, .5));
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
 
   .container {
     height: 100%;
@@ -332,7 +339,7 @@ a:hover {
         }
       }
 
-      h1.big{
+      h1.big {
         font-size: 2.5rem;
         font-weight: 500;
 
@@ -425,30 +432,31 @@ a:hover {
 
 .link {
   background-color: #2d2e2f;
-  ul{
+
+  ul {
     margin: 0;
   }
 
-  .btm{
+  .btm {
 
 
-      li{
+    li {
 
 
-        a {
-          display: block;
-          transition: all .5s;
-          padding: 10px 20px;
-          text-decoration: none;
+      a {
+        display: block;
+        transition: all .5s;
+        padding: 10px 20px;
+        text-decoration: none;
 
-          &:hover {
-            color: lighten($baseColor2, 10) !important;
-            //background-color: lighten(#2d2e2f,20);
+        &:hover {
+          color: lighten($baseColor2, 10) !important;
+          //background-color: lighten(#2d2e2f,20);
 
-          }
         }
-
       }
+
+    }
 
 
   }

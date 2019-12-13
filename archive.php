@@ -13,9 +13,22 @@ get_header();
     <div class="row">
 
         <!--        distance-top 开始-->
-        <div class="distance-top col-12" <?php if ( function_exists( 'z_taxonomy_image_url' ) ) {
+        <div class="distance-top col-12" <?php if ( function_exists( 'z_taxonomy_image_url' ) && z_taxonomy_image_url() !='' ) {
 			echo 'style="background-image: url(\'' . z_taxonomy_image_url() . '\')"';
-		} ?>'>
+		} ?>>
+
+
+	        <?php if (function_exists( 'z_taxonomy_image_url' ) && z_taxonomy_image_url() !=''){
+		        // 如果存在图片 增加shade 遮罩标签, 避免图片过于明亮 影响到标题的 显示效果
+		        echo '<div class="shade"></div>';
+	        } ?>
+
+<!--        <div class="distance-top col-12">-->
+<!---->
+<!--	        --><?php //if ( function_exists( 'z_taxonomy_image_url' ) ) {
+//	        			echo '<img src=\'' . z_taxonomy_image_url() . '\' />';
+//	        		} ?>
+<!--        </div>-->
         <!--        顶部内容区域container开始-->
         <div class="container">
             <div class="row align-items-center description">
