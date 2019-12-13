@@ -14,7 +14,7 @@ get_header();
 <?php if ( have_posts() ): ?>
 	<?php while ( have_posts() ):the_post(); ?>
         <div class="row">
-	        <?php $getThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()),full); ?>
+	        <?php $getThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()),'full'); ?>
 
             <!--        distance-top 开始-->
             <div class="distance-top col-12" <?php if ($getThumbnail[0]) {
