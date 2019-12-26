@@ -86,7 +86,7 @@
 
                 if (videoBg) {
                     // videoBg.parentNode.removeChild(videoBg);
-                    $(videoBg).parent().empty();//jquery 写法
+                    $(videoBg).remove();//jquery 写法
                     console.log("video已移除");
                     jsmpegPlay(videoBgC, show, jsmpeg_startCallBack, jsmpeg_playingCallBack, jsmpeg_endCallBack);
                     console.log('jsmpeg 启动', show);
@@ -98,7 +98,7 @@
                 }
                 if (videoBgC) {
                     // videoBgC.parentNode.removeChild(videoBgC);
-                    $(videoBgC).parent().empty();
+                    $(videoBgC).remove();
                     // videoBg.play();
                 }
             }
@@ -111,13 +111,13 @@
             }
             if (videoBgC) {
                 // videoBgC.parentNode.removeChild(videoBgC);
-                $(videoBgC).parent().empty();
+                $(videoBgC).remove();
             }
 
             //手机上移除video 标签
             if (isAndroid() || isIos()) {
                 // videoBg.parentNode.removeChild(videoBg);
-                $(videoBg).parent().empty();
+                $(videoBg).remove();
             }
 
 
