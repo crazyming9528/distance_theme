@@ -150,7 +150,7 @@ if(get_theme_mod( 'index_video')){
 						$args = array(
 							'tag_id'         => $tag_id,//显示指定标签 id
 //						'tag_id'         => 43,//显示指定标签 id
-							'posts_per_page' => 10,//文章数
+							'posts_per_page' => 25,//文章数
 						);
 						query_posts( $args );//显示指定标签
 					}
