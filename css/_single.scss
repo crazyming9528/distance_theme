@@ -36,7 +36,7 @@
   .single-article-wrapper {
 
     .distance-article-content {
-     padding-top: 25px;
+      padding-top: 25px;
       padding-bottom: 25px;
       line-height: 1.6;
       width: 100%;
@@ -45,6 +45,10 @@
       overflow: hidden;
       font-size: 16px;
 
+      .kgvid_wrapper {
+        width: 100% !important;
+      }
+
       img {
         max-width: 100%;
         height: auto;
@@ -52,7 +56,6 @@
         overflow: hidden;
         margin: 10px auto 10px;
       }
-
 
 
     }
@@ -72,7 +75,7 @@
 
     }
 
-    .distance-pager{
+    .distance-pager {
       //display: flex;
       //li{
       //  flex: 1;
@@ -80,7 +83,7 @@
       //  font-size: 14px;
       //
       //}
-      span{
+      span {
         color: grey;
         font-size: 14px;
       }
