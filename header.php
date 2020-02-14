@@ -48,7 +48,7 @@ if ( is_home() ) {
 		}
 	}
 
-	// 文章的 关键词 为  自定义字段  keywords  拼接  tag标签名 拼接 博客名称
+	// 文章的 关键词 为  自定义字段  keywords  拼接  tag标签名
 	$keywords = trim( get_post_meta( $id, "keywords", true ) );
 	if ( $keywords != '' && mb_substr( $keywords, - 1 ) !== ',' ) {
 		$keywords .= ',';
@@ -57,7 +57,7 @@ if ( is_home() ) {
 	foreach ( $tags as $tag ) {
 		$keywords = $keywords . $tag->name . ",";
 	}
-	$keywords .= get_bloginfo( 'name' );
+//	$keywords .= get_bloginfo( 'name' );
 	$keywords = rtrim( $keywords, ',' );
 
 } elseif ( is_category() ) {
